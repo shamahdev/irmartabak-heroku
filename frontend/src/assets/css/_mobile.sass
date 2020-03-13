@@ -1,0 +1,115 @@
+.display-1,.display-2,.display-3,.display-4,.display-5
+  @include primaryfont-bold
+.display-3
+  font-size: 3.2rem
+.display-4
+  font-size: 2rem
+.card-img-overlay
+    .display-4
+        font-size: 1.6rem
+.card-img-top
+    min-height: 360px
+.hidedesktop
+    display: flex
+.navigation
+    position: sticky
+    top: 0
+    z-index: 99
+.navbar
+    width: 100%
+    z-index: 99
+.sidebar
+    position: sticky
+    transition: 0.2s ease-in-out
+    z-index: 100
+    overflow-y: hidden !important
+    height: 100%
+    ul
+        overflow-y: hidden !important
+        flex-direction: row
+        a
+            color: black
+            padding: 0.5rem 0.5rem
+            &:hover
+                transition: 0.2s ease-in-out
+                background-color: white
+    .arrow
+        display: none
+.martabak,.martabak2,.fit-cover
+    object-fit: cover
+.martabak
+    max-height: 100%
+.martabak2
+    max-height: 100%
+    width: 100%
+.aboutus
+    position: relative
+.map-point
+    height: 360px
+    overflow-y: scroll
+#quotes
+  max-height: 100%
+.maskot
+    display: none
+.thumbnail
+    height: 50vh
+    width: 100%
+@media only screen and (min-width:768px)
+    .card-img-overlay
+        .display-4
+            font-size: 3rem
+    .card-img-top
+        min-height: 480px
+    .display-3
+        font-size: 4.5rem
+    .display-4
+        font-size: 3rem
+    .display-5
+        font-size: 2rem  
+    .hidedesktop
+        display: none
+    //Sidebar
+    .navigation
+        position: sticky
+    .sidebar
+        transition: 0.2s ease-in-out
+        min-width: 60px
+        position: absolute
+        height: 100vh
+        right: 0
+        ul
+            flex-direction: column
+            font-size: 1.5rem
+            a
+                padding: 0.5rem 0.5rem
+        .arrow
+            display: block
+            position: absolute
+            bottom: 0
+            background-color: $secondary
+            color: white
+            font-size: 2rem
+            &:hover
+                transition: 0.2s ease-in-out
+                background-color: $primary
+                color: black
+    //Navbar
+    .nav-link
+        border-style: none none solid none
+        border-color: $primary
+        border-width: 0px
+
+    .martabak
+        min-height: 100vh
+        max-height: 100%
+    .martabak2
+        min-height: 100%
+        height: 90vh
+    .aboutus
+        position: absolute
+        right: 0
+    .map-point
+        height: auto
+        overflow-y: hidden
+    .maskot
+        display: block

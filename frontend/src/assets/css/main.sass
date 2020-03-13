@@ -1,0 +1,245 @@
+@import url('bootstrap.min.css')
+@import url('materialdesignicons.min.css')
+@import 'variable'
+@import 'fontpack'
+@import 'mixins'
+@import 'mobile'
+
+::-webkit-scrollbar 
+  width: 8px
+::-webkit-scrollbar-track 
+  background: $secondary
+::-webkit-scrollbar-thumb 
+  background: $primary
+
+html,body,p
+  @include primaryfont
+  user-select: none
+  scroll-behavior: smooth
+#aboutus
+  height: 100% !important
+#favorite
+  overflow-x: hidden
+.darkmode *
+  color: white !important
+  background-color: $secondary !important
+
+
+//===== Boostrap Modification ======\\
+input, textarea
+  border-radius: 0 !important
+  background-color: #ebebeb !important
+.navbar
+  transform: translate3d(0, 0, 0)
+  transition: 0.4s all ease-out
+.navbar.navbar--hidden
+  box-shadow: none
+  transform: translate3d(0, -100%, 0)
+.text-primary
+  color: $primary !important
+.bg-primary
+  background-color: $primary !important
+.bg-light
+  background-color: #ebebeb !important
+.bg-white
+  background-color: white !important
+.btn
+  @include secondaryfont-bold
+  font-size: 16px
+  text-transform: uppercase
+  border-radius: 0
+.btn-primary
+  background-color: $primary !important
+  color: $secondary
+  border: none
+  &:hover
+    background-color: $secondary !important
+.navbar-brand
+  margin: 0 3%
+.nav-item
+  margin: 0.5rem 4%
+  .nav-link
+      @include secondaryfont-bold
+      font-size: 14px
+      text-transform: uppercase
+      transition: 0.1s ease
+      padding: 0.5rem 1rem !important
+      &:hover
+        background-color: $primary
+        border-width: 3px
+a.router-link-active
+  transition: 1s ease
+  border-width: 3px !important
+.lead,.lead2
+  @include primaryfont
+  font-size: 1.5rem
+.lead2
+  font-size: 1rem
+.lead3
+  font-size: 15px
+  @include secondaryfont-bold
+  text-transform: uppercase
+.dropdown-menu
+  border-radius: 0
+  .dropdown-item
+    &:hover
+      background-color: $primary
+      
+// .active
+//   border-width: 3px
+.card.card--menu
+  color: $secondary
+  &:hover
+    cursor: pointer
+.card
+  &:hover
+    .card-img-overlay
+      top: 0%
+  *
+    transition: 0.3s ease
+    border-radius: 0px
+  .card-img-overlay
+    background-color: fade-out($primary,0.3)
+    display: inline-block
+    top: 50%
+.container
+  max-width: 100%
+.modal-header, .modal-footer, .modal-content
+  border: 0 !important
+  border-radius: 0
+.card-img-overlay2
+  color: white
+  background-color: fade-out($secondary,0.1)
+  position: absolute
+  left: 0
+  right: 0
+  padding: 1.25rem
+  top: 0
+  bottom: 0
+  height: 70%
+.add-list
+  .mdi
+    font-size: 5rem
+  &:hover
+    cursor: pointer
+    .mdi
+      color: $primary
+      font-size: 6rem !important
+.card-img-overlay-fb,.card-img-overlay-ig,.card-img-overlay-twt,.card-img-overlay-yt,.card-img-overlay-add
+  color: white
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  .mdi
+    font-size: 5rem
+  &:hover
+    cursor: pointer
+    .mdi
+      color: $secondary
+      font-size: 7rem
+    p
+      color: $secondary
+      font-size: 0rem
+.card-img-overlay-fb
+  background-color: fade-out(#22a6ff,0.2)
+.card-img-overlay-ig
+  background-color: fade-out(#ff229c,0.2)
+.card-img-overlay-twt
+  background-color: fade-out(#22e5ff,0.2)
+.card-img-overlay-yt
+  background-color: fade-out(#ff2222,0.2)
+.card-img-overlay-add
+  color: $secondary
+  background-color: fade-out($primary,0.2)
+.round
+  border-radius: 100%
+.border-none
+  border: 0
+.btn-secondary, .btn-dark
+  &:hover
+    border: 0
+    color: $secondary
+    background-color: $primary !important
+.bg-dark, .bg-secondary, .btn-secondary, .btn-dark
+  border: 0
+  background-color: $secondary !important
+.form-control
+  border: 0
+  font-size: 1rem
+//===== End of modification =====\\
+
+.not
+  background-color: white !important
+.inline-block
+  display: inline-block
+.rating
+  color: $primary
+.map-point
+  .container
+    transition: 0.3s ease
+    padding: 1rem 1rem
+    margin: 2rem 0rem
+    box-shadow: 0 !important
+    &:hover
+      cursor: pointer
+      background-color: $primary !important
+  .active
+    cursor: auto
+    transition: 0.3s ease
+    padding: 3rem 1rem
+    background-color: $primary !important
+    &:hover
+      cursor: auto
+    .float-right
+      color: white !important
+      background-color: $secondary !important
+.VueCarousel-navigation-button
+  transition: 0.3s ease
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.1) !important
+  padding: 18px !important
+  color: white !important
+  background-color: $secondary !important
+  margin: 0
+  &:hover
+    color: $secondary !important
+    background-color: $primary !important
+.VueCarousel-navigation-next
+  &::before
+    display: inline-block
+    font: normal normal normal 24px/1 "Material Design Icons"
+    content: '\F054'
+.VueCarousel-navigation-prev
+  &::before
+    display: inline-block
+    font: normal normal normal 24px/1 "Material Design Icons"
+    content: '\F04D'
+.inner-shadow-lg
+  box-shadow: 0 0rem 3rem rgba(0,0,0,.1) !important
+.footer-list
+  list-style: none
+  li, a
+    text-decoration: none
+    color: white !important
+    transition: 0.1s ease
+    cursor: pointer
+    display: flex
+    border-width: 0px
+    border-style: none none solid none
+    border-color: $primary
+    padding: 10px 0rem
+    &:hover
+      border-width: 1px
+  .router-link-active
+    text-decoration: none
+    border-width: 0px !important
+    &:hover
+      border-width: 1px !important
+.social-footer
+  li
+    padding: 4px 0rem
+  .mdi
+    &::before
+      font-size: 20px !important
+      margin-right: 4px
