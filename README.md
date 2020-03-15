@@ -1,24 +1,22 @@
 # Web Insinyur Martabak on Development
-![Insinyur Martabak Logo](static/img/logo.png)
+![Insinyur Martabak Logo](static/img/icon.png)
 
 ## Project setup
 ```
 npm install
-
 pip install requirements.txt
 ```
 
 ### Bundle Webpack (need to run every change made)
 ```
 npm run build
-
 ```
 
 ### Start Server
 ```
 npm start
-
 ```
+
 
 ### Changelogs
 15/03/2020 by FrontEnd
