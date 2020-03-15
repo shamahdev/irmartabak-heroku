@@ -33,6 +33,10 @@
   font-size: 2rem;
 }
 
+.display-5 {
+  font-size: 1.6rem;
+}
+
 .card-img-overlay .display-4 {
   font-size: 1.6rem;
 }
@@ -129,20 +133,14 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .navbar-toggler.mr-md-5 {
+    margin-right: 4rem !important;
+  }
   .card-img-overlay .display-4 {
     font-size: 3rem;
   }
   .card-img-top {
     min-height: 480px;
-  }
-  .display-3 {
-    font-size: 4.5rem;
-  }
-  .display-4 {
-    font-size: 3rem;
-  }
-  .display-5 {
-    font-size: 2rem;
   }
   .hidedesktop {
     display: none;
@@ -206,6 +204,18 @@
   }
   .maskot {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .display-3 {
+    font-size: 4.5rem;
+  }
+  .display-4 {
+    font-size: 3rem;
+  }
+  .display-5 {
+    font-size: 2.5rem;
   }
 }
 
@@ -300,7 +310,7 @@ input, textarea {
 }
 
 .nav-item {
-  margin: 0.5rem 4%;
+  margin: 0.5rem 0rem;
 }
 
 .nav-item .nav-link {
@@ -310,6 +320,7 @@ input, textarea {
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
   padding: 0.5rem 1rem !important;
+  margin: 0rem 0.8rem !important;
 }
 
 .nav-item .nav-link:hover {
@@ -482,10 +493,6 @@ a.router-link-active {
 
 .inline-block {
   display: inline-block;
-}
-
-.rating {
-  color: #FFD645;
 }
 
 .map-point .container {

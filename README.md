@@ -1,5 +1,6 @@
 # Web Insinyur Martabak on Development
-![Insinyur Martabak Logo](src/assets/img/logo.png)
+![Insinyur Martabak Logo](static/img/logo.png)
+
 ## Project setup
 ```
 npm install
@@ -22,10 +23,11 @@ npm start
 ### Changelogs
 15/03/2020 by FrontEnd
 - Added npm commands for shortcut to bundle webpack and run django server
-- Fixing slider error in console
-- Fixing slider size in mid-low screen resolution
-- Fixing font size in mid-low screen resolution
-- Fixing some typos in the Home page
+- Fixed slider error in console
+- Fixed slider size in mid-low screen resolution
+- Fixed font size in mid-low screen resolution
+- Fixed some typos in the Home page
+- Fixed static images not displaying correctly in detail page
 - Added New & Promo and Awards tab to Navigation bar
 - Added Detail button to Best Seller slider
 - scroll will now return to top every page changed

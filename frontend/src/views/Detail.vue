@@ -16,24 +16,22 @@
             <div class="h2 my-3">
               <p class="inline-block text-dark mr-3">{{ "Rp " + martabak.price }}</p>
             </div>
+            <div class="btn-group"> 
             <button
               class="btn btn-primary btn-lg px-3 px-md-5 py-3"
-              href="#"
-              role="button"
               data-toggle="modal"
               data-target="#buymethod"
             >
               Pesan Sekarang
             </button>
             <button
-              class="btn btn-secondary btn-lg px-3 px-md-5 py-3"
-              href="#"
-              role="button"
+              class="btn btn-dark btn-lg px-3 px-md-5 py-3"
               data-toggle="modal"
               data-target="#startrating"
             >
               Berikan Rating
             </button>
+            </div>
             <modal id="startrating" title="Berikan Rating">
               <div class="row m-0">
                 <vue-stars
@@ -60,7 +58,7 @@
                   >
                     <img
                       class="img-fluid"
-                      src="static/img/gofood.png"
+                      src="/static/img/gofood.png"
                       alt=""
                     />
                   </a>
@@ -71,7 +69,7 @@
                   >
                     <img
                       class="img-fluid"
-                      src="static/img/grabfood.png"
+                      src="/static/img/grabfood.png"
                       alt=""
                     />
                   </a>

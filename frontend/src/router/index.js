@@ -24,48 +24,54 @@ const routes = [
     path: "/social",
     name: "Social",
     meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "social" */ "../views/Social.vue")
+    component: () => import(/* webpackChunkName: "social" */ "../views/Social.vue")
   },
   {
     path: "/contact",
     name: "Contact",
     meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "contact" */ "../views/Contact.vue")
+    component: () => import(/* webpackChunkName: "contact" */ "../views/Contact.vue")
   },
   {
     path: "/menu",
     name: "Menu",
     meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "menu" */ "../views/Menu.vue")
   },
   {
     path: "/location",
     name: "Location",
     meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "location" */ "../views/Location.vue")
+    component: () => import(/* webpackChunkName: "location" */ "../views/Location.vue")
+  },
+  {
+    path: "/disclaimer",
+    name: "Disclaimer",
+    meta: { hideDesktop: true },
+    component: () => import(/* webpackChunkName: "disclaimer" */ "../views/Disclaimer.vue")
+  },
+  {
+    path: "/privacypolicy",
+    name: "PrivacyPolicy",
+    meta: { hideDesktop: true },
+    component: () => import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue")
+  },
+  {
+    path: "/menu/:name",
+    name: "Detail",
+    meta: { hideDesktop: true },
+    component: () => import(/* webpackChunkName: "menu" */ "../views/Detail.vue")
+  },
+  { 
+    path: "*",
+    name: "Error404",
+    meta: { hideDesktop: true },
+    component: () => import(/* webpackChunkName: "error404" */ "../views/Error404.vue")
   },
   // {
   //   path: "/dev",
   //   name: "Location",
   //   meta: { hideDesktop: true },
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
   //   component: () =>
   //     import(/* webpackChunkName: "about" */ "../views/Dev.vue")
   // },
@@ -73,49 +79,9 @@ const routes = [
   //   path: "/faq",
   //   name: "Location",
   //   meta: { hideDesktop: true },
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
   //   component: () =>
   //     import(/* webpackChunkName: "about" */ "../views/FAQ.vue")
   // },
-  {
-    path: "/disclaimer",
-    name: "Disclaimer",
-    meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "disclaimer" */ "../views/Disclaimer.vue")
-  },
-  {
-    path: "/privacypolicy",
-    name: "PrivacyPolicy",
-    meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue")
-  },
-  {
-    path: "/menu/:name",
-    name: "Detail",
-    meta: { hideDesktop: true },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
-  },
-  { 
-    path: "*",
-    name: "Error404",
-    meta: { hideDesktop: true },
-    component: () =>
-      import(/* webpackChunkName: "error404" */ "../views/Error404.vue")
-  }
 ];
 
 const router = new VueRouter({
