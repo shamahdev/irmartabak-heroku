@@ -2,7 +2,7 @@
   <section id="favorite">
     <div class="container-fluid row p-0 m-0 mx-auto">
       <div class="col-md-12 p-0">
-        <h1 class="text-center display-4 my-5">{{ title }}</h1>
+        <h1 class="text-center display-4 my-5">Menu Paling Populer</h1>
       </div>
     </div>
     <div class="container-fluid row p-0 m-0 mx-auto">
@@ -13,7 +13,7 @@
           :scrollPerPage="false"
           :perPageCustom="[
             [480, 2],
-            [768, 3]
+            [1080, 3]
           ]"
           :navigationEnabled="true"
           :navigationNextLabel="''"
@@ -21,13 +21,13 @@
           :paginationEnabled="false"
           :loop="true"
         >
-          <slide v-bind:key="i" v-for="i in forin">
+          <slide v-bind:key="martabak.id" v-for="martabak in martabakmenu">
             <menucard
-              :price="price"
-              :name="name"
+              :price="martabak.price"
+              :name="martabak.name"
               :rating="rating"
-              :img="img"
-              :slug="slug"
+              :img="martabak.image"
+              :slug="martabak.slug"
             />
           </slide>
         </carousel>
@@ -39,17 +39,28 @@
 <script>
 export default {
   name: "menuslider",
+  data (){
+    return{
+      martabakmenu: [],
+      rating: 3.7,
+      errored: false,
+      loading: true,
+    }
+  },
   components: {
     menucard: () => import("../components/menucard.vue")
   },
-  props: {
-    title: String,
-    forin: Number,
-    name: String,
-    slug: String,
-    price: Number,
-    rating: Number,
-    img: String
-  }
+   mounted () {
+    this.$axios
+      .get('http://127.0.0.1:8000/api/martabak/')
+      .then(response => {
+        this.martabakmenu = response.data
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
+      .finally(() => this.loading = false)
+  },
 };
 </script>

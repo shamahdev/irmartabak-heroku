@@ -12,7 +12,7 @@ FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
 SECRET_KEY = '_=+d^8kew$()w&8c!^@=z%-2eh549+-98dfk*y-up&7i-cf+b0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend',
+    'star_ratings',
+    'database',
     'rest_framework',
     'webpack_loader',
 ]
@@ -114,6 +116,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(FRONTEND_DIR, 'src/assets'),
 )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 WEBPACK_LOADER = {
     'DEFAULT': {

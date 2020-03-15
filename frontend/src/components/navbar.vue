@@ -1,13 +1,13 @@
 <template>
   <nav
     :class="{ 'navbar--hidden': !showNavbar }"
-    class="shadow-sm navbar navbar-expand-md navbar-light bg-white py-md-3 py-0 pl-3 pl-md-5"
+    class="shadow-sm navbar navbar-expand-lg navbar-light bg-white py-md-3 py-0 pl-3 pl-md-5"
   >
     <router-link class="navbar-brand pb-sm-3 pb-md-0" exact to="/">
-      <img class="p-2 p-md-1" height="60" src="static/img/logo.png" />
+      <img class="p-2 p-md-1" height="60" src="/static/img/logo.png" />
     </router-link>
     <button
-      class="navbar-toggler float-left"
+      class="navbar-toggler float-left mr-0 mr-md-5"
       type="button"
       data-toggle="collapse"
       data-target="#navbarSupportedContent"
@@ -28,6 +28,12 @@
         </li>
         <li class="nav-item">
           <router-link to="/social" class="nav-link">Social</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/news" class="nav-link">News &amp; Promo</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/awards" class="nav-link">Awards</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/contact" class="nav-link">Contact</router-link>

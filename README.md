@@ -1,20 +1,35 @@
 # Web Insinyur Martabak on Development
-[Insinyur Martabak Logo](src/assets/img/logo.png)
-## Project Vue setup
+![Insinyur Martabak Logo](src/assets/img/logo.png)
+## Project setup
 ```
 npm install
+
+pip install requirements.txt
 ```
 
-### Commands available
+### Bundle Webpack (need to run every change made)
 ```
-npm run serve
-
 npm run build
 
-npm run lint
+```
+
+### Start Server
+```
+npm start
+
 ```
 
 ### Changelogs
+15/03/2020 by FrontEnd
+- Added npm commands for shortcut to bundle webpack and run django server
+- Fixing slider error in console
+- Fixing slider size in mid-low screen resolution
+- Fixing font size in mid-low screen resolution
+- Fixing some typos in the Home page
+- Added New & Promo and Awards tab to Navigation bar
+- Added Detail button to Best Seller slider
+- scroll will now return to top every page changed
+
 12/03/2020 by BackEnd
 - Django-Vue Integration Via Webpack
 - Syncing Vue's Router With Django's UrlPattern

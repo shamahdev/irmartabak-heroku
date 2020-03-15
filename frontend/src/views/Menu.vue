@@ -6,6 +6,7 @@
           <div class="form-group">
             <label class="lead3" for="search">Cari martabak</label>
             <input
+              v-model="searchdata"
               required
               type="text"
               class="mdi form-control form-control-lg"
@@ -19,32 +20,32 @@
           <label class="lead3" for="orderby">Urutkan berdasarkan</label>
           <div class="row m-0 p-0">
             <div class="col-6 p-0">
-              <select class="form-control form-control-lg" id="orderby">
-                <option>Nama</option>
-                <option>Harga</option>
-                <option>Tipe</option>
+              <select class="form-control form-control-lg" id="orderby" v-model="orderdata" >
+                <option value="name">Nama</option>
+                <option value="price">Harga</option>
+                <option value="type">Tipe</option>
               </select>
             </div>
             <div class="col-6 p-0">
-              <select class="form-control form-control-lg" id="orderby">
-                <option>Ascending</option>
-                <option>Descending</option>
+              <select class="form-control form-control-lg" id="orderby" v-model="orderasc">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
               </select>
             </div>
           </div>
         </div>
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
-        <div class="col-6 col-md-4 p-0 my-4" v-bind:key="i" v-for="i in list">
+        <div class="col-6 col-md-4 p-0 my-4" v-bind:key="martabak.id" v-for="martabak in search.slice(0,list)">
           <menucard
-            :price="15000"
-            name="Martabak Sapi"
-            :rating="4"
-            img="static/img/martabak.jpg"
-            slug="martabak-super-sapi-mozarella"
+            :price="martabak.price"
+            :name="martabak.name"
+            :rating="4.2"
+            :img="martabak.image"
+            :slug="martabak.slug"
           />
         </div>
-        <div class="add-list col-6 col-md-4 p-0 my-4 my-auto h-100">
+        <div class="add-list col-6 col-md-4 p-0 my-4 my-auto h-100" v-if="list < martabakmenu.length">
           <div class="card p-0 py-3 border-none" @click="list += 3">
             <div class="mx-auto my-auto text-center">
               <i class="mdi mdi-plus-box-multiple" style="font-size: 5rem"></i>
@@ -64,7 +65,7 @@
             alt=""
           />
           <p class="display-4 my-5">
-            Datangi tempat kami untuk mengetahui menu lainnya!
+            Kunjungi outlet kami untuk mengetahui menu lainnya!
           </p>
         </div>
       </div>
@@ -78,8 +79,52 @@ export default {
   name: "Menu",
   data() {
     return {
+      searchdata: '',
+      orderdata: 'name',
+      orderasc: 'asc',
+      martabakmenu: [],
       list: 5
     };
+  },
+  computed: {
+    search(){
+      if(this.orderasc == 'asc'){
+        if(this.orderdata == 'name'){
+          return this.martabakmenu.filter(m=>{
+            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
+          } ).sort((a, b) => (a.name > b.name) - (a.name < b.name))
+        }else if(this.orderdata == 'price'){
+          return this.martabakmenu.filter(m=>{
+            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
+          } ).sort((a, b) => (a.price - b.price))
+        }else if(this.orderdata == 'type'){
+          return this.martabakmenu.filter(m=>{
+            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
+          } ).sort((a, b) => (a.variant > b.variant) - (a.variant < b.variant))
+        }
+      }else{
+        if(this.orderdata == 'name'){
+          return this.martabakmenu.filter(m=>{
+            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
+          } ).sort((a, b) => (a.name > b.name) - (a.name < b.name)).reverse()
+        }else if(this.orderdata == 'price'){
+          return this.martabakmenu.filter(m=>{
+            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
+          } ).sort((a, b) => (a.price - b.price)).reverse()
+        }else if(this.orderdata == 'type'){
+          return this.martabakmenu.filter(m=>{
+            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
+          } ).sort((a, b) => (a.variant > b.variant) - (a.variant < b.variant)).reverse()
+        }
+      }
+    },
+  },
+  mounted () {
+    this.$axios
+      .get('http://127.0.0.1:8000/api/martabak/')
+      .then(response => {
+        this.martabakmenu = response.data
+      })
   },
   components: {
     menucard: () => import("../components/menucard.vue")

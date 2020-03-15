@@ -4,7 +4,7 @@
       <div class="container-fluid row p-0 m-0 mx-auto my-5">
         <div class="col-10 mx-auto my-auto p-0 text-center">
           <img
-            src="static/img/logo.png"
+            src="/static/img/logo.png"
             class="img-fluid my-2"
             width="200px"
             alt=""
@@ -19,7 +19,7 @@
             <a href="https://www.instagram.com/insinyur_martabak">
               <img
                 class="card-img-top img-fluid fit-cover"
-                src="static/img/stand.jpg"
+                src="/static/img/stand.jpg"
                 alt="Card image cap"
               />
               <div class="card-img-overlay-fb row m-0 my-auto">
@@ -38,7 +38,7 @@
             <a href="https://www.instagram.com/insinyur_martabak">
               <img
                 class="card-img-top img-fluid fit-cover"
-                src="static/img/stand.jpg"
+                src="/static/img/stand.jpg"
                 alt="Card image cap"
               />
               <div class="card-img-overlay-ig row m-0 my-auto">
@@ -57,7 +57,7 @@
             <a href="https://twitter.com/insinyur_mrtbk">
               <img
                 class="card-img-top img-fluid fit-cover"
-                src="static/img/stand.jpg"
+                src="/static/img/stand.jpg"
                 alt="Card image cap"
               />
               <div class="card-img-overlay-twt row m-0 my-auto">
@@ -76,7 +76,7 @@
             <a href="https://www.youtube.com/channel/UCFLqxU4DwJLiv07RueTK0VA">
               <img
                 class="card-img-top img-fluid fit-cover"
-                src="static/img/stand.jpg"
+                src="/static/img/stand.jpg"
                 alt="Card image cap"
               />
               <div class="card-img-overlay-yt row m-0 my-auto">

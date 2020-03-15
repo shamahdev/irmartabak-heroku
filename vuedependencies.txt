@@ -1,1 +1,0 @@
-npm install --save-dev axios bootstrap-sass jquery node-sass sass-loader vue webpack webpack-cli  @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/runtime babel-loader babel-preset-es2015 babel-preset-stage-0 css-loader style-loader vue-loader vue-hot-reload-api vue-template-compiler webpack-bundle-tracker

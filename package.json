@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npx webpack --config frontend/webpack.config.js",
+    "start": "server.cmd",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
     "emailjs-com": "^2.4.1",
@@ -49,8 +51,8 @@
     "webpack-bundle-tracker": "^0.4.3",
     "webpack-cli": "^3.3.11"
   },
-  "description": "[Insinyur Martabak Logo](src/assets/img/logo.png) ## Project Vue setup ``` npm install ```",
-  "main": ".eslintrc.js",
+  "description": "Insinyur Martabak",
+  "main": "frontend/.eslintrc.js",
   "author": "",
   "license": "ISC"
 }

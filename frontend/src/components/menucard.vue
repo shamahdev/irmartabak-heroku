@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       starStyle: {
-        fullStarColor: "#f1c420",
+        emptyStarColor: "#111111",
         starWidth: 20,
         starHeight: 20
       }

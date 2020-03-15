@@ -1,14 +1,7 @@
 <template>
   <div class="home">
     <section id="landing">
-      <homeslider
-        name="Martabak Super Sapi Mozarella"
-        :price="20000"
-        :rating="4.3"
-        :forin="6"
-        target="#buymethod"
-        img="static/img/martabak.jpg"
-      />
+      <homeslider target="#buymethod" />
       <modal id="buymethod" title="Pilih Layanan Pemesanan">
         <div class="row m-0">
           <div class="col-md-6 p-5 my-auto">
@@ -78,16 +71,7 @@
         </div>
       </div>
     </section>
-    <menuslider
-      class="py-3 py-md-5"
-      title="Menu Paling Populer"
-      :forin="9"
-      name="Martabak Super Sapi Mozarella"
-      :price="20000"
-      :rating="2.4"
-      slug="martabak-super-sapi-mozarella"
-      img="static/img/martabak.jpg"
-    />
+    <menuslider class="py-3 py-md-5" />
     <maplocation />
     <section id="comment">
       <div class="container-fluid row p-0 m-0 mx-auto">
@@ -106,8 +90,8 @@
             :perPage="1"
             :perPageCustom="[
               [480, 1],
-              [660, 2],
-              [768, 3]
+              [768, 2],
+              [992, 3]
             ]"
             :navigationEnabled="false"
             :paginationEnabled="false"
@@ -157,14 +141,13 @@
         </div>
         <div class="quote col-md-7 p-0 my-auto mx-auto px-4 py-5 h-100">
           <h1 class="display-4 my-2">
-            "Bahagiamu kamu yang ciptakan, dan kami hadir untuk menyempurnakan!
+            "Bahagiamu kamu yang ciptakan, dan kami hadir untuk menyempurnakan!"
           </h1>
           <p class="lead3 mb-5">
-            - Insinyur Martabak, Complement your Happiness!"
+            - Insinyur Martabak, Complement your Happiness!
           </p>
           <p class="lead mt-5">
-            Tunggu apa lagi? Ayo Pesan martabak rasa kesukaan kalian sekarang
-            juga!
+            Tunggu apa lagi? Bahagiakan dirimu dan orang di dekatmu sekarang!
           </p>
           <button
             class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"

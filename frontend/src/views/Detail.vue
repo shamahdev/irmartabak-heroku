@@ -1,20 +1,20 @@
 <template>
   <div class="detail">
-    <section id="detailmartabak">
+    <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
-        <img class="thumbnail fit-cover" :src="img" :alt="name" />
+        <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
       </div>
       <div v-if="available" class="container-fluid row p-0 m-0 my-5 m">
         <div class="col-sm-12 col-md-8 mx-auto my-auto p-0">
           <div class="container-fluid">
-            <p class="display-4 mt-5 mb-0">{{ name }}</p>
+            <p class="display-4 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
               class="my-3"
               :rating="rating"
               :star-style="starStyle"
             ></star-rating>
             <div class="h2 my-3">
-              <p class="inline-block text-dark mr-3">{{ "Rp " + price }}</p>
+              <p class="inline-block text-dark mr-3">{{ "Rp " + martabak.price }}</p>
             </div>
             <button
               class="btn btn-primary btn-lg px-3 px-md-5 py-3"
@@ -41,9 +41,9 @@
                   class="h1"
                   name="menurating"
                   inactive-color="#737373"
-                  v-model="newrating"
+                  v-model="giverating.score"
                   shadow-color="none"
-                  hover-color="#f1c420"
+                  hover-color="#ed8a19"
                   :max="5.0"
                   :value="newrating"
                   :readonly="checked"
@@ -80,32 +80,22 @@
             </modal>
           </div>
           <div class="my-5 p-4">
-            <label class="lead3" for="formGroupExampleInput">Nama</label>
-            <p class="lead">{{ name }}</p>
-            <label class="lead3" for="formGroupExampleInput">Harga</label>
-            <p class="lead">{{ "Rp " + price }}</p>
-            <label class="lead3" for="formGroupExampleInput">Rating</label>
+            <label class="lead3">Nama</label>
+            <p class="lead">{{ martabak.name }}</p>
+            <label class="lead3">Harga</label>
+            <p class="lead">{{ "Rp " + martabak.price }}</p>
+            <label class="lead3">Rating</label>
             <p class="lead">{{ rating + "/5" }}</p>
-            <label class="lead3" for="formGroupExampleInput"
-              >Ukuran Tersedia</label
+            <label class="lead3">Ukuran Tersedia</label
             >
-            <p class="lead">{{ size }}</p>
-            <label class="lead3" for="formGroupExampleInput">Deskripsi</label>
-            <p class="lead">{{ $route.params.name }}</p>
+            <p class="lead">{{ martabak.Size }}</p>
+            <label class="lead3">Deskripsi</label>
+            <p class="lead">{{ martabak.deskripsi }}</p>
           </div>
         </div>
       </div>
     </section>
-    <menuslider
-      class="py-3 py-md-5"
-      title="Cek Menu Lainnya"
-      :forin="9"
-      name="Martabak Super Sapi Mozarella"
-      :price="20000"
-      :rating="5"
-      slug="martabak-super-sapi-mozarella"
-      img="static/img/martabak.jpg"
-    />
+    <menuslider class="py-3 py-md-5" />
   </div>
 </template>
 
@@ -115,9 +105,17 @@ export default {
   name: "Detail",
   data() {
     return {
+      giverating: {
+        "ip": "",
+        "score": null,
+        "user": null,
+        "rating": null
+      },
+      newrating: 3,
+      martabakdetail: [],
+      slug: this.$route.params.name,
       available: true,
       starStyle: {
-        fullStarColor: "#f1c420",
         starWidth: 25,
         starHeight: 25
       },
@@ -126,6 +124,8 @@ export default {
       price: "30000",
       rating: 4.4,
       size: "Kecil",
+      error: [],
+      r: [],
       checked: false
     };
   },
@@ -133,10 +133,37 @@ export default {
     modal: () => import("../components/modal.vue"),
     menuslider: () => import("../components/menuslider.vue")
   },
+
+  computed: {
+    martabakdata(){
+      this.slug = this.$route.params.name;
+      this.$axios
+      .get('http://127.0.0.1:8000/api/martabak/')
+      .then(response => {
+        this.martabakdetail = response.data.filter(m => m.slug.includes(this.slug))
+      });
+      return this.martabakdetail
+    }
+
+  },
+  mounted () {
+    this.$axios
+      .get('https://api.ipify.org/?format=json')
+      .then(response => {
+        this.giverating.ip = response.data["ip"]
+      })
+  },
   methods: {
     rate() {
       this.checked = true;
-      alert("Anda berhasil merating " + this.newrating);
+      this.$axios
+      .post('http://127.0.0.1:8000/api/userrating/', this.giverating)
+      .then(response => {
+        this.r.push(response)
+      })
+      .catch(error => {
+        this.error.push(error)
+      })
     }
   }
 };

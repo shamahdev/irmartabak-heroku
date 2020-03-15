@@ -57,13 +57,14 @@ input, textarea
 .navbar-brand
   margin: 0 3%
 .nav-item
-  margin: 0.5rem 4%
+  margin: 0.5rem 0rem
   .nav-link
       @include secondaryfont-bold
       font-size: 14px
       text-transform: uppercase
       transition: 0.1s ease
       padding: 0.5rem 1rem !important
+      margin: 0rem 0.8rem !important
       &:hover
         background-color: $primary
         border-width: 3px
@@ -174,8 +175,6 @@ a.router-link-active
   background-color: white !important
 .inline-block
   display: inline-block
-.rating
-  color: $primary
 .map-point
   .container
     transition: 0.3s ease
@@ -243,3 +242,5 @@ a.router-link-active
     &::before
       font-size: 20px !important
       margin-right: 4px
+
+.card ~ #gradient1

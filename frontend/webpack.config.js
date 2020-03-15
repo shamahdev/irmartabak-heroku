@@ -10,7 +10,7 @@ module.exports = {
             "app"  : "./src/Main.js",
         },
     output: {
-        path: path.resolve('./src/assets/bundles'),
+        path: path.resolve('./frontend/src/assets/bundles'),
         publicPath: '/static/bundles/',
         filename: '[name].js',
     },

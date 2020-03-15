@@ -5,12 +5,14 @@ import VueCarousel from "vue-carousel";
 import VuePageTransition from "vue-page-transition";
 import { VueStars } from "vue-stars";
 import StarRating from "vue-dynamic-star-rating";
+import VueAxios from '../components/plugins/axios';
 
 Vue.component("star-rating", StarRating);
 Vue.component("vue-stars", VueStars);
 Vue.use(VuePageTransition);
 Vue.use(VueCarousel);
 Vue.use(VueRouter);
+Vue.use(VueAxios);
 const routes = [
   {
     path: "/",
@@ -105,7 +107,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Detail.vue")
+      import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
   },
   { 
     path: "*",
@@ -119,6 +121,9 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },
   routes
 });
 
