@@ -60,7 +60,7 @@ const routes = [
     path: "/menu/:name",
     name: "Detail",
     meta: { hideDesktop: true },
-    component: () => import(/* webpackChunkName: "menu" */ "../views/Detail.vue")
+    component: () => import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
   },
   { 
     path: "*",

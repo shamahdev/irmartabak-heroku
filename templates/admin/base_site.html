@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | Insinyur Martabak Admin Site{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a  class="text-dark lead" href="{% url 'admin:index' %}"><img src="{% static '/img/icon.png' %}" width="8%" height="auto" style="margin-right: 5%;">Admin Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

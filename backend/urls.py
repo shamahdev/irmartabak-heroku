@@ -1,6 +1,6 @@
 from django.urls import path, include, re_path
 from django.conf import settings
-from django.conf.urls import handler404
+from django.conf.urls import handler404, handler500
 from django.views.static import serve 
 from . import views
 
@@ -11,3 +11,4 @@ urlpatterns = [
     re_path(r'^menu/(?P<martabak_requested>[\w-]+)/$', views.martabak),
 ]
 handler404 = 'backend.views.error_404'
+handler500 = 'backend.views.error_500'

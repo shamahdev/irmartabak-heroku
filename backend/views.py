@@ -10,7 +10,13 @@ def pages(request, page_requested):
     return render(request, 'pages.html', context)
 
 def martabak(request, martabak_requested):
-    pass
+    context = {
+        'martabak' : martabak_requested,
+    }
+    return render(request, 'detail.html', context)
 
 def error_404(request, exception):
+    return render(request, 'exception.html')
+
+def error_500(request):
     return render(request, 'exception.html')
