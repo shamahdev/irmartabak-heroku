@@ -21,7 +21,7 @@ npm start
 
 ### Changelogs
 17/03/2020 by BackEnd
-- Recustomized Django Admin Views
+- Redirected to Menu views if Martabak Detail is not available
 
 16/03/2020 by BackEnd
 - Customized Django Admin Views

@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name="Home"),
+    path('menu/', views.menu, name="Menu"),
     re_path(r'^(?P<page_requested>[\w-]+)/$', views.pages),
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     re_path(r'^menu/(?P<martabak_requested>[\w-]+)/$', views.martabak),
