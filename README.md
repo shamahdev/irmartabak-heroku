@@ -20,8 +20,12 @@ npm start
 
 
 ### Changelogs
+17/03/2020 by BackEnd
+- Recustomized Django Admin Views
+
 16/03/2020 by BackEnd
 - Customized Django Admin Views
+- Fixed static images not displaying correctly when user manually input URL
 
 15/03/2020 by BackEnd
 - Fixed Django's UrlPattern for detail views
