@@ -4,6 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .routers import router
 
+admin.site.index_template = 'admin/index.html'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('backend.urls')),

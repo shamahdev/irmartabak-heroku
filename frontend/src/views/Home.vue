@@ -8,14 +8,14 @@
             <a
               href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
             >
-              <img class="img-fluid" src="static/img/gofood.png" alt="" />
+              <img class="img-fluid" src="/static/img/gofood.png" alt="" />
             </a>
           </div>
           <div class="col-md-6 p-5 my-auto">
             <a
               href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
             >
-              <img class="img-fluid" src="static/img/grabfood.png" alt="" />
+              <img class="img-fluid" src="/static/img/grabfood.png" alt="" />
             </a>
           </div>
         </div>

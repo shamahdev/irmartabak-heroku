@@ -14,11 +14,22 @@ npm run build
 
 ### Start Server
 ```
+open terminal then run server.bat
 npm start
 ```
 
 
 ### Changelogs
+17/03/2020 by BackEnd
+- Redirected to Menu views if Martabak Detail is not available
+
+16/03/2020 by BackEnd
+- Customized Django Admin Views
+- Fixed static images not displaying correctly when user manually input URL
+
+15/03/2020 by BackEnd
+- Fixed Django's UrlPattern for detail views
+
 15/03/2020 by FrontEnd
 - Added npm commands for shortcut to bundle webpack and run django server
 - Fixed slider error in console
@@ -28,7 +39,11 @@ npm start
 - Fixed static images not displaying correctly in detail page
 - Added New & Promo and Awards tab to Navigation bar
 - Added Detail button to Best Seller slider
-- scroll will now return to top every page changed
+- Scroll will now return to top every page changed
+
+13/03/2020 by BackEnd
+- Creating REST API for data transfering
+- Creating Django Models for storing data
 
 12/03/2020 by BackEnd
 - Django-Vue Integration Via Webpack

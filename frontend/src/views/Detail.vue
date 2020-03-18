@@ -118,7 +118,7 @@ export default {
         starHeight: 25
       },
       name: "Martabak Super Sapi Mozarella!",
-      img: "static/img/martabak.jpg",
+      img: "/static/img/martabak.jpg",
       price: "30000",
       rating: 4.4,
       size: "Kecil",

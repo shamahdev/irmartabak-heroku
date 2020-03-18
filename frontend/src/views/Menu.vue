@@ -59,7 +59,7 @@
       <div class="container-fluid row p-0 m-0 mx-auto my-5">
         <div class="col-10 mx-auto my-auto p-0 text-center">
           <img
-            src="static/img/logo.png"
+            src="/static/img/logo.png"
             class="img-fluid my-2"
             width="200px"
             alt=""
