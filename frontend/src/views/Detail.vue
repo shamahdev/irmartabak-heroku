@@ -1,16 +1,22 @@
 <template>
   <div class="detail">
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
-      <div class="container-fluid row p-0 m-0 mb-5">
+      <div v-for="r in ratinguser">
+        <div v-if="r.rating == martabak.id">
+          <div v-bind="ratingip = r.ip"></div>
+        </div>
+      </div>
+      <div class="container-fluid row p-0 m-0 mb-5" v-bind="giverating.rating = martabak.id">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
       </div>
       <div v-if="available" class="container-fluid row p-0 m-0 my-5 m">
-        <div class="col-sm-12 col-md-8 mx-auto my-auto p-0">
+        <div v-for="rating in ratingmartabak">
+        <div class="col-sm-12 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
           <div class="container-fluid">
             <p class="display-4 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
               class="my-3"
-              :rating="rating"
+              :rating="rating.average"
               :star-style="starStyle"
             ></star-rating>
             <div class="h2 my-3">
@@ -32,7 +38,7 @@
               Berikan Rating
             </button>
             </div>
-            <modal id="startrating" title="Berikan Rating">
+            <modal id="startrating" title="Berikan Rating" v-for="">
               <div class="row m-0">
                 <vue-stars
                   @input="rate()"
@@ -44,7 +50,7 @@
                   hover-color="#ed8a19"
                   :max="5.0"
                   :value="newrating"
-                  :readonly="checked"
+                  :readonly="cekip"
                 >
                 </vue-stars>
               </div>
@@ -77,18 +83,19 @@
               </div>
             </modal>
           </div>
-          <div class="my-5 p-4">
+          <div class="my-5 p-4" v-if="rating.object_id == martabak.id">
             <label class="lead3">Nama</label>
             <p class="lead">{{ martabak.name }}</p>
             <label class="lead3">Harga</label>
             <p class="lead">{{ "Rp " + martabak.price }}</p>
             <label class="lead3">Rating</label>
-            <p class="lead">{{ rating + "/5" }}</p>
+            <p class="lead" v-bind="rating.average = parseFloat(rating.average)">{{ rating.average + "/5" }}</p>
             <label class="lead3">Ukuran Tersedia</label
             >
             <p class="lead">{{ martabak.Size }}</p>
             <label class="lead3">Deskripsi</label>
             <p class="lead">{{ martabak.deskripsi }}</p>
+          </div>
           </div>
         </div>
       </div>
@@ -109,8 +116,11 @@ export default {
         "user": null,
         "rating": null
       },
+      martabakid: 1,
       newrating: 3,
+      ratingip: '',
       martabakdetail: [],
+      ratingu: [],
       slug: this.$route.params.name,
       available: true,
       starStyle: {
@@ -122,8 +132,7 @@ export default {
       price: "30000",
       rating: 4.4,
       size: "Kecil",
-      error: [],
-      r: [],
+      ratingdata: [],
       checked: false
     };
   },
@@ -131,8 +140,39 @@ export default {
     modal: () => import("../components/modal.vue"),
     menuslider: () => import("../components/menuslider.vue")
   },
-
+  mounted () {
+    this.$axios
+      .get('https://api.ipify.org/?format=json')
+      .then(response => {
+        this.giverating.ip = response.data["ip"]
+      })
+  },
   computed: {
+    cekip(){
+      if(this.giverating.ip == this.ratingip){
+        this.checked = true;
+        return this.checked
+      }else{
+        this.checked = false;
+        return this.checked
+      }
+    },
+    ratinguser(){
+      this.$axios
+      .get('http://127.0.0.1:8000/api/userrating/')
+      .then(response => {
+        this.ratingu = response.data
+      })
+      return this.ratingu
+    },
+    ratingmartabak(){
+      this.$axios
+      .get('http://127.0.0.1:8000/api/rating/')
+      .then(response => {
+        this.ratingdata = response.data
+      })
+      return this.ratingdata
+    },
     martabakdata(){
       this.slug = this.$route.params.name;
       this.$axios
@@ -144,23 +184,10 @@ export default {
     }
 
   },
-  mounted () {
-    this.$axios
-      .get('https://api.ipify.org/?format=json')
-      .then(response => {
-        this.giverating.ip = response.data["ip"]
-      })
-  },
   methods: {
     rate() {
-      this.checked = true;
-      this.$axios
-      .post('http://127.0.0.1:8000/api/userrating/', this.giverating)
-      .then(response => {
-        this.r.push(response)
-      })
-      .catch(error => {
-        this.error.push(error)
+      this.$axios.post('http://127.0.0.1:8000/api/userrating/', this.giverating)
+      .then(r => {
       })
     }
   }
