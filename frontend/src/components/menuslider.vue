@@ -22,13 +22,17 @@
           :loop="true"
         >
           <slide v-bind:key="martabak.id" v-for="martabak in martabakmenu">
-            <menucard
-              :price="martabak.price"
-              :name="martabak.name"
-              :rating="rating"
-              :img="martabak.image"
-              :slug="martabak.slug"
-            />
+            <div v-for="rating in ratingdata">
+              <div v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
+                <menucard
+                  :price="martabak.price"
+                  :name="martabak.name"
+                  :rating="rating.average"
+                  :img="martabak.image"
+                  :slug="martabak.slug"
+                />
+              </div>
+            </div>
           </slide>
         </carousel>
       </div>
@@ -42,6 +46,7 @@ export default {
   data (){
     return{
       martabakmenu: [],
+      ratingdata: [],
       rating: 3.7,
       errored: false,
       loading: true,
@@ -51,6 +56,11 @@ export default {
     menucard: () => import("../components/menucard.vue")
   },
    mounted () {
+    this.$axios
+    .get('http://127.0.0.1:8000/api/rating/')
+    .then(response => {
+      this.ratingdata = response.data
+    });
     this.$axios
       .get('http://127.0.0.1:8000/api/martabak/')
       .then(response => {
