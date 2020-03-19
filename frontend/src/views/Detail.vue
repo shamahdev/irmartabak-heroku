@@ -35,10 +35,12 @@
               data-toggle="modal"
               data-target="#startrating"
             >
+              {{slug}}
+              OKOK
               Berikan Rating
             </button>
             </div>
-            <modal id="startrating" title="Berikan Rating" v-for="">
+            <modal id="startrating" title="Berikan Rating">
               <div class="row m-0">
                 <vue-stars
                   @input="rate()"
@@ -49,7 +51,7 @@
                   shadow-color="none"
                   hover-color="#ed8a19"
                   :max="5.0"
-                  :value="newrating"
+                  :value="4"
                   :readonly="cekip"
                 >
                 </vue-stars>
