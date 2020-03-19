@@ -11,7 +11,7 @@
               type="text"
               class="mdi form-control form-control-lg"
               id="search"
-              placeholder="Martabak Manis/Asin. . ."
+              placeholder="Nama Martabak"
             />
           </div>
         </div>
@@ -37,15 +37,19 @@
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
         <div class="col-6 col-md-4 p-0 my-4" v-bind:key="martabak.id" v-for="martabak in search.slice(0,list)">
-          <menucard
-            :price="martabak.price"
-            :name="martabak.name"
-            :rating="4.2"
-            :img="martabak.image"
-            :slug="martabak.slug"
-          />
+          <div v-for="rating in ratingmartabak">
+            <div v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
+              <menucard
+                :price="martabak.price"
+                :name="martabak.name"
+                :rating="rating.average"
+                :img="martabak.image"
+                :slug="martabak.slug"
+              />
+            </div>
+          </div>
         </div>
-        <div class="add-list col-6 col-md-4 p-0 my-4 my-auto h-100" v-if="list < martabakmenu.length">
+        <div class="add-list col-6 col-md-4 p-0 my-4 my-auto h-100" v-if="list < search.length">
           <div class="card p-0 py-3 border-none" @click="list += 3">
             <div class="mx-auto my-auto text-center">
               <i class="mdi mdi-plus-box-multiple" style="font-size: 5rem"></i>
@@ -82,12 +86,22 @@ export default {
       searchdata: '',
       orderdata: 'name',
       orderasc: 'asc',
+      ratingdata: [],
       martabakmenu: [],
       list: 5
     };
   },
   computed: {
+    ratingmartabak(){
+      this.$axios
+      .get('http://127.0.0.1:8000/api/rating/')
+      .then(response => {
+        this.ratingdata = response.data
+      })
+      return this.ratingdata
+    },
     search(){
+      this.list = 5;
       if(this.orderasc == 'asc'){
         if(this.orderdata == 'name'){
           return this.martabakmenu.filter(m=>{

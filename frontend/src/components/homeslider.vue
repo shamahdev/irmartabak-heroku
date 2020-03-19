@@ -9,15 +9,15 @@
     :loop="true"
   >
     <slide v-bind:key="martabak.id" v-for="martabak in martabakhome">
-      <div class="container-fluid row p-0 m-0">
-        <div class="col-md-6 p-sm-4 p-md-2 p-lg-4 my-auto">
+      <div class="container-fluid row p-0 m-0" v-for="rating in ratingdata">
+        <div class="col-md-6 p-sm-4 p-md-2 p-lg-4 my-auto" v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
           <div
             class="jumbotron-fluid bg-white m-3 m-lg-5 pr-0 pr-md-3 m-md-0 ml-2 ml-lg-5 pl-0 pl-md-5"
           >
             <p class="lead">{{martabak.name}}</p>
             <div>
               <star-rating
-                :rating="rating"
+                :rating="rating.average"
                 :star-style="starStyle"
               ></star-rating>
             </div>
@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 p-0">
+        <div class="col-md-6 p-0" v-if="rating.object_id == martabak.id">
           <img class="martabak2" :src="martabak.image" :alt="martabak.name" />
         </div>
       </div>
@@ -54,6 +54,7 @@ export default {
   data() {
     return {
       martabakhome: [],
+      ratingdata: [],
       rating: 4.6,
       errored: false,
       loading: true,
@@ -65,6 +66,11 @@ export default {
     };
   },
   mounted () {
+    this.$axios
+    .get('http://127.0.0.1:8000/api/rating/')
+    .then(response => {
+      this.ratingdata = response.data
+    });
     this.$axios
       .get('http://127.0.0.1:8000/api/martabak/bestseller/')
       .then(response => {

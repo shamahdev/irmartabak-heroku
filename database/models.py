@@ -18,3 +18,11 @@ class martabak(models.Model):
     def __str__(self):
         return "{}".format(self.name)
 
+class rating(models.Model):
+    ip = models.CharField(max_length=50)
+    rating = models.IntegerField()
+    rating_object = models.IntegerField()
+
+    def __str__(self):
+        return "{}".format(self.ip)
+
