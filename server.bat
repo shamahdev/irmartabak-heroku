@@ -1,0 +1,1 @@
+start cmd /K "..\envMartabak\Scripts\activate & python manage.py runserver"

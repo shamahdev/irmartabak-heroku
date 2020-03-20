@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <sidebar v-bind:class="{ hidedesktop: $route.meta.hideDesktop }"></sidebar>
+    <sidebar :class="{ hidedesktop: $route.meta.hideDesktop }"></sidebar>
     <div class="navigation">
       <navbar></navbar>
     </div>

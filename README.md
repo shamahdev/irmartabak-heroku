@@ -14,12 +14,27 @@ npm run build
 
 ### Start Server
 ```
-open terminal then run server.bat
-npm start
+2 Ways:
+1. open terminal then run server.bat
+2. npm start
 ```
 
 
 ### Changelogs
+20/03/2020 by FrontEnd
+- Fixed Vue errors on console
+- Optimizing axios get API
+- Add Auto Reload after Rating
+- Add info for already rating menu
+- Image will Zoom on Home Slider if hovered
+- Revamping Font size
+- Fixing some button size on mobile screen
+- Add migrate.bat for auto migrating (for lazy people like me lol)
+
+19/03/2020 by BackEnd
+- Fixed Rating Function
+- Fixed detail menu page showing error when user manually input URL or reload te page
+
 18/03/2020 by BackEnd
 - Add Rating Function for Menu
 

@@ -276,19 +276,6 @@ input, textarea {
   color: #FFD645 !important;
 }
 
-.text-white {
-  color: white !important;
-}
-
-.text-dark {
-  color: rgb(26, 25, 21) !important;
-  text-decoration: none;
-}
-
-a.text-dark:hover{
-  border-bottom: #111111;
-}
-
 .bg-primary {
   background-color: #FFD645 !important;
 }
@@ -316,7 +303,6 @@ a.text-dark:hover{
 
 .btn-primary:hover {
   background-color: #111111 !important;
-  color: #ebebeb !important;
 }
 
 .navbar-brand {

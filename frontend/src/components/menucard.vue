@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/menu/' + slug">
+  <router-link :to="'/menu/' + slug" exact>
     <div class="shadow card card--menu mx-2">
       <img
         class="card-img-top img-fluid fit-cover"
@@ -11,7 +11,7 @@
           <star-rating :rating="rating" :star-style="starStyle"></star-rating>
         </div>
         <p class="lead2">{{ name }}</p>
-        <h1 class="display-4">{{ "Rp. " + price }}</h1>
+        <h1 class="display-4">{{ "Rp " + price }}</h1>
       </div>
     </div>
   </router-link>
