@@ -20,6 +20,9 @@ npm start
 
 
 ### Changelogs
+18/03/2020 by BackEnd
+- Add Rating Function for Menu
+
 17/03/2020 by BackEnd
 - Redirected to Menu views if Martabak Detail is not available
 
