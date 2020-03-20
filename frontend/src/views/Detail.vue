@@ -1,22 +1,23 @@
 <template>
   <div class="detail">
+    <vue-page-transition name="fade-in-up">
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
-      <div v-for="r in ratinguser">
+      <div :key="r.rating" v-for="r in ratinguser">
         <div v-if="r.rating == martabak.id">
-          <div v-bind="ratingip = r.ip"></div>
+          <div :rip="ratingip = r.ip"></div>
         </div>
       </div>
-      <div class="container-fluid row p-0 m-0 mb-5" v-bind="giverating.rating = martabak.id">
+      <div class="container-fluid row p-0 m-0 mb-5" :rid="giverating.rating = martabak.id">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
       </div>
-      <div v-if="available" class="container-fluid row p-0 m-0 my-5 m">
-        <div v-for="rating in ratingmartabak">
-        <div class="col-sm-12 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
+      <div class="container-fluid row p-0 m-0 my-5 m">
+        <div :key="rating.object_id" v-for="rating in ratingmartabak">
+        <div class="col-sm-12 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id">
           <div class="container-fluid">
             <p class="display-4 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
               class="my-3"
-              :rating="rating.average"
+              :rating="parseFloat(rating.average)"
               :star-style="starStyle"
             ></star-rating>
             <div class="h2 my-3">
@@ -35,27 +36,26 @@
               data-toggle="modal"
               data-target="#startrating"
             >
-              {{slug}}
-              OKOK
               Berikan Rating
             </button>
             </div>
             <modal id="startrating" title="Berikan Rating">
               <div class="row m-0">
                 <vue-stars
-                  @input="rate()"
                   class="h1"
                   name="menurating"
-                  inactive-color="#737373"
+                  inactive-color="#111111"
                   v-model="giverating.score"
                   shadow-color="none"
+                  active-color="#ed8a19"
                   hover-color="#ed8a19"
-                  :max="5.0"
-                  :value="4"
-                  :readonly="cekip"
+                  @input="rate()"
+                  :value="parseFloat(rating.average)"
+                  :readonly="already_rate"
                 >
                 </vue-stars>
               </div>
+                <div v-if="already_rate">Kamu telah memberikan rating {{ parseFloat(rating.average) + " untuk " + martabak.name }}</div> 
             </modal>
             <!-- Modal2 -->
             <modal id="buymethod" title="Pilih Layanan Pemesanan">
@@ -91,7 +91,7 @@
             <label class="lead3">Harga</label>
             <p class="lead">{{ "Rp " + martabak.price }}</p>
             <label class="lead3">Rating</label>
-            <p class="lead" v-bind="rating.average = parseFloat(rating.average)">{{ rating.average + "/5" }}</p>
+            <p class="lead">{{ parseFloat(rating.average) + "/5" }}</p>
             <label class="lead3">Ukuran Tersedia</label
             >
             <p class="lead">{{ martabak.Size }}</p>
@@ -102,6 +102,7 @@
         </div>
       </div>
     </section>
+    </vue-page-transition>
     <menuslider class="py-3 py-md-5" />
   </div>
 </template>
@@ -118,22 +119,17 @@ export default {
         "user": null,
         "rating": null
       },
-      martabakid: 1,
-      newrating: 3,
-      ratingip: '',
-      martabakdetail: [],
-      ratingu: [],
+      martabakdata: [],
+      ratingmartabak: [],
+      ratinguser: [],
+      errored: false,
+      loading: true,
       slug: this.$route.params.name,
-      available: true,
       starStyle: {
+        emptyStarColor: "#111111",
         starWidth: 25,
         starHeight: 25
       },
-      name: "Martabak Super Sapi Mozarella!",
-      img: "/static/img/martabak.jpg",
-      price: "30000",
-      rating: 4.4,
-      size: "Kecil",
       ratingdata: [],
       checked: false
     };
@@ -143,14 +139,10 @@ export default {
     menuslider: () => import("../components/menuslider.vue")
   },
   mounted () {
-    this.$axios
-      .get('https://api.ipify.org/?format=json')
-      .then(response => {
-        this.giverating.ip = response.data["ip"]
-      })
+    this.getData()
   },
   computed: {
-    cekip(){
+    already_rate(){
       if(this.giverating.ip == this.ratingip){
         this.checked = true;
         return this.checked
@@ -159,39 +151,47 @@ export default {
         return this.checked
       }
     },
-    ratinguser(){
-      this.$axios
-      .get('http://127.0.0.1:8000/api/userrating/')
-      .then(response => {
-        this.ratingu = response.data
-      })
-      return this.ratingu
-    },
-    ratingmartabak(){
-      this.$axios
-      .get('http://127.0.0.1:8000/api/rating/')
-      .then(response => {
-        this.ratingdata = response.data
-      })
-      return this.ratingdata
-    },
-    martabakdata(){
-      this.slug = this.$route.params.name;
-      this.$axios
-      .get('http://127.0.0.1:8000/api/martabak/')
-      .then(response => {
-        this.martabakdetail = response.data.filter(m => m.slug.includes(this.slug))
-      });
-      return this.martabakdetail
-    }
-
   },
   methods: {
+    getData(){
+    this.$axios
+      .get('https://api.ipify.org/?format=json')
+      .then(response => {
+        this.giverating.ip = response.data["ip"]
+      });
+    this.$axios
+      .get('http://127.0.0.1:8000/api/userrating/')
+      .then(response => {
+        this.ratinguser = response.data
+      });
+    this.$axios
+      .get('http://127.0.0.1:8000/api/rating/')
+      .then(response => {
+        this.ratingmartabak = response.data
+      });
+    this.slug = this.$route.params.name;
+    this.$axios
+      .get('http://127.0.0.1:8000/api/martabak/')
+      .then(response => {
+        this.martabakdata = response.data.filter(m => m.slug.includes(this.slug))
+      })
+      .catch(error => {
+      console.log(error)
+      this.errored = true
+      })
+    .finally(() => this.loading = false)
+    },
     rate() {
       this.$axios.post('http://127.0.0.1:8000/api/userrating/', this.giverating)
       .then(r => {
       })
+    location.reload();
     }
-  }
+  },
+  watch:{
+    $route (to, from){
+        this.getData();
+    }
+} 
 };
 </script>

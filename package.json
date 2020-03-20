@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npx webpack --config frontend/webpack.config.js",
-    "start": "server.cmd",
+    "start": "server.bat -s",
+    "migrate": "migrate.bat -s",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.1.5",
     "vue-stars": "^1.2.1",
+    "vue-zoom": "^1.1.0",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

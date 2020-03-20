@@ -19,20 +19,16 @@ def menu(request):
     return render(request, 'pages.html', context)
 
 def martabak(request, martabak_requested):
-    status = 0
     try:
-        availableMartabak = model_martabak.objects.get(slug = martabak_requested)
-        if availableMartabak.exists():
-            status = '200'
-    except ObjectDoesNotExist:
-        status = '404'
-    context = {
+        context = {
         'martabak' : martabak_requested,
-    }
-    if status is '200':
+        }
+        availableMartabak = model_martabak.objects.get(slug = martabak_requested)
+    except AttributeError:
         return render(request, 'detail.html', context)
-    else:
+    except ObjectDoesNotExist:
         return redirect("Menu")
+    return render(request, "detail.html", context)
     
 
 def error_404(request, exception):

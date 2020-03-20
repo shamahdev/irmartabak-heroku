@@ -4,11 +4,13 @@ import Home from "../views/Home.vue";
 import VueCarousel from "vue-carousel";
 import VuePageTransition from "vue-page-transition";
 import { VueStars } from "vue-stars";
+import vZoom from 'vue-zoom';
 import StarRating from "vue-dynamic-star-rating";
 import VueAxios from '../components/plugins/axios';
 
 Vue.component("star-rating", StarRating);
 Vue.component("vue-stars", VueStars);
+Vue.component("v-zoom", vZoom);
 Vue.use(VuePageTransition);
 Vue.use(VueCarousel);
 Vue.use(VueRouter);

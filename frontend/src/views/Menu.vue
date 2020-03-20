@@ -37,12 +37,12 @@
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
         <div class="col-6 col-md-4 p-0 my-4" v-bind:key="martabak.id" v-for="martabak in search.slice(0,list)">
-          <div v-for="rating in ratingmartabak">
-            <div v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
+          <div :key="rating.id" v-for="rating in ratingdata">
+            <div v-if="rating.object_id == martabak.id">
               <menucard
                 :price="martabak.price"
                 :name="martabak.name"
-                :rating="rating.average"
+                :rating="parseFloat(rating.average)"
                 :img="martabak.image"
                 :slug="martabak.slug"
               />
@@ -92,14 +92,6 @@ export default {
     };
   },
   computed: {
-    ratingmartabak(){
-      this.$axios
-      .get('http://127.0.0.1:8000/api/rating/')
-      .then(response => {
-        this.ratingdata = response.data
-      })
-      return this.ratingdata
-    },
     search(){
       this.list = 5;
       if(this.orderasc == 'asc'){
@@ -133,12 +125,22 @@ export default {
       }
     },
   },
-  mounted () {
+   mounted () {
+    this.$axios
+    .get('http://127.0.0.1:8000/api/rating/')
+    .then(response => {
+      this.ratingdata = response.data
+    });
     this.$axios
       .get('http://127.0.0.1:8000/api/martabak/')
       .then(response => {
         this.martabakmenu = response.data
       })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
+      .finally(() => this.loading = false)
   },
   components: {
     menucard: () => import("../components/menucard.vue")

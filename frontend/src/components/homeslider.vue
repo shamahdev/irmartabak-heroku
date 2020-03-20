@@ -8,16 +8,16 @@
     :navigationEnabled="false"
     :loop="true"
   >
-    <slide v-bind:key="martabak.id" v-for="martabak in martabakhome">
-      <div class="container-fluid row p-0 m-0" v-for="rating in ratingdata">
-        <div class="col-md-6 p-sm-4 p-md-2 p-lg-4 my-auto" v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
+    <slide :key="martabak.id" v-for="martabak in martabakhome">
+      <div class="container-fluid row p-0 m-0" :key="rating.object_id" v-for="rating in ratingdata">
+        <div class="col-md-6 p-sm-4 p-md-2 p-lg-4 my-auto" v-if="rating.object_id == martabak.id">
           <div
             class="jumbotron-fluid bg-white m-3 m-lg-5 pr-0 pr-md-3 m-md-0 ml-2 ml-lg-5 pl-0 pl-md-5"
           >
             <p class="lead">{{martabak.name}}</p>
             <div>
               <star-rating
-                :rating="rating.average"
+                :rating="parseFloat(rating.average)"
                 :star-style="starStyle"
               ></star-rating>
             </div>
@@ -30,18 +30,14 @@
               >
                 Pesan Sekarang
               </button>
-              <router-link :to="'/menu/' + martabak.slug" class="my-auto">
-              <button
-                class="btn btn-dark btn-lg px-5 py-3"
-              >
+              <router-link :to="'/menu/' + martabak.slug" tag="button" class="btn btn-dark btn-lg px-5 py-3">
                 Detail
-              </button>
               </router-link>
             </div>
           </div>
         </div>
         <div class="col-md-6 p-0" v-if="rating.object_id == martabak.id">
-          <img class="martabak2" :src="martabak.image" :alt="martabak.name" />
+          <v-zoom class="martabak2" :img="martabak.image" :alt="martabak.name" :width="750" />
         </div>
       </div>
     </slide>
@@ -55,7 +51,6 @@ export default {
     return {
       martabakhome: [],
       ratingdata: [],
-      rating: 4.6,
       errored: false,
       loading: true,
       starStyle: {
@@ -65,7 +60,7 @@ export default {
       }
     };
   },
-  mounted () {
+  created () {
     this.$axios
     .get('http://127.0.0.1:8000/api/rating/')
     .then(response => {

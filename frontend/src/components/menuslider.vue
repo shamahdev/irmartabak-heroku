@@ -21,13 +21,13 @@
           :paginationEnabled="false"
           :loop="true"
         >
-          <slide v-bind:key="martabak.id" v-for="martabak in martabakmenu">
-            <div v-for="rating in ratingdata">
-              <div v-if="rating.object_id == martabak.id" v-bind="rating.average = parseFloat(rating.average)">
+          <slide :key="martabak.id" v-for="martabak in martabakmenu">
+            <div :key="rating.object_id" v-for="rating in ratingdata">
+              <div v-if="rating.object_id == martabak.id">
                 <menucard
                   :price="martabak.price"
                   :name="martabak.name"
-                  :rating="rating.average"
+                  :rating="parseFloat(rating.average)"
                   :img="martabak.image"
                   :slug="martabak.slug"
                 />
@@ -47,7 +47,7 @@ export default {
     return{
       martabakmenu: [],
       ratingdata: [],
-      rating: 3.7,
+
       errored: false,
       loading: true,
     }

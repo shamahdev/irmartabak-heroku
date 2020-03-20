@@ -336,15 +336,14 @@ a.router-link-active {
 
 .lead, .lead2 {
   font-family: 'Gilroy-Regular';
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
-.lead2 {
-  font-size: 1rem;
+.lead2, .lead3 {
+  font-size: 1.05rem;
 }
 
 .lead3 {
-  font-size: 15px;
   font-family: 'Product-Sans Bold';
   text-transform: uppercase;
 }
