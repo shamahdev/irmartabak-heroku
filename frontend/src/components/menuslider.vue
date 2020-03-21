@@ -47,7 +47,7 @@ export default {
     return{
       martabakmenu: [],
       ratingdata: [],
-
+      
       errored: false,
       loading: true,
     }
@@ -64,7 +64,7 @@ export default {
     this.$axios
       .get('http://127.0.0.1:8000/api/martabak/')
       .then(response => {
-        this.martabakmenu = response.data
+        this.martabakmenu = response.data  
       })
       .catch(error => {
         console.log(error)

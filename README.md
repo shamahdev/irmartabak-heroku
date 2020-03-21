@@ -19,8 +19,20 @@ npm run build
 2. npm start
 ```
 
+### Bug To Fix
+- In Detail, there is a redundant menuslider (a.k.a there is menu that you currently view in detail)
+- In Rating modal if user has already rated, not showing what user score rate, instead it's showing total score
+- Vue errors 'duplicate keys' in console
 
 ### Changelogs
+21/03/2020 by BackEnd
+- Automatically deletes old Martabak Photo from filesystem when corresponding Martabak Record is updated with new file
+- Automatically deletes Martabak Photo from filesystem when corresponding Martabak Record is deleted
+- Automatically deletes Rating Object when corresponding Martabak Record is deleted
+- Rating Object has been changed into One-To-One relation
+- It's now easier to make Rating Object
+- Fixed Django Admin Customization (I missed some part haha)
+
 20/03/2020 by FrontEnd
 - Fixed Vue errors on console
 - Optimizing axios get API
@@ -33,7 +45,7 @@ npm run build
 
 19/03/2020 by BackEnd
 - Fixed Rating Function
-- Fixed detail menu page showing error when user manually input URL or reload te page
+- Fixed detail menu page showing error when user manually input URL or reload the page
 
 18/03/2020 by BackEnd
 - Add Rating Function for Menu
