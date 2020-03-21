@@ -21,7 +21,7 @@ def menu(request):
 def martabak(request, martabak_requested):
     try:
         context = {
-        'martabak' : martabak_requested,
+            'martabak' : martabak_requested,
         }
         availableMartabak = model_martabak.objects.get(slug = martabak_requested)
     except AttributeError:
@@ -30,7 +30,6 @@ def martabak(request, martabak_requested):
         return redirect("Menu")
     return render(request, "detail.html", context)
     
-
 def error_404(request, exception):
     return render(request, '404.html')
 
