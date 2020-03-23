@@ -52,7 +52,7 @@
             <input
               type="submit"
               value="Send"
-              class="shadow btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"
+              class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"
             />
           </form>
         </div>

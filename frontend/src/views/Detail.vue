@@ -2,19 +2,22 @@
   <div class="detail">
     <vue-page-transition name="fade-in-up">
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
-      <div :key="r.rating" v-for="r in ratinguser">
-        <div v-if="r.rating == martabak.id">
-          <div :rip="ratingip = r.ip"></div>
-        </div>
-      </div>
-      <div class="container-fluid row p-0 m-0 mb-5" :rid="giverating.rating = martabak.id">
+      <div class="container-fluid row p-0 m-0 mb-5">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
       </div>
-      <div class="container-fluid row p-0 m-0 my-5 m">
-        <div :key="rating.object_id" v-for="rating in ratingmartabak">
-        <div class="col-sm-12 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id">
-          <div class="container-fluid">
-            <p class="display-4 mt-5 mb-0">{{ martabak.name }}</p>
+      <div class="container-fluid row p-0 m-0 my-5">
+        <!-- This is function | Not gonna be rendered-->
+        <div :key="rating.average" v-for="rating in ratingmartabak">
+          <div :key="r.id" v-for="r in ratinguser">
+            <div v-if="r.rating == rating.id">
+            <div :rip="ratingip = r.ip"/>
+            <div :ur="userrating = r.score"/>
+          </div>
+        </div>
+        <!-- end -->
+        <div class="col-sm-11 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
+          <div :rid="giverating.rating = rating.id">
+            <p class="display-5 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
               class="my-3"
               :rating="parseFloat(rating.average)"
@@ -55,7 +58,7 @@
                 >
                 </vue-stars>
               </div>
-                <div v-if="already_rate">Kamu telah memberikan rating {{ parseFloat(rating.average) + " untuk " + martabak.name }}</div> 
+                <div v-if="already_rate">Kamu telah memberikan rating {{userrating + " untuk " + martabak.name }}</div> 
             </modal>
             <!-- Modal2 -->
             <modal id="buymethod" title="Pilih Layanan Pemesanan">
@@ -103,7 +106,7 @@
       </div>
     </section>
     </vue-page-transition>
-    <menuslider class="py-3 py-md-5" />
+    <menuslider class="py-3 py-md-5" :currentMartabak="currentM" />
   </div>
 </template>
 
@@ -124,6 +127,7 @@ export default {
       ratinguser: [],
       errored: false,
       loading: true,
+      currentM: null,
       slug: this.$route.params.name,
       starStyle: {
         emptyStarColor: "#111111",

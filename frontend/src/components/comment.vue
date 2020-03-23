@@ -1,5 +1,5 @@
 <template>
-  <div class="card p-0 border-none">
+  <div data-aos="zoom-in" class="card p-0 border-none">
     <img class="card-img-top img-fluid fit-cover" :src="img" :alt="comment" />
     <div class="card-img-overlay2 row m-0 my-auto">
       <div class="col-4 mx-auto my-auto">

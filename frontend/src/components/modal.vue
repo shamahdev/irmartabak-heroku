@@ -8,7 +8,7 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="shadow-lg modal-content bg-white pt-3 px-3 pb-0">
+      <div class="shadow-sm modal-content bg-white pt-3 px-3 pb-0">
         <div class="modal-header">
           <h5 class="display-5 modal-title" id="exampleModalLongTitle">
             {{ title }}
@@ -19,7 +19,7 @@
             data-dismiss="modal"
             aria-label="Close"
           >
-            <i class="mdi mdi-close"></i>
+            <i class="mdi mdi-close-thick"></i>
           </button>
         </div>
         <div class="modal-body border-none">

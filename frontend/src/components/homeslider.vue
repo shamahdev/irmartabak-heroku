@@ -21,7 +21,7 @@
                 :star-style="starStyle"
               ></star-rating>
             </div>
-            <h1 class="display-3 mb-5 price">{{ "Rp " + martabak.price }}</h1>
+            <h1 class="display-3 mb-5 price">{{ "Rp " + martabak.price + "*"}}</h1>
             <div class="btn-group mt-3 mb-5">
               <button
                 class=" btn btn-primary btn-lg px-5 py-3"
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="col-md-6 p-0" v-if="rating.object_id == martabak.id">
-          <v-zoom class="martabak2" :img="martabak.image" :alt="martabak.name" :width="750" />
+          <img class="martabak2" :src="martabak.image" :alt="martabak.name" />
         </div>
       </div>
     </slide>

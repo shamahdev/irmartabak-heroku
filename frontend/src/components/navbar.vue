@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="{ 'navbar--hidden': !showNavbar }"
-    class="shadow-sm navbar navbar-expand-lg navbar-light bg-white py-md-3 py-0 pl-3 pl-md-5"
+    class="navbar navbar-expand-lg navbar-light bg-white py-md-3 py-0 pl-3 pl-md-5"
   >
     <router-link class="navbar-brand pb-sm-3 pb-md-0" exact to="/">
       <img class="p-2 p-md-1" height="60" src="/static/img/logo.png" />

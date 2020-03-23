@@ -19,12 +19,14 @@ npm run build
 2. npm start
 ```
 
-### Bug To Fix
-- In Detail, there is a redundant menuslider (a.k.a there is menu that you currently view in detail)
-- In Rating modal if user has already rated, not showing what user score rate, instead it's showing total score
-- Vue errors 'duplicate keys' in console
 
 ### Changelogs
+23/03/2020 by FrontEnd
+- Rating modal now show user score rate
+- Fix bad vue error on console
+- Menuslider now won't show menu taht currently view in detail menu
+- Add AOS Animations js
+
 21/03/2020 by BackEnd
 - Automatically deletes old Martabak Photo from filesystem when corresponding Martabak Record is updated with new file
 - Automatically deletes Martabak Photo from filesystem when corresponding Martabak Record is deleted

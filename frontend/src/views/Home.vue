@@ -2,6 +2,7 @@
   <div class="home">
     <section id="landing">
       <homeslider target="#buymethod" />
+      <!-- Layanan Pemesanan Modal -->
       <modal id="buymethod" title="Pilih Layanan Pemesanan">
         <div class="row m-0">
           <div class="col-md-6 p-5 my-auto">
@@ -20,6 +21,7 @@
           </div>
         </div>
       </modal>
+      <!-- End -->
     </section>
     <section id="aboutus">
       <div
@@ -30,7 +32,7 @@
         </div>
         <div class="col-md-8 p-0 my-auto aboutus">
           <h1 class="text-center display-4 my-5">Tentang Kami</h1>
-          <div class="shadow-lg jumbotron-fluid bg-primary px-5 pt-5 pb-0">
+          <div data-aos="fade-right" class="shadow-sm jumbotron-fluid bg-primary px-5 pt-5 pb-0">
             <h1 class="display-5 mb-5 mt-5">The Professional Martabak Maker</h1>
             <p class="lead2">
               Insinyur martabak adalah sebuah Restoran berkonsep open kitchen
@@ -49,24 +51,34 @@
                 Baca Selengkapnya
               </button>
             </p>
+            <!-- Modal Tentang -->
             <modal id="aboutmodal" title="The Professional Martabak Maker">
-              <div class="col-sm-12 col-md-6 py-5 my-auto">
-                <img class="img-fluid" src="/static/img/logo.png" alt="" />
+              <div class="container-fluid row m-0 p-0">
+                <div class="col-sm-12 text-center col-md-4 py-3">
+                  <img class="img-fluid" src="/static/img/icon.png" alt="Insinyur Martabak Brand Icon" />
+                </div>
+                <div class="col-sm-12 col-md-8 py-3 my-auto">
+                  <p class="lead2 my-3">
+                    Insinyur martabak adalah sebuah brand martabak yang didirikan
+                    oleh para ahli dalam bidangnya. Dengan konsep proyek open
+                    kitchen yang menyajikan berbagai varian martabak manis dan
+                    martabak telur.</p>
+                  <p class="lead2 my-3">
+                    Berdiri sejak tahun 2017 hingga kini telah
+                    melebarkan sayap hingga empat cabang yang tersebar di Kota
+                    Bandung. Insinyur Martabak menyediakan menu yang lengkap mulai
+                    dari martabak klasik hingga martabak dengan inovasi yang modern
+                    dan kekinian.</p>
+                  <p class="lead2 my-3">
+                    Dengan konsep yang unik dan rasa produk yang
+                    spesial serta selalu terjaga kualitasnya, Insinyur Martabak
+                    selalu digemari oleh para pecinta martabak yang pastinya telah
+                    mendapat tempat spesial di hati para pelanggannya.</p>
+                  <p class="lead3 my-5">INSINYUR MARTABAK 2017-2020</p>
+                </div>
               </div>
-              <p class="lead2">
-                Insinyur martabak adalah sebuah brand martabak yang didirikan
-                oleh para ahli dalam bidangnya. Dengan konsep proyek open
-                kitchen yang menyajikan berbagai varian martabak manis dan
-                martabak telur. Berdiri sejak tahun 2017 hingga kini telah
-                melebarkan sayap hingga empat cabang yang tersebar di Kota
-                Bandung. Insinyur Martabak menyediakan menu yang lengkap mulai
-                dari martabak klasik hingga martabak dengan inovasi yang modern
-                dan kekinian. Dengan konsep yang unik dan rasa produk yang
-                spesial serta selalu terjaga kualitasnya, Insinyur Martabak
-                selalu digemari oleh para pecinta martabak yang pastinya telah
-                mendapat tempat spesial di hati para pelanggannya.
-              </p>
             </modal>
+            <!-- End -->
           </div>
         </div>
       </div>
@@ -118,14 +130,14 @@
         </div>
       </div>
       <div class="container-fluid row mt-5 p-0 m-0 mx-auto my-0 my-md-5">
-        <div class="col-md-6 p-0 text-center my-5">
+        <div data-aos="zoom-in" class="col-md-6 p-0 text-center my-5">
           <a
             href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
           >
             <img class="w-50" src="/static/img/gofood.png" alt="" />
           </a>
         </div>
-        <div class="col-md-6 p-0 text-center my-5">
+        <div data-aos="zoom-in" class="col-md-6 p-0 text-center my-5">
           <a
             href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
           >

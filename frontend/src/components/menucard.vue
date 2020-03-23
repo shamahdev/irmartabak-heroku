@@ -1,6 +1,6 @@
 <template>
   <router-link :to="'/menu/' + slug" exact>
-    <div class="shadow card card--menu mx-2">
+    <div data-aos="zoom-in" class="shadow-sm card card--menu mx-2">
       <img
         class="card-img-top img-fluid fit-cover"
         v-bind:src="img"

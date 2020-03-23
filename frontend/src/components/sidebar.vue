@@ -7,7 +7,7 @@
       ></a>
       <a
         href="https://m.facebook.com/Insinyur-Martabak-1655086604519961"
-        class="mdi mdi-facebook-box"
+        class="mdi mdi-facebook"
       ></a>
       <a
         href="https://www.youtube.com/channel/UCFLqxU4DwJLiv07RueTK0VA"

@@ -3,10 +3,11 @@
     <section id="map">
       <div class="container-fluid row p-0 m-0">
         <div class="col-md-6 col-sm-12 p-0 my-auto">
-          <h1 class="text-center display-4 my-3">Temukan Kami Di</h1>
+          <h1 class="text-center display-4 mb-3">Temukan Kami Di</h1>
           <div class="col-lg-11 col-md-12 col-sm-12 float-right p-0">
             <div class="map-point">
               <div
+                data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(0);
@@ -15,13 +16,14 @@
                 "
                 v-bind:class="{ active: map_active[0] }"
               >
-                <p class="lead3 mb-2">Kiaracondong</p>
+                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Kiaracondong</p>
                 <p>Jl. Babakan Sari no 115 Kiaracondong, Bandung</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 14.00 - 23.00
                 </p>
               </div>
               <div
+                data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(1);
@@ -30,13 +32,14 @@
                 "
                 v-bind:class="{ active: map_active[1] }"
               >
-                <p class="lead3 mb-2">Cibaduyut</p>
+                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Cibaduyut</p>
                 <p>Jl. Terusan Cibaduyut no 24</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 14.00 - 23.00
                 </p>
               </div>
               <div
+                data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(2);
@@ -45,13 +48,14 @@
                 "
                 v-bind:class="{ active: map_active[2] }"
               >
-                <p class="lead3 mb-2">Cijerah</p>
+                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Cijerah</p>
                 <p>Jl. Melong Asih no 45, Cijerah</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 14.00 - 23.00
                 </p>
               </div>
               <div
+               data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(3);
@@ -60,7 +64,7 @@
                 "
                 v-bind:class="{ active: map_active[3] }"
               >
-                <p class="lead3 mb-2">Grab Kitchen (GrabFood only)</p>
+                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Grab Kitchen (GrabFood only)</p>
                 <p>Grab Kitchen, Jl. Tubagus Ismail Raya no 24</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 14.00 - 23.00
@@ -69,7 +73,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 p-0 my-auto inner-shadow-lg">
+        <div class="col-md-6 p-0 my-auto inner-shadow-sm">
           <div class="embed-responsive">
             <iframe
               class="embed-responsive-item"

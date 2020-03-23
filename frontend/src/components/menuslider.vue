@@ -21,7 +21,7 @@
           :paginationEnabled="false"
           :loop="true"
         >
-          <slide :key="martabak.id" v-for="martabak in martabakmenu">
+          <slide :key="martabak.id" v-for="martabak in martabakmenu" v-show="martabak.id != currentMartabak">
             <div :key="rating.object_id" v-for="rating in ratingdata">
               <div v-if="rating.object_id == martabak.id">
                 <menucard
@@ -47,7 +47,6 @@ export default {
     return{
       martabakmenu: [],
       ratingdata: [],
-      
       errored: false,
       loading: true,
     }
@@ -72,5 +71,8 @@ export default {
       })
       .finally(() => this.loading = false)
   },
+  props: {
+    currentMartabak: Number
+  }
 };
 </script>

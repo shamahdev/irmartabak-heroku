@@ -15,7 +15,7 @@
       <div class="container-fluid row p-0 m-0 mx-auto">
         <div class="col-sm-12 col-md-6 p-0">
           <!-- facebook -->
-          <div class="card p-0 border-none">
+          <div data-aos="zoom-in" class="card p-0 border-none">
             <a href="https://www.instagram.com/insinyur_martabak">
               <img
                 class="card-img-top img-fluid fit-cover"
@@ -34,7 +34,7 @@
         </div>
         <div class="col-sm-12 col-md-6 p-0">
           <!-- Instagram -->
-          <div class="card p-0 border-none">
+          <div data-aos="zoom-in" class="card p-0 border-none">
             <a href="https://www.instagram.com/insinyur_martabak">
               <img
                 class="card-img-top img-fluid fit-cover"
@@ -53,7 +53,7 @@
         </div>
         <div class="col-sm-12 col-md-6 p-0">
           <!-- Twitter -->
-          <div class="card p-0 border-none">
+          <div data-aos="zoom-in" class="card p-0 border-none">
             <a href="https://twitter.com/insinyur_mrtbk">
               <img
                 class="card-img-top img-fluid fit-cover"
@@ -72,7 +72,7 @@
         </div>
         <div class="col-sm-12 col-md-6 p-0">
           <!-- Youtube -->
-          <div class="card p-0 border-none">
+          <div data-aos="zoom-in" class="card p-0 border-none">
             <a href="https://www.youtube.com/channel/UCFLqxU4DwJLiv07RueTK0VA">
               <img
                 class="card-img-top img-fluid fit-cover"
