@@ -1,5 +1,5 @@
-@import url("bootstrap.min.css");
 @import url("materialdesignicons.min.css");
+@import url("bootstrap.min.css");
 @font-face {
   font-family: 'Gilroy-Regular';
   src: url("../fonts/Gilroy-Regular.woff") format("woff");
@@ -117,6 +117,7 @@
 .map-point {
   height: 360px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #quotes {
@@ -336,15 +337,14 @@ a.router-link-active {
 
 .lead, .lead2 {
   font-family: 'Gilroy-Regular';
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
-.lead2 {
-  font-size: 1rem;
+.lead2, .lead3 {
+  font-size: 1.05rem;
 }
 
 .lead3 {
-  font-size: 15px;
   font-family: 'Product-Sans Bold';
   text-transform: uppercase;
 }
@@ -370,13 +370,13 @@ a.router-link-active {
 }
 
 .card * {
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   border-radius: 0px;
 }
 
 .card .card-img-overlay {
-  background-color: rgba(255, 214, 69, 0.7);
+  background-color: rgba(255, 214, 69, 0.8);
   display: inline-block;
   top: 50%;
 }
@@ -496,8 +496,8 @@ a.router-link-active {
 }
 
 .map-point .container {
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   padding: 1rem 1rem;
   margin: 2rem 0rem;
   -webkit-box-shadow: 0 !important;
@@ -511,8 +511,8 @@ a.router-link-active {
 
 .map-point .active {
   cursor: auto;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   padding: 3rem 1rem;
   background-color: #FFD645 !important;
 }
@@ -527,8 +527,8 @@ a.router-link-active {
 }
 
 .VueCarousel-navigation-button {
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
   padding: 18px !important;

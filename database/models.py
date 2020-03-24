@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from star_ratings.models import Rating
 from django.dispatch import receiver
+from tinymce.models import HTMLField
 import os
 
 class martabak(models.Model):
@@ -36,16 +37,29 @@ def auto_delete_image_on_delete(sender, instance, **kwargs):
             os.remove(instance.image.path)
 
 @receiver(models.signals.pre_save, sender=martabak)
-def auto_delete_file_on_change(sender, instance, **kwargs):
+def auto_delete_image_on_change(sender, instance, **kwargs):
     if not instance.pk:
         return False
-
     try:
         old_file = sender.objects.get(pk=instance.pk).image
     except sender.DoesNotExist:
         return False
-
     new_file = instance.image
     if not old_file == new_file:
         if os.path.isfile(old_file.path):
             os.remove(old_file.path)
+
+class artikel(models.Model):
+    judul = models.CharField(max_length=50)
+    konten = HTMLField(default="Artikel Ini Belum Memiliki Konten")
+    thumbnail = models.ImageField(upload_to="img/artikelThumb")
+    tanggal_post = models.DateField(auto_now=False, auto_now_add=False)
+    link = models.CharField(max_length=200)
+    slug = models.SlugField(blank=True, editable=False)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.judul)
+        super(artikel, self).save()
+    
+    def __str__(self):
+        return "{}".format(self.judul)
