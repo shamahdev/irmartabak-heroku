@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'database',
     'rest_framework',
     'webpack_loader',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

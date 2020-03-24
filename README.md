@@ -19,12 +19,16 @@ npm run build
 2. npm start
 ```
 
-
 ### Changelogs
+24/03/2020 by BackEnd
+- Added new Django package don't forget to run 'pip install -r requirements.txt'
+- Created Article REST API
+- Created Article models
+
 23/03/2020 by FrontEnd
 - Rating modal now show user score rate
 - Fix bad vue error on console
-- Menuslider now won't show menu taht currently view in detail menu
+- Menuslider now won't show menu that currently view in detail menu
 - Add AOS Animations js
 
 21/03/2020 by BackEnd
