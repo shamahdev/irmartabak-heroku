@@ -4,6 +4,7 @@ chardet==3.0.4
 clint==0.5.1
 Django==2.2.10
 django-braces==1.14.0
+django-heroki==0.3.1
 django-cors-headers==3.2.1
 django-jinja==2.2.1
 django-jinja2==0.1
@@ -14,6 +15,7 @@ django-tinymce==2.8.0
 django-webpack-loader==0.7.0
 djangorestframework==3.11.0
 djangorestframework-jwt==1.11.0
+gunicorn==20.0.4
 djoser==2.0.3
 idna==2.9
 Jinja2==2.11.1
