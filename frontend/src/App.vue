@@ -4,7 +4,7 @@
     <div class="navigation">
       <navbar></navbar>
     </div>
-    <vue-page-transition name="fade-in-up">
+    <vue-page-transition name="fade-in-down">
       <router-view />
     </vue-page-transition>
     <footerbar></footerbar>

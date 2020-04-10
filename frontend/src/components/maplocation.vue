@@ -7,7 +7,6 @@
           <div class="col-lg-11 col-md-12 col-sm-12 float-right p-0">
             <div class="map-point">
               <div
-                data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(0);
@@ -23,7 +22,6 @@
                 </p>
               </div>
               <div
-                data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(1);
@@ -39,7 +37,6 @@
                 </p>
               </div>
               <div
-                data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(2);
@@ -55,7 +52,6 @@
                 </p>
               </div>
               <div
-               data-aos="fade-left"
                 class="container bg-light"
                 @click="
                   set_active(3);

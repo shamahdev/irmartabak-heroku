@@ -28,8 +28,8 @@
             </div>
             <div class="col-6 p-0">
               <select class="form-control form-control-lg" id="orderby" v-model="orderasc">
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
+                <option value="asc">Dari Teratas</option>
+                <option value="desc">Dari Terbawah</option>
               </select>
             </div>
           </div>

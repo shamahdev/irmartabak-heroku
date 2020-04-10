@@ -20,6 +20,14 @@ npm run build
 ```
 
 ### Changelogs
+
+== ALPHA DEVELOPMENT ==
+
+10/04/2020 by FrontEnd
+- Change (almost) all transition to material design hover animation
+- Fixing Home Layout
+- Change Product Sans font to Roboto because of license and visual issue
+
 24/03/2020 by BackEnd
 - Added new Django package don't forget to run 'pip install -r requirements.txt'
 - Created Article REST API

@@ -24,7 +24,7 @@
               :star-style="starStyle"
             ></star-rating>
             <div class="h2 my-3">
-              <p class="inline-block text-dark mr-3">{{ "Rp " + martabak.price }}</p>
+              <p class="inline-block text-dark mr-3">{{ "Rp. " + martabak.price }}</p>
             </div>
             <div class="btn-group"> 
             <button

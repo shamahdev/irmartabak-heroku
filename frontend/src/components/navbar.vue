@@ -1,10 +1,10 @@
 <template>
   <nav
     :class="{ 'navbar--hidden': !showNavbar }"
-    class="navbar navbar-expand-lg navbar-light bg-white py-md-3 py-0 pl-3 pl-md-5"
+    class="navbar navbar-expand-lg navbar-light bg-white py-md-2 py-0 pl-3 pl-md-5 shadow-sm"
   >
     <router-link class="navbar-brand pb-sm-3 pb-md-0" exact to="/">
-      <img class="p-2 p-md-1" height="60" src="/static/img/logo.png" />
+      <img class="p-1" height="60px" src="/static/img/logo.png" />
     </router-link>
     <button
       class="navbar-toggler float-left mr-0 mr-md-5"
@@ -53,7 +53,6 @@ export default {
       scrollValue: 0
     };
   },
-
   mounted() {
     this.lastScrollPosition = window.pageYOffset;
     window.addEventListener("scroll", this.onScroll);

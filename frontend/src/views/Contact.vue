@@ -49,11 +49,11 @@
                 rows="7"
               ></textarea>
             </div>
-            <input
+            <button
               type="submit"
               value="Send"
               class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"
-            />
+            >Kirim Email</button>
           </form>
         </div>
       </div>
