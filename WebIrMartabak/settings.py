@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -14,7 +15,7 @@ SECRET_KEY = '_=+d^8kew$()w&8c!^@=z%-2eh549+-98dfk*y-up&7i-cf+b0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['webirmartabak.herokuapp.com']
 
 
 # Application definition
@@ -152,3 +153,5 @@ WEBPACK_LOADER = {
         'STATS_FILE': os.path.join(FRONTEND_DIR, 'webpack-stats.json'),
     }
 }
+
+django_heroku.settings(locals())
