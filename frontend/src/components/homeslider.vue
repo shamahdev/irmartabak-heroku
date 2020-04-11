@@ -9,30 +9,7 @@
     :loop="true"
   >
   <slide v-if="loading">
-      <div class="container-fluid row p-0 m-0">
-        <div class="col-md-6 p-4 p-md-2 p-lg-4 my-auto">
-          <div
-            class="jumbotron-fluid bg-white m-3 m-lg-5 pr-0 pr-md-3 m-md-0 ml-2 ml-lg-5 pl-0 pl-md-5"
-          >
-            <p class="lead"></p>
-            <h1 class="display-3 mb-5 price"></h1>
-            <div class="btn-group mt-3 mb-5">
-              <button
-                class=" btn btn-primary btn-lg px-5 py-3"
-                data-toggle="modal"
-                :data-target="target"
-              >
-                Pesan Sekarang
-              </button>
-              <router-link :to="'/menu/' + martabak.slug" tag="button" class="btn btn-dark btn-lg px-5 py-3">
-                Detail
-              </router-link>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid bg-primary col-md-6 p-0">
-        </div>
-      </div>
+      <div style="height: 100vh"></div>
     </slide>
     <slide :key="martabak.id" v-for="martabak in martabakhome">
       <div class="container-fluid row p-0 m-0" :key="rating.object_id" v-for="rating in ratingdata">
@@ -88,12 +65,12 @@ export default {
   },
   created () {
     this.$axios
-    .get('http://webirmartabak.herokuapp.com/api/rating/')
+    .get('https://webirmartabak.herokuapp.com/api/rating/')
     .then(response => {
       this.ratingdata = response.data
     });
     this.$axios
-      .get('http://webirmartabak.herokuapp.com/api/martabak/bestseller/')
+      .get('https://webirmartabak.herokuapp.com/api/martabak/bestseller/')
       .then(response => {
         this.martabakhome = response.data
       })

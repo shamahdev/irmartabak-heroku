@@ -164,18 +164,18 @@ export default {
         this.giverating.ip = response.data["ip"]
       });
     this.$axios
-      .get('http://webirmartabak.herokuapp.com0/api/userrating/')
+      .get('https://webirmartabak.herokuapp.com0/api/userrating/')
       .then(response => {
         this.ratinguser = response.data
       });
     this.$axios
-      .get('http://webirmartabak.herokuapp.com/api/rating/')
+      .get('https://webirmartabak.herokuapp.com/api/rating/')
       .then(response => {
         this.ratingmartabak = response.data
       });
     this.slug = this.$route.params.name;
     this.$axios
-      .get('http://webirmartabak.herokuapp.com/api/martabak/')
+      .get('https://webirmartabak.herokuapp.com/api/martabak/')
       .then(response => {
         this.martabakdata = response.data.filter(m => m.slug.includes(this.slug))
       })
@@ -186,7 +186,7 @@ export default {
     .finally(() => this.loading = false)
     },
     rate() {
-      this.$axios.post('http://webirmartabak.herokuapp.com/api/userrating/', this.giverating)
+      this.$axios.post('https://webirmartabak.herokuapp.com/api/userrating/', this.giverating)
       .then(r => {
       })
       .catch(error => {
