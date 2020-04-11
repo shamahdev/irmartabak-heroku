@@ -56,12 +56,12 @@ export default {
   },
    mounted () {
     this.$axios
-    .get('http://127.0.0.1:8000/api/rating/')
+    .get('https://webirmartabak.herokuapp.com/api/rating/')
     .then(response => {
       this.ratingdata = response.data
     });
     this.$axios
-      .get('http://127.0.0.1:8000/api/martabak/')
+      .get('http:///webirmartabak.herokuapp.com/api/martabak/')
       .then(response => {
         this.martabakmenu = response.data  
       })
