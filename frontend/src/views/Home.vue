@@ -152,7 +152,7 @@
     <section id="quotes" class="px-5 px-md-0 pt-2">
       <div class="container-fluid row p-0 m-0">
         <div class="maskot col-md-6 px-5 order-12 order-md-1">
-          <img src="/static/img/maskot.png" class="img-fluid w-100 px-3 px-md-5 mx-auto" srcset="" />
+          <img src="/static/img/maskot.png" class="img-fluid w-100 px-3 px-md-5 mx-auto" style="object-fit: cover" srcset="" />
         </div>
         <div class="quote col-md-6 p-0 my-auto mx-auto pr-0 pr-md-4 py-5 h-100 order-1 order-md-12">
           <h1 class="display-4 my-2">
