@@ -69,7 +69,7 @@ export default {
       if (window.pageYOffset < 0) {
         return;
       }
-      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 60) {
+      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 80) {
         return;
       }
       this.showNavbar = window.pageYOffset < this.lastScrollPosition;

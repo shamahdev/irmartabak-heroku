@@ -164,7 +164,7 @@ export default {
         this.giverating.ip = response.data["ip"]
       });
     this.$axios
-      .get('https://webirmartabak.herokuapp.com0/api/userrating/')
+      .get('https://webirmartabak.herokuapp.com/api/userrating/')
       .then(response => {
         this.ratinguser = response.data
       });

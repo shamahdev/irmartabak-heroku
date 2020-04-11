@@ -132,7 +132,7 @@ export default {
       this.ratingdata = response.data
     });
     this.$axios
-      .get('https://webirmartabak.herokuapp.com/martabak/')
+      .get('https://webirmartabak.herokuapp.com/api/martabak/')
       .then(response => {
         this.martabakmenu = response.data
       })

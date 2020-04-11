@@ -21,6 +21,15 @@
           :paginationEnabled="false"
           :loop="true"
         >
+          <slide v-if="loading">
+             <div class="card card--menu mx-2">
+              <div class="image-card">
+              <img class="card-img-top img-fluid fit-cover"/>
+              </div>
+              <div class="card-img-overlay">
+              </div>
+            </div>
+          </slide>
           <slide :key="martabak.id" v-for="martabak in martabakmenu" v-show="martabak.id != currentMartabak">
             <div :key="rating.object_id" v-for="rating in ratingdata">
               <div v-if="rating.object_id == martabak.id">
