@@ -1,4 +1,4 @@
-import dj_database_url
+import dj_database_url # add this to the top of your file
 import os
 import django_heroku
 
