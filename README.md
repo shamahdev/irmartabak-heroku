@@ -1,7 +1,7 @@
 ![Insinyur Martabak Logo](static/img/icon.png)
 # Insinyur Martabak's Website x Heroku
 [Check the website!](https://webirmartabak.herokuapp.com/)
-__[Found bug? Let us know!](irmartabak-heroku/issues)__
+__[Found bug? Let us know!](https://github.com/Shaddamah/irmartabak-heroku/issues)__
 
 
 ## Development Setup
