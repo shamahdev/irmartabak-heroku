@@ -94,13 +94,13 @@ export default {
   name: "Menu",
   data() {
     return {
+      loading: true,
       searchdata: '',
       orderdata: 'name',
       orderasc: 'asc',
       ratingdata: [],
       martabakmenu: [],
       list: 5,
-      loading: true
     };
   },
   computed: {
@@ -137,7 +137,7 @@ export default {
       }
     },
   },
-   mounted () {
+   created () {
     this.$axios
     .get('/api/rating/')
     .then(response => {

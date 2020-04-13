@@ -71,8 +71,8 @@ export default {
     return {
       martabakhome: [],
       ratingdata: [],
-      errored: false,
       loading: true,
+      errored: false,
       starStyle: {
         emptyStarColor: "#111111",
         starWidth: 30,

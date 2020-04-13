@@ -62,28 +62,8 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
 // @ is an alias to /src
 export default {
   name: "Contact",
-  methods: {
-    sendEmail: e => {
-      emailjs
-        .sendForm(
-          "gmail",
-          "template_GaUFC35R",
-          e.target,
-          "user_DhqUjJcMjEIxzBcZlAtt8"
-        )
-        .then(
-          result => {
-            console.log("SUCCESS!", result.status, result.text);
-          },
-          error => {
-            console.log("FAILED...", error);
-          }
-        );
-    }
-  }
 };
 </script>

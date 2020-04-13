@@ -81,7 +81,7 @@ export default {
   components: {
     menucard: () => import("../components/menucard.vue")
   },
-   mounted () {
+   created () {
     this.$axios
     .get('/api/rating/')
     .then(response => {

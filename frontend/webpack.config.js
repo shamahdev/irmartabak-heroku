@@ -4,7 +4,7 @@ const BundleTracker = require('webpack-bundle-tracker');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     context: __dirname,
     entry: {
             "app"  : "./src/Main.js",

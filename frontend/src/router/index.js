@@ -6,13 +6,16 @@ import VuePageTransition from "vue-page-transition";
 import { VueStars } from "vue-stars";
 import StarRating from "vue-dynamic-star-rating";
 import VueAxios from '../components/plugins/axios';
+import NProgress from 'nprogress';
 
 Vue.component("star-rating", StarRating);
 Vue.component("vue-stars", VueStars);
+
 Vue.use(VuePageTransition);
 Vue.use(VueCarousel);
 Vue.use(VueRouter);
 Vue.use(VueAxios);
+
 const routes = [
   {
     path: "/",
@@ -92,5 +95,17 @@ const router = new VueRouter({
   },
   routes
 });
+
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+      NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  NProgress.done()
+})
 
 export default router;

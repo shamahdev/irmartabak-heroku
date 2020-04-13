@@ -3,8 +3,8 @@
     <vue-page-transition name="fade-in-up">
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
-        <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
         <div v-if="loading" class="skeleton-thumbnail"/>
+        <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
       </div>
       <div class="container-fluid row p-0 m-0 my-5">
         <!-- This is function | Not gonna be rendered-->
@@ -187,7 +187,7 @@ export default {
     modal: () => import("../components/modal.vue"),
     menuslider: () => import("../components/menuslider.vue")
   },
-  mounted () {
+  created () {
     this.getData()
   },
   computed: {
@@ -227,7 +227,7 @@ export default {
       console.log(error)
       this.errored = true
       })
-    .finally(() => this.loading = false)
+      .finally(() => this.loading = false)
       if(this.giverating.ip == this.ratingip){
         this.checked = true;
       }else{
@@ -246,12 +246,7 @@ export default {
   },
   watch:{
     $route (to, from){
-        this.getData();
-        if(this.giverating.ip == this.ratingip){
-          this.checked = true;
-        }else{
-          this.checked = false;
-        }
+        this.getData()
     }
 } 
 };

@@ -6,25 +6,23 @@
     "serve": "vue-cli-service serve",
     "build": "npx webpack --config frontend/webpack.config.js",
     "start": "server.bat -s",
-    "migrate": "migrate.bat -s",
-    "lint": "vue-cli-service lint"
+    "migrate": "migrate.bat -s"
   },
   "dependencies": {
+    "@mdi/font": "^5.0.45",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
-    "emailjs-com": "^2.4.1",
     "fs": "0.0.1-security",
     "hooper": "^0.3.4",
     "jquery": "^3.4.1",
+    "nprogress": "^0.2.0",
     "popper.js": "^1.16.1",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
     "vue-dynamic-star-rating": "^1.0.8",
-    "vue-google-signin-button": "^1.0.4",
     "vue-page-transition": "^0.2.2",
-    "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.1.5",
     "vue-stars": "^1.2.1",
     "vuex": "^3.1.2"
@@ -56,6 +54,6 @@
   },
   "description": "Insinyur Martabak",
   "main": "frontend/.eslintrc.js",
-  "author": "",
+  "author": "Insinyur Nartabak",
   "license": "ISC"
 }

@@ -4,7 +4,8 @@ import router from "./router";
 import store from "./store";
 
 // Styles framework
-import 'bootstrap'
+import 'bootstrap/js/dist/collapse'
+import 'bootstrap/js/dist/modal'
 import AOS from "aos";
 
 Vue.config.productionTip = true;
