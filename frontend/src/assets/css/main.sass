@@ -1,52 +1,62 @@
 @import url('materialdesignicons.min.css')
-@import url('bootstrap.min.css')
 @import 'variable'
-@import 'fontpack'
-@import 'mixins'
 @import 'mobile'
 
-::-webkit-scrollbar 
-  width: 6px
-::-webkit-scrollbar-track 
+::-webkit-scrollbar
+  width: 8px
+::-webkit-scrollbar-track
   background: $secondary
-::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb
   background: $primary
 
 html,body,p
-  @include primaryfont
-  user-select: none
+  @include secondary-font
   scroll-behavior: smooth
+body
+  min-height: 100vh
 #aboutus
   height: 100% !important
 #favorite
   overflow-x: hidden
-.darkmode *
-  color: white !important
-  background-color: $secondary !important
 
+.btn:focus, .btn:active
+  outline: none !important
+  box-shadow: none !important
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus 
+  box-shadow: inset 0 -1px 0 $fog
 
-//===== Boostrap Modification ======\\
+.fade-scale
+  transform: scale(0)
+  opacity: 0
+  transition: all .5s ease
+  &.show
+    opacity: 1
+    transform: scale(1)
+    transition: all .5s ease
+
 input, textarea
-  border-radius: 25rem !important
-  background-color: #ebebeb !important
-textarea
-  border-radius: 1.5rem !important
-.navbar
-  transform: translate3d(0, 0, 0)
-  transition: 0.5s all ease-out
-.navbar.navbar--hidden
-  box-shadow: none
-  transform: translate3d(0, -100%, 0)
+  background-color: $fog !important
 .text-primary
   color: $primary !important
 .bg-primary
   background-color: $primary !important
 .bg-light
-  background-color: #ebebeb !important
+  background-color: $fog !important
 .bg-white
   background-color: white !important
 .btn
-  @include secondaryfont-bold
+  @include accent-font
   text-transform: uppercase
   border-radius: 0
   border: 0 !important
@@ -107,16 +117,16 @@ textarea
     transition: all .3s
     z-index: -1
   &:hover
-    color: black
+    color: $secondary
     &:before
       width: 100% !important
-    z-index: -1
+      z-index: -1
 .navbar-brand
   margin: 0 3%
 .nav-item
   margin: 0.5rem 0rem
   .nav-link
-      @include secondaryfont-bold
+      @include accent-font
       font-size: 0.85rem
       text-transform: uppercase
       transition: 0.1s ease
@@ -143,13 +153,13 @@ textarea
         transition: all .3s
         z-index: -1
 .nav-link.router-link-active
-  color: black !important
+  color: $secondary !important
   &:before
-   width: 100% !important
+    width: 100% !important
 .lead,.lead2
-  @include primaryfont
+  @include secondary-font
 .lead3
-  @include secondaryfont-bold
+  @include accent-font
   font-size: 0.85rem
   text-transform: uppercase
 .dropdown-menu
@@ -166,11 +176,15 @@ textarea
 .card
   overflow: hidden
   border: 0 !important
+  border-radius: 0
   &:hover
     .card-img-overlay
       background-color: $primary
       display: inline-block
       top: 30%
+    .skeleton-card-overlay
+      background-color: $fog
+      top: 0%
   *
     transition: 0.3s ease
     border-radius: 0px
@@ -178,6 +192,16 @@ textarea
     background-color: fade-out($primary,0.2)
     display: inline-block
     top: 50%
+  .skeleton-card-overlay
+    pointer-events: none
+    background-color: $fog
+    display: inline-block
+    top: 0%
+    background-image: repeating-linear-gradient(to right,transparent 0,#ffffffbb 25%,transparent 50%)
+    background-size: 200% 100%
+    animation: skeleton 3s infinite linear
+.card--disabled
+  pointer-events: none
 .container
   max-width: 100%
 .modal-header, .modal-footer, .modal-content
@@ -317,3 +341,12 @@ textarea
     &::before
       font-size: 20px !important
       margin-right: 4px
+.btn-skeleton, .skeleton-txt
+  color: #ffffff00
+  pointer-events: none
+  background-color: $fog !important
+  user-select: none
+.skeleton-thumbnail
+    height: 50vh
+    width: 100%
+    background-color: $fog !important

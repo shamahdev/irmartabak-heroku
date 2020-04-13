@@ -48,6 +48,17 @@
               />
             </div>
           </div>
+          <div v-if="loading">
+            <div :key="i" v-for="i in 5">
+              <div class="card card--menu card--disable mx-2">
+              <div class="image-card">
+              <img class="card-img-top img-fluid fit-cover"/>
+              </div>
+              <div class="card-img-overlay skeleton-card-overlay">
+              </div>
+            </div>
+            </div>
+          </div>
         </div>
         <div class="add-list col-6 col-md-4 p-0 my-4 my-auto h-100" v-if="list < search.length">
           <div class="card p-0 py-3 border-none" @click="list += 3">
@@ -88,7 +99,8 @@ export default {
       orderasc: 'asc',
       ratingdata: [],
       martabakmenu: [],
-      list: 5
+      list: 5,
+      loading: true
     };
   },
   computed: {
@@ -127,12 +139,12 @@ export default {
   },
    mounted () {
     this.$axios
-    .get('https://webirmartabak.herokuapp.com/api/rating/')
+    .get('/api/rating/')
     .then(response => {
       this.ratingdata = response.data
     });
     this.$axios
-      .get('https://webirmartabak.herokuapp.com/api/martabak/')
+      .get('/api/martabak/')
       .then(response => {
         this.martabakmenu = response.data
       })

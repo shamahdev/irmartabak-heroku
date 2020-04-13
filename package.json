@@ -22,6 +22,7 @@
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
     "vue-dynamic-star-rating": "^1.0.8",
+    "vue-google-signin-button": "^1.0.4",
     "vue-page-transition": "^0.2.2",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.1.5",

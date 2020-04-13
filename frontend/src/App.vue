@@ -11,11 +11,11 @@
   </div>
 </template>
 
-<style lang="scss">
-@import "./assets/css/main.css";
-</style>
-
 <script>
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  import 'aos/dist/aos.css';
+  import './assets/css/main.min.css';
+
   import navbar from "./components/navbar.vue";
   import sidebar from "./components/sidebar.vue";
   import footerbar from "./components/footerbar.vue";

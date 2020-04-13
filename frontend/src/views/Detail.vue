@@ -4,18 +4,19 @@
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
+        <div v-if="loading" class="skeleton-thumbnail"/>
       </div>
       <div class="container-fluid row p-0 m-0 my-5">
         <!-- This is function | Not gonna be rendered-->
         <div :key="rating.average" v-for="rating in ratingmartabak">
           <div :key="r.id" v-for="r in ratinguser">
             <div v-if="r.rating == rating.id">
-            <div :rip="ratingip = r.ip"/>
-            <div :ur="userrating = r.score"/>
+              <div :rip="ratingip = r.ip"/>
+              <div :ur="userrating = r.score"/>
+            </div>
           </div>
-        </div>
         <!-- end -->
-        <div class="col-sm-11 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
+        <div class="col-10 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
           <div :rid="giverating.rating = rating.id">
             <p class="display-5 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
@@ -35,6 +36,7 @@
               Pesan Sekarang
             </button>
             <button
+              v-if="already_rate !== null"
               class="btn btn-dark btn-lg px-3 px-md-5 py-3"
               data-toggle="modal"
               data-target="#startrating"
@@ -42,8 +44,37 @@
               Berikan Rating
             </button>
             </div>
+            <!-- Skeleton Load -->
+            <div v-if="loading">
+              <p class="display-5 mt-5 mb-0 skeleton-txt">Martabak Super</p>
+              <div class="h2 my-3">
+                <p class="inline-block mr-3 skeleton-txt">Rp. 30000</p>
+              </div>
+              <div class="btn-group"> 
+              <button
+                class="btn btn-skeleton btn-lg px-3 px-md-5 py-3"
+                data-toggle="modal"
+                data-target="#buymethod"
+              >
+                Pesan Sekarang
+              </button>
+              <button
+                class="btn btn-skeleton  btn-lg px-3 px-md-5 py-3"
+              >
+                Berikan Rating
+              </button>
+              </div>
+              <div class="my-5 px-0 py-4 px-md-4">
+                <label class="lead3 skeleton-txt">Rating</label>
+                <label class="lead3 skeleton-txt">Ukuran Tersedia</label
+                >
+                <p class="skeleton-txt">Small</p>
+                <label class="lead3 skeleton-txt">Deskripsi</label>
+              </div>
+            </div>
+            
             <modal id="startrating" title="Berikan Rating">
-              <div class="row m-0">
+              <div v-if="!already_rate" class="row m-0">
                 <vue-stars
                   class="h1"
                   name="menurating"
@@ -53,8 +84,22 @@
                   active-color="#ed8a19"
                   hover-color="#ed8a19"
                   @input="rate()"
-                  :value="parseFloat(rating.average)"
-                  :readonly="already_rate"
+                  :max="5"
+                >
+                </vue-stars>
+              </div>
+              <!-- If already rate -->
+              <div v-if="already_rate" class="row m-0">
+                <vue-stars
+                  class="h1"
+                  name="alreadyrating"
+                  inactive-color="#111111"
+                  shadow-color="none"
+                  active-color="#ed8a19"
+                  hover-color="#ed8a19"
+                  :max="5"
+                  :value="userrating"
+                  :readonly="true"
                 >
                 </vue-stars>
               </div>
@@ -88,18 +133,18 @@
               </div>
             </modal>
           </div>
-          <div class="my-5 p-4" v-if="rating.object_id == martabak.id">
+          <div class="my-5 px-0 py-4 px-md-4" v-if="rating.object_id == martabak.id">
             <label class="lead3">Nama</label>
-            <p class="lead">{{ martabak.name }}</p>
+            <p>{{ martabak.name }}</p>
             <label class="lead3">Harga</label>
-            <p class="lead">{{ "Rp " + martabak.price }}</p>
+            <p>{{ "Rp " + martabak.price }}</p>
             <label class="lead3">Rating</label>
-            <p class="lead">{{ parseFloat(rating.average) + "/5" }}</p>
+            <p>{{ parseFloat(rating.average) + "/5" }}</p>
             <label class="lead3">Ukuran Tersedia</label
             >
-            <p class="lead">{{ martabak.Size }}</p>
+            <p>{{ martabak.Size }}</p>
             <label class="lead3">Deskripsi</label>
-            <p class="lead">{{ martabak.deskripsi }}</p>
+            <p>{{ martabak.deskripsi }}</p>
           </div>
           </div>
         </div>
@@ -135,7 +180,7 @@ export default {
         starHeight: 25
       },
       ratingdata: [],
-      checked: false
+      checked: null
     };
   },
   components: {
@@ -149,11 +194,10 @@ export default {
     already_rate(){
       if(this.giverating.ip == this.ratingip){
         this.checked = true;
-        return this.checked
       }else{
         this.checked = false;
-        return this.checked
       }
+      return this.checked
     },
   },
   methods: {
@@ -164,18 +208,18 @@ export default {
         this.giverating.ip = response.data["ip"]
       });
     this.$axios
-      .get('https://webirmartabak.herokuapp.com/api/userrating/')
+      .get('/api/userrating/')
       .then(response => {
         this.ratinguser = response.data
       });
     this.$axios
-      .get('https://webirmartabak.herokuapp.com/api/rating/')
+      .get('/api/rating/')
       .then(response => {
         this.ratingmartabak = response.data
       });
     this.slug = this.$route.params.name;
     this.$axios
-      .get('https://webirmartabak.herokuapp.com/api/martabak/')
+      .get('/api/martabak/')
       .then(response => {
         this.martabakdata = response.data.filter(m => m.slug.includes(this.slug))
       })
@@ -184,9 +228,14 @@ export default {
       this.errored = true
       })
     .finally(() => this.loading = false)
+      if(this.giverating.ip == this.ratingip){
+        this.checked = true;
+      }else{
+        this.checked = false;
+      }
     },
     rate() {
-      this.$axios.post('https://webirmartabak.herokuapp.com/api/userrating/', this.giverating)
+      this.$axios.post('/api/userrating/', this.giverating)
       .then(r => {
       })
       .catch(error => {
@@ -198,6 +247,11 @@ export default {
   watch:{
     $route (to, from){
         this.getData();
+        if(this.giverating.ip == this.ratingip){
+          this.checked = true;
+        }else{
+          this.checked = false;
+        }
     }
 } 
 };

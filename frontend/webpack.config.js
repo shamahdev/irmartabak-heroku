@@ -33,7 +33,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,  
-                include: /node_modules/,  
+                include: [
+                    path.resolve(__dirname, '..', 'node_modules'),
+                    path.resolve(__dirname, 'src/assets/css'),
+                ], 
                 loaders: ['style-loader', 'css-loader'],
             },
             {

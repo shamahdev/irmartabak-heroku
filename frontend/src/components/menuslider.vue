@@ -22,11 +22,29 @@
           :loop="true"
         >
           <slide v-if="loading">
-             <div class="card card--menu mx-2">
+             <div class="card card--menu card--disable mx-2">
               <div class="image-card">
               <img class="card-img-top img-fluid fit-cover"/>
               </div>
-              <div class="card-img-overlay">
+              <div class="card-img-overlay skeleton-card-overlay">
+              </div>
+            </div>
+          </slide>
+          <slide v-if="loading">
+             <div class="card card--menu card--disable mx-2">
+              <div class="image-card">
+              <img class="card-img-top img-fluid fit-cover"/>
+              </div>
+              <div class="card-img-overlay skeleton-card-overlay">
+              </div>
+            </div>
+          </slide>
+          <slide v-if="loading">
+             <div class="card card--menu card--disable mx-2">
+              <div class="image-card">
+              <img class="card-img-top img-fluid fit-cover"/>
+              </div>
+              <div class="card-img-overlay skeleton-card-overlay">
               </div>
             </div>
           </slide>
@@ -65,12 +83,12 @@ export default {
   },
    mounted () {
     this.$axios
-    .get('https://webirmartabak.herokuapp.com/api/rating/')
+    .get('/api/rating/')
     .then(response => {
       this.ratingdata = response.data
     });
     this.$axios
-      .get('https:///webirmartabak.herokuapp.com/api/martabak/')
+      .get('/api/martabak/')
       .then(response => {
         this.martabakmenu = response.data  
       })

@@ -3,12 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-// Bootstrap
-import "bootstrap";
-
-// Utilization
+// Styles framework
+import 'bootstrap'
 import AOS from "aos";
-import 'aos/dist/aos.css';
 
 Vue.config.productionTip = true;
 AOS.init();

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="modal fade bd-example-modal-lg"
+    class="modal fade-scale bd-example-modal-lg"
     :id="id"
     tabindex="-1"
     role="dialog"
@@ -10,9 +10,9 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="shadow-sm modal-content bg-white pt-3 px-3 pb-0">
         <div class="modal-header">
-          <h5 class="display-5 modal-title" id="exampleModalLongTitle">
+          <p class="lead3 modal-title">
             {{ title }}
-          </h5>
+          </p>
           <button
             type="button"
             class="close"

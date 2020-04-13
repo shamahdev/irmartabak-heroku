@@ -27,7 +27,7 @@
       <div
         class="container-fluid row align-items-center p-0 m-0 position-relative"
       >
-        <div class="col-md-5 col-sm-12 p-0 ">
+        <div class="col-md-5 col-sm-12 p-0 d-none d-md-flex">
           <img class="w-100 martabak" src="/static/img/stand.jpg" alt="" />
         </div>
         <div class="col-md-8 p-0 my-auto aboutus">

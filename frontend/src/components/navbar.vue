@@ -3,11 +3,11 @@
     :class="{ 'navbar--hidden': !showNavbar }"
     class="navbar navbar-expand-lg navbar-light bg-white py-md-2 py-0 pl-3 pl-md-5 shadow-sm"
   >
-    <router-link class="navbar-brand pb-sm-3 pb-md-0" exact to="/">
+    <router-link class="navbar-brand w-auto text-center pb-sm-3 pb-md-0" exact to="/">
       <img class="p-1" height="60px" src="/static/img/logo.png" />
     </router-link>
     <button
-      class="navbar-toggler float-left mr-0 mr-md-5"
+      class="navbar-toggler float-left shadow-none"
       type="button"
       data-toggle="collapse"
       data-target="#navbarSupportedContent"
@@ -19,7 +19,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto text-center">
         <li class="nav-item">
           <router-link exact to="/" class="nav-link">Home</router-link>
         </li>
