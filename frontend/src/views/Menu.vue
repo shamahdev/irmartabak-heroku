@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
-        <div class="col-md-4 p-0 my-2 my-md-4 mx-auto" v-bind:key="martabak.id" v-for="martabak in search.slice(0,list)">
+        <div class="col-md-4 col-lg-3 p-0 my-2 my-md-4 " v-bind:key="martabak.id" v-for="martabak in search.slice(0,list)">
           <div :key="rating.id" v-for="rating in ratingdata">
             <div v-if="rating.object_id == martabak.id">
               <menucard
