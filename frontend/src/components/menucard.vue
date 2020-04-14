@@ -11,7 +11,14 @@
       <div class="card-img-overlay">
         <p>{{ name }}</p>
         <div class="my-2 text-dark">
-          <star-rating :rating="rating" :star-style="starStyle"></star-rating>
+          <star-rating 
+            :rating="rating" 
+            :read-only="true"
+            :increment="0.1"
+            :star-size="20"
+            active-color="#111111"
+            glowColor="#FFD645"
+          ></star-rating>
         </div>
         <h1 class="display-4 price">{{ "Rp. " + price}}</h1>
       </div>
@@ -22,15 +29,6 @@
 <script>
 export default {
   name: "menucard",
-  data() {
-    return {
-      starStyle: {
-        emptyStarColor: "#111111",
-        starWidth: 20,
-        starHeight: 20
-      }
-    };
-  },
   props: {
     rating: Number,
     name: String,

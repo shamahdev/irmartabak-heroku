@@ -20,10 +20,12 @@
           <div :rid="giverating.rating = rating.id">
             <p class="display-5 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
-              class="my-3"
-              :rating="parseFloat(rating.average)"
-              :star-style="starStyle"
-            ></star-rating>
+                class="my-3"
+                :rating="parseFloat(rating.average)"
+                :read-only="true"
+                :increment="0.1"
+                :star-size="32"
+              ></star-rating>
             <div class="h2 my-3">
               <p class="inline-block text-dark mr-3">{{ "Rp. " + martabak.price }}</p>
             </div>
@@ -75,33 +77,22 @@
             
             <modal id="startrating" title="Berikan Rating">
               <div v-if="!already_rate" class="row m-0">
-                <vue-stars
-                  class="h1"
-                  name="menurating"
-                  inactive-color="#111111"
-                  v-model="giverating.score"
-                  shadow-color="none"
-                  active-color="#ed8a19"
-                  hover-color="#ed8a19"
-                  @input="rate()"
-                  :max="5"
-                >
-                </vue-stars>
+                <star-rating
+                @rating-selected="rate()"
+                v-model="giverating.score"
+                :increment="0.5"
+                :star-size="28"
+                text-class="custom-text"
+              ></star-rating>
               </div>
               <!-- If already rate -->
               <div v-if="already_rate" class="row m-0">
-                <vue-stars
-                  class="h1"
-                  name="alreadyrating"
-                  inactive-color="#111111"
-                  shadow-color="none"
-                  active-color="#ed8a19"
-                  hover-color="#ed8a19"
-                  :max="5"
-                  :value="userrating"
-                  :readonly="true"
-                >
-                </vue-stars>
+                <star-rating
+                :rating="userrating"
+                :read-only="true"
+                :increment="0.5"
+                :star-size="32"
+                ></star-rating>
               </div>
                 <div v-if="already_rate">Kamu telah memberikan rating {{userrating + " untuk " + martabak.name }}</div> 
             </modal>
@@ -174,11 +165,6 @@ export default {
       loading: true,
       currentM: null,
       slug: this.$route.params.name,
-      starStyle: {
-        emptyStarColor: "#111111",
-        starWidth: 25,
-        starHeight: 25
-      },
       ratingdata: [],
       checked: null
     };
@@ -208,10 +194,10 @@ export default {
         this.giverating.ip = response.data["ip"]
       });
     this.$axios
-      .get('/api/userrating/')
-      .then(response => {
-        this.ratinguser = response.data
-      });
+    .get('/api/martabak/')
+    .then(response => {
+      this.martabakdata = response.data.filter(m => m.slug.includes(this.slug))
+    });
     this.$axios
       .get('/api/rating/')
       .then(response => {
@@ -219,20 +205,24 @@ export default {
       });
     this.slug = this.$route.params.name;
     this.$axios
-      .get('/api/martabak/')
+      .get('/api/userrating/')
       .then(response => {
-        this.martabakdata = response.data.filter(m => m.slug.includes(this.slug))
+        this.ratinguser = response.data
       })
       .catch(error => {
       console.log(error)
       this.errored = true
       })
-      .finally(() => this.loading = false)
-      if(this.giverating.ip == this.ratingip){
-        this.checked = true;
-      }else{
-        this.checked = false;
+      .finally(() => 
+      {
+        if(this.giverating.ip == this.ratingip){
+          this.checked = true;
+        }else{
+          this.checked = false;
+        }
+        this.loading = false
       }
+      )
     },
     rate() {
       this.$axios.post('/api/userrating/', this.giverating)

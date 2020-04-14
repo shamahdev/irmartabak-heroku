@@ -1,9 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const BundleTracker = require('webpack-bundle-tracker');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
+    optimization: {
+        nodeEnv: 'production'
+    },
     mode: 'production',
     context: __dirname,
     entry: {
@@ -16,8 +19,10 @@ module.exports = {
     },
 
     plugins: [
-        new BundleTracker({filename: './frontend/webpack-stats.json'}),
+        // new BundleTracker({filename: './frontend/webpack-stats.json'}),
         new VueLoaderPlugin(),
+        new CompressionPlugin({algorithm: 'gzip'})
+        
     ],
 
     module: {
@@ -55,6 +60,8 @@ module.exports = {
         ],
     },
     resolve: {
-        alias: {vue: 'vue/dist/vue.js'}
+        alias: {
+          vue: process.env.NODE_ENV == 'production' ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+        }
     },
 };

@@ -21,9 +21,9 @@
     "popper.js": "^1.16.1",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
-    "vue-dynamic-star-rating": "^1.0.8",
     "vue-page-transition": "^0.2.2",
     "vue-router": "^3.1.5",
+    "vue-star-rating": "^1.6.1",
     "vue-stars": "^1.2.1",
     "vuex": "^3.1.2"
   },
@@ -35,6 +35,7 @@
     "@vue/cli-service": "~4.2.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.3",
+    "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",

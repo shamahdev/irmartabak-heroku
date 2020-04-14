@@ -38,7 +38,9 @@
             <div>
               <star-rating
                 :rating="parseFloat(rating.average)"
-                :star-style="starStyle"
+                :read-only="true"
+                :increment="0.1"
+                :star-size="28"
               ></star-rating>
             </div>
             <h1 class="display-3 mb-5 price">{{ "Rp. " + martabak.price}}</h1>
@@ -73,11 +75,6 @@ export default {
       ratingdata: [],
       loading: true,
       errored: false,
-      starStyle: {
-        emptyStarColor: "#111111",
-        starWidth: 30,
-        starHeight: 30
-      }
     };
   },
   created () {

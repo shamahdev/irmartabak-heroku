@@ -3,13 +3,10 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import VueCarousel from "vue-carousel";
 import VuePageTransition from "vue-page-transition";
-import { VueStars } from "vue-stars";
-import StarRating from "vue-dynamic-star-rating";
+import StarRating from 'vue-star-rating'
 import VueAxios from '../components/plugins/axios';
-import NProgress from 'nprogress';
 
 Vue.component("star-rating", StarRating);
-Vue.component("vue-stars", VueStars);
 
 Vue.use(VuePageTransition);
 Vue.use(VueCarousel);
@@ -24,43 +21,43 @@ const routes = [
     component: Home
   },
   {
-    path: "/social",
+    path: "/social/",
     name: "Social",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "social" */ "../views/Social.vue")
   },
   {
-    path: "/contact",
+    path: "/contact/",
     name: "Contact",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "contact" */ "../views/Contact.vue")
   },
   {
-    path: "/menu",
+    path: "/menu/",
     name: "Menu",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "menu" */ "../views/Menu.vue")
   },
   {
-    path: "/location",
+    path: "/location/",
     name: "Location",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "location" */ "../views/Location.vue")
   },
   {
-    path: "/disclaimer",
+    path: "/disclaimer/",
     name: "Disclaimer",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "disclaimer" */ "../views/Disclaimer.vue")
   },
   {
-    path: "/privacypolicy",
+    path: "/privacypolicy/",
     name: "PrivacyPolicy",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue")
   },
   {
-    path: "/menu/:name",
+    path: "/menu/:name/",
     name: "Detail",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
@@ -95,17 +92,5 @@ const router = new VueRouter({
   },
   routes
 });
-
-
-router.beforeResolve((to, from, next) => {
-  if (to.name) {
-      NProgress.start()
-  }
-  next()
-})
-
-router.afterEach((to, from) => {
-  NProgress.done()
-})
 
 export default router;
