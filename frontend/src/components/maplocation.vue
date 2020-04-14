@@ -3,9 +3,10 @@
     <section id="map">
       <div class="container-fluid row p-0 m-0">
         <div class="col-md-6 col-sm-12 p-0 my-auto">
-          <h1 class="text-center display-4 mb-3">Temukan Kami Di</h1>
+          <h1 class="text-center display-4 mb-3">
+            Temukan Kami di</h1>
           <div class="col-lg-11 col-md-12 col-sm-12 float-right p-0">
-            <div class="map-point">
+            <div class="map-point px-3 px-md-0">
               <div
                 class="container bg-light"
                 @click="
@@ -72,10 +73,10 @@
         <div class="col-md-6 p-0 my-auto inner-shadow-sm">
           <div class="embed-responsive">
             <iframe
-              class="embed-responsive-item"
+              class="embed-responsive-item map_embed"
               :src="'https://www.google.com/maps/embed?pb=' + map_embed"
               frameborder="0"
-              style="border:0; position:relative; height:90vh"
+              style="border:0; position:relative;"
             ></iframe>
           </div>
         </div>
@@ -85,6 +86,7 @@
 </template>
 
 <script>
+
 export default {
   name: "maplocation",
   data() {

@@ -1,17 +1,30 @@
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const BundleTracker = require('webpack-bundle-tracker');
 const CompressionPlugin = require('compression-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-    optimization: {
-        nodeEnv: 'production'
-    },
     mode: 'production',
     context: __dirname,
     entry: {
             "app"  : "./src/Main.js",
         },
+    optimization:{
+        runtimeChunk: false,
+        splitChunks: {
+            cacheGroups: {
+              default: false,
+              commons: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendor_app',
+                chunks: 'all',
+                minChunks: 2
+              }
+            }
+          }
+    },
     output: {
         path: path.resolve('./frontend/src/assets/bundles'),
         publicPath: '/static/bundles/',
@@ -19,10 +32,19 @@ module.exports = {
     },
 
     plugins: [
-        // new BundleTracker({filename: './frontend/webpack-stats.json'}),
+        new BundleTracker({filename: './frontend/webpack-stats.json'}),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
         new VueLoaderPlugin(),
-        new CompressionPlugin({algorithm: 'gzip'})
-        
+        new CompressionPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+            threshold: 10240,
+            minRatio: 0.8
+          }),
+        // new BundleAnalyzerPlugin()
     ],
 
     module: {
@@ -58,10 +80,5 @@ module.exports = {
                 ]
             },
         ],
-    },
-    resolve: {
-        alias: {
-          vue: process.env.NODE_ENV == 'production' ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
-        }
     },
 };

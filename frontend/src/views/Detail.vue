@@ -61,7 +61,7 @@
                 Pesan Sekarang
               </button>
               <button
-                class="btn btn-skeleton  btn-lg px-3 px-md-5 py-3"
+                class="btn btn-skeleton btn-lg px-3 px-md-5 py-3"
               >
                 Berikan Rating
               </button>
@@ -74,7 +74,7 @@
                 <label class="lead3 skeleton-txt">Deskripsi</label>
               </div>
             </div>
-            
+            <!-- Skeleton End -->
             <modal id="startrating" title="Berikan Rating">
               <div v-if="!already_rate" class="row m-0">
                 <star-rating
@@ -94,7 +94,7 @@
                 :star-size="32"
                 ></star-rating>
               </div>
-                <div v-if="already_rate">Kamu telah memberikan rating {{userrating + " untuk " + martabak.name }}</div> 
+                <div class="mt-2" v-if="already_rate">Kamu telah memberikan rating {{userrating + " untuk " + martabak.name }}</div> 
             </modal>
             <!-- Modal2 -->
             <modal id="buymethod" title="Pilih Layanan Pemesanan">
@@ -147,7 +147,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 export default {
   name: "Detail",
   data() {
@@ -181,6 +180,11 @@ export default {
       if(this.giverating.ip == this.ratingip){
         this.checked = true;
       }else{
+        this.$axios
+        .get('https://api.ipify.org/?format=json')
+        .then(response => {
+          this.giverating.ip = response.data["ip"]
+        });
         this.checked = false;
       }
       return this.checked

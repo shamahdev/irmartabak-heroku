@@ -6,14 +6,16 @@
       </div>
     </div>
     <div class="container-fluid row p-0 m-0 mx-auto">
-      <div class="col-md-9 col-sm-12 p-0 mx-auto mb-5 pb-5">
+      <div class="col-9 p-0 mx-auto mb-5 pb-5">
         <carousel
           class="mdi"
           :autoplay="true"
           :scrollPerPage="false"
+          :perPage="1"
           :perPageCustom="[
-            [480, 2],
-            [1080, 3]
+              [480, 1],
+              [768, 2],
+              [992, 3]
           ]"
           :navigationEnabled="true"
           :navigationNextLabel="''"

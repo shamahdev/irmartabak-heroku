@@ -3,21 +3,18 @@
     <ul class="list-group">
       <a
         href="https://www.instagram.com/insinyur_martabak"
-        class="mdi mdi-instagram"
-      ></a>
+      ><i class="fab fa-instagram"></i></a>
       <a
         href="https://m.facebook.com/Insinyur-Martabak-1655086604519961"
-        class="mdi mdi-facebook"
-      ></a>
+      ><i class="fab fa-facebook-f"></i></a>
       <a
         href="https://www.youtube.com/channel/UCFLqxU4DwJLiv07RueTK0VA"
-        class="mdi mdi-youtube"
-      ></a>
-      <a href="https://twitter.com/insinyur_mrtbk" class="mdi mdi-twitter"></a>
+      ><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com/insinyur_mrtbk" ><i class="fab fa-twitter"></i></a>
     </ul>
     <a href="#aboutus">
       <div class="arrow container-fluid m-0 p-0">
-        <i class="mdi mdi-arrow-down"></i>
+        <i class="fas fa-arrow-down p-1"></i>
       </div>
     </a>
   </div>

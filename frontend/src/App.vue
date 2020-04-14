@@ -13,9 +13,7 @@
 
 <script>
   import 'bootstrap/dist/css/bootstrap.min.css';
-  import 'nprogress/nprogress.css';
   import 'aos/dist/aos.css';
-  import '@mdi/font/css/materialdesignicons.min.css';
   import './assets/css/main.min.css';
 export default {
   name: "Home",

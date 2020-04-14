@@ -9,12 +9,12 @@
     :loop="true"
   >
   <slide v-if="loading">
-      <div class="container-fluid row p-0 m-0" >
+      <div class="container-fluid row p-0 m-0">
         <div class="col-md-6 p-4 p-md-2 p-lg-4 my-auto">
           <div class="jumbotron-fluid bg-white m-3 m-lg-5 pr-0 pr-md-3 m-md-0 ml-2 ml-lg-5 pl-0 pl-md-5">
              <p class="skeleton-txt lead">Martabak Super</p>
             <h1 class="skeleton-txt display-3 mb-5 price">Rp. 30000</h1>
-            <div class="btn-group mt-3 mb-5">
+            <div class="btn-group mt-3 mb-5 d-block d-md-inline-flex">
               <button type="button" class="btn btn-skeleton btn-lg px-5 py-3" disabled>
                 Pesan Sekarang
               </button>
@@ -44,7 +44,7 @@
               ></star-rating>
             </div>
             <h1 class="display-3 mb-5 price">{{ "Rp. " + martabak.price}}</h1>
-            <div class="btn-group mt-3 mb-5">
+            <div class="btn-group mt-3 mb-5 d-block d-md-inline-flex">
               <button
                 class=" btn btn-primary btn-lg px-5 py-3"
                 data-toggle="modal"

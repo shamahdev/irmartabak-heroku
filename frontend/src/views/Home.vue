@@ -35,11 +35,10 @@
           <div class="shadow-sm jumbotron-fluid bg-primary px-5 pt-5 pb-0">
             <h1 class="display-5 mb-3 mt-5">The Professional Martabak Maker</h1>
             <p class="lead2 mb-5">
-              Insinyur martabak adalah sebuah Restoran berkonsep open kitchen
-              yang menyajikan martabak dengan menu yang lengkap mulai dari
-              martabak yang umum seperti martabak telor dan martabak coklat,
-              sampai yang sedang trending saat ini seperti Red Velvet dan
-              Matcha. . .
+              Insinyur martabak adalah sebuah brand martabak yang didirikan
+              oleh para ahli dalam bidangnya. Dengan konsep proyek open
+              kitchen yang menyajikan berbagai varian martabak manis dan
+              martabak telur.
             </p>
             <div class="btn-group">
               <button
@@ -57,13 +56,8 @@
                   <img class="img-fluid" src="/static/img/icon.png" alt="Insinyur Martabak Brand Icon" />
                 </div>
                 <div class="col-sm-12 col-md-8 py-2 my-auto">
-                  <p class="lead2 mb-3">
-                    Insinyur martabak adalah sebuah brand martabak yang didirikan
-                    oleh para ahli dalam bidangnya. Dengan konsep proyek open
-                    kitchen yang menyajikan berbagai varian martabak manis dan
-                    martabak telur.</p>
                   <p class="lead2 my-3">
-                    Berdiri sejak tahun 2017 hingga kini telah
+                    Insinyur Martabak Berdiri sejak tahun 2017 hingga kini telah
                     melebarkan sayap hingga empat cabang yang tersebar di Kota
                     Bandung. Insinyur Martabak menyediakan menu yang lengkap mulai
                     dari martabak klasik hingga martabak dengan inovasi yang modern
@@ -124,7 +118,7 @@
       <div class="container-fluid row p-0 m-0 my-5 mx-auto">
         <div class="col-md-12 p-0 text-center">
           <h1 class="display-4 mt-0 mt-md-3">
-            Tersedia Juga Di
+            Tersedia Juga di
           </h1>
           <p class="mb-0 mb-md-3">Dapatkan banyak promo diskon dengan menggunakan layanan dibawah ini!</p>
 
@@ -132,14 +126,14 @@
       </div>
       <div class="row mt-5 p-0 m-0 mx-auto my-0 my-md-5 text-center">
         <div class="col text-center">
-        <div class="col-5 col-lg-3 d-inline-block px-2 px-md-5">
+        <div class="col-md-5 col-lg-3 d-inline-block pb-2 pb-md-0 px-5">
           <a
             href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
           >
             <img class="img-fluid" src="/static/img/gofood.png" alt="" />
           </a>
         </div>
-        <div class="col-5 col-lg-3 d-inline-block px-2 px-md-5">
+        <div class="col-md-5 col-lg-3 d-inline-block px-5">
           <a
             href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
           >
@@ -152,10 +146,10 @@
     <section id="quotes" class="px-5 px-md-0 pt-2">
       <div class="container-fluid row p-0 m-0">
         <div class="maskot col-md-6 px-5 order-12 order-md-1">
-          <img src="/static/img/maskot.png" class="img-fluid w-100 px-3 px-md-5 mx-auto" style="object-fit: scale-down" srcset="" />
+          <img src="/static/img/maskot.png" class="img-fluid w-100 px-1 px-md-3 mx-auto" srcset="" />
         </div>
         <div class="quote col-md-6 p-0 my-auto mx-auto pr-0 pr-md-4 py-5 h-100 order-1 order-md-12">
-          <h1 class="display-4 my-2">
+          <h1 class="display-5 my-2">
             "Bahagiamu kamu yang ciptakan, dan kami hadir untuk menyempurnakan!"
           </h1>
           <p class="lead3 mb-5">

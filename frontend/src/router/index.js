@@ -21,43 +21,43 @@ const routes = [
     component: Home
   },
   {
-    path: "/social/",
+    path: "/social",
     name: "Social",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "social" */ "../views/Social.vue")
   },
   {
-    path: "/contact/",
+    path: "/contact",
     name: "Contact",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "contact" */ "../views/Contact.vue")
   },
   {
-    path: "/menu/",
+    path: "/menu",
     name: "Menu",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "menu" */ "../views/Menu.vue")
   },
   {
-    path: "/location/",
+    path: "/location",
     name: "Location",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "location" */ "../views/Location.vue")
   },
   {
-    path: "/disclaimer/",
+    path: "/disclaimer",
     name: "Disclaimer",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "disclaimer" */ "../views/Disclaimer.vue")
   },
   {
-    path: "/privacypolicy/",
+    path: "/privacypolicy",
     name: "PrivacyPolicy",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue")
   },
   {
-    path: "/menu/:name/",
+    path: "/menu/:name",
     name: "Detail",
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "detail" */ "../views/Detail.vue")

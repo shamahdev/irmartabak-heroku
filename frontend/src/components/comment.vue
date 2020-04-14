@@ -7,7 +7,7 @@
       </div>
       <div class="col-8 my-auto mx-auto">
         <p class="lead1 text-primary mb-1">{{ name }}</p>
-        <p>{{ comment }} <b>#insinyur_martabak #ir_martabak_moment</b></p>
+        <p>{{ comment }}</p>
       </div>
     </div>
   </div>

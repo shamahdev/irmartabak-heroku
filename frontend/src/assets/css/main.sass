@@ -313,14 +313,14 @@ input, textarea
     background-color: $primary !important
 .VueCarousel-navigation-next
   &::before
+    @include accent-font
     display: inline-block
-    font: normal normal normal 24px/1 "Material Design Icons"
-    content: '\F054'
+    content: '\1F80A'
 .VueCarousel-navigation-prev
   &::before
+    @include accent-font
     display: inline-block
-    font: normal normal normal 24px/1 "Material Design Icons"
-    content: '\F04D'
+    content: '\1F808'
 .inner-shadow-lg
   box-shadow: 0 0rem 3rem rgba(0,0,0,.1) !important
 .footer-list
@@ -350,6 +350,7 @@ input, textarea
       font-size: 20px !important
       margin-right: 4px
 .btn-skeleton, .skeleton-txt
+  color: $fog
   color: #ffffff00
   pointer-events: none
   background-color: $fog !important
