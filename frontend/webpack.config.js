@@ -11,20 +11,6 @@ module.exports = {
     entry: {
             "app"  : "./src/Main.js",
         },
-    optimization:{
-        runtimeChunk: false,
-        splitChunks: {
-            cacheGroups: {
-              default: false,
-              commons: {
-                test: /[\\/]node_modules[\\/]/,
-                name: 'vendor_app',
-                chunks: 'all',
-                minChunks: 2
-              }
-            }
-          }
-    },
     output: {
         path: path.resolve('./frontend/src/assets/bundles'),
         publicPath: '/static/bundles/',
