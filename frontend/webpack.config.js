@@ -23,13 +23,13 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
         new VueLoaderPlugin(),
-        new CompressionPlugin({
-            filename: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
-            threshold: 10240,
-            minRatio: 0.8
-          }),
+        // new CompressionPlugin({
+        //     filename: '[path].gz[query]',
+        //     algorithm: 'gzip',
+        //     test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+        //     threshold: 10240,
+        //     minRatio: 0.8
+        //   }),
         // new BundleAnalyzerPlugin()
     ],
 
