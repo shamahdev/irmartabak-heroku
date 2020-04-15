@@ -4,9 +4,9 @@
       <div class="container-fluid row p-0 m-0 mx-auto my-5">
         <div class="col-10 mx-auto my-auto p-0 text-center">
           <img
-            src="/static/img/logo.png"
+            src="/static/img/icon.png"
             class="img-fluid my-2"
-            width="200px"
+            width="140px"
             alt=""
           />
           <p class="lead m-0 mt-5">ERROR 404 NOT FOUND</p>

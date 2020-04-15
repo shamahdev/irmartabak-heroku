@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="container-fluid row p-0 m-0 mx-auto">
-      <div class="col-9 p-0 mx-auto mb-5 pb-5">
+      <div class="col-9 p-0 mx-auto mb-2 pb-5">
         <carousel
           class="mdi"
           :autoplay="true"
@@ -64,6 +64,18 @@
             </div>
           </slide>
         </carousel>
+      </div>
+    </div>
+    <div class="container-fluid row p-0 m-0 mx-auto mb-5">
+      <div v-if="loading" class="col mx-auto p-0 text-center">
+        <button type="button" class="mx-auto btn btn-skeleton btn-lg px-5 py-3">
+                Menu Lainnya
+              </button>
+      </div>
+      <div v-if="!loading" class="col mx-auto p-0 text-center">
+        <router-link :to="'/menu'" tag="button" type="button" class="mx-auto btn btn-primary btn-lg px-5 py-3">
+                Menu Lainnya
+              </router-link>
       </div>
     </div>
   </section>

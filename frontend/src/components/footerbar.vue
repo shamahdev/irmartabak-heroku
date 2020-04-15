@@ -1,12 +1,11 @@
 <template>
-  <footer>
-    <div class="container-fluid bg-primary row m-0 p-0">
+  <div id="footer">
+    <div class="container-fluid bg-primary row m-0 p-0 mt-auto">
       <div class="col-md-3 p-0 bg-dark p-4">
         <ul class="p-0 footer-list bg-secondary lead3 text-light">
           <router-link to="/location">Outlet Location</router-link>
           <router-link to="/contact">Contact Us</router-link>
-          <router-link to="/aboutus">About Developer</router-link>
-          <router-link to="/faq">FAQ</router-link>
+          <router-link to="/dev">About Developer</router-link>
           <router-link to="/disclaimer">Disclaimer</router-link>
           <router-link to="/privacypolicy">Privacy Policy</router-link>
         </ul>
@@ -33,14 +32,14 @@
           <h4 class="lead3 mb-3">Hubungi Kami</h4>
           <ul class="p-0 social-footer" style="list-style: none;">
             <li class="mdi mdi-email">ir.martabak@gmail.com</li>
-            <li class="mdi mdi-phone">0895-0410-6666</li>
-            <li class="mdi mdi-instagram">@insinyur_martabak</li>
-            <li class="mdi mdi-facebook">Insinyur Martabak</li>
-            <li class="mdi mdi-twitter">@insinyur_mrtbk</li>
+            <li><i class="fab fa-whatsapp mr-2"></i>0895-0410-6666</li>
+            <li><i class="fab fa-instagram mr-2"></i>@insinyur_martabak</li>
+            <li><i class="fab fa-facebook-f mr-2"></i>Insinyur Martabak</li>
+            <li><i class="fab fa-twitter mr-2"></i>@insinyur_mrtbk</li>
           </ul>
       </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>

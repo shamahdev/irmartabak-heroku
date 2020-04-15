@@ -68,13 +68,13 @@ const routes = [
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "error404" */ "../views/Error404.vue")
   },
-  // {
-  //   path: "/dev",
-  //   name: "Location",
-  //   meta: { hideDesktop: true },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/Dev.vue")
-  // },
+  {
+    path: "/dev",
+    name: "AboutDev",
+    meta: { hideDesktop: true },
+    component: () =>
+      import(/* webpackChunkName: "dev" */ "../views/AboutDev.vue")
+  },
   // {
   //   path: "/faq",
   //   name: "Location",

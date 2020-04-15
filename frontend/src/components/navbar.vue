@@ -1,8 +1,6 @@
 <template>
-  <nav
-    :class="{ 'navbar--hidden': !showNavbar }"
-    class="navbar navbar-expand-lg navbar-light bg-white py-md-2 py-0 pl-3 pl-md-5 shadow-sm"
-  >
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-md-2 py-0 pl-3 pl-md-5">
+  <button data-aos="fade-up" data-aos-offset="400" id="toTop" class="btn btn-dark py-3 px-4" @click="scrollToTop()" title="Back to top"><i class="fas fa-arrow-up fa-lg"></i></button>
     <router-link class="navbar-brand w-auto text-center pb-sm-3 pb-md-0" exact to="/">
       <img class="p-1" height="60px" src="/static/img/logo.png" />
     </router-link>
@@ -46,35 +44,10 @@
 <script>
 export default {
   name: "navbar",
-  data() {
-    return {
-      showNavbar: true,
-      lastScrollPosition: 0,
-      scrollValue: 0
-    };
-  },
-  mounted() {
-    this.lastScrollPosition = window.pageYOffset;
-    window.addEventListener("scroll", this.onScroll);
-    const viewportMeta = document.createElement("meta");
-    viewportMeta.name = "viewport";
-    viewportMeta.content = "width=device-width, initial-scale=1";
-    document.head.appendChild(viewportMeta);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
   methods: {
-    onScroll() {
-      if (window.pageYOffset < 0) {
-        return;
+    scrollToTop() {
+          window.scrollTo(0,0);
       }
-      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 80) {
-        return;
-      }
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition;
-      this.lastScrollPosition = window.pageYOffset;
-    }
   }
 };
 </script>

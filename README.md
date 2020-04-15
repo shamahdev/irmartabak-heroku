@@ -29,6 +29,15 @@ __Running Server__
 
 ## Changelogs
 
+15/04/2020 by FrontEnd
+- Added About Developer page
+- Added Back to Top Button
+- Fixed Footer not fix placed in bottom if the content's height is under 100vh
+- Added button to go to menu page under Menu Slider
+- Added button to go back to home page at the end of Disclaimer and Privacy Policy page
+- Fixed several typos in Privacy Policy page
+- Removed FAQ Page
+
 14/04/2020 by FrontEnd
 - Change Webpack bundle mode to production mode to compress the app.js size
 - ~~Material Designs Icon now included in node_modules (will change later due to large size of font files)~~
