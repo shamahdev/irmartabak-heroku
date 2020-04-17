@@ -43,15 +43,16 @@
       </div>
       <div class="container-fluid row p-0 m-0 my-5">
         <!-- This is function | Not gonna be rendered-->
-        <div :key="rating.average" v-for="rating in ratingmartabak">
-          <div :key="r.id" v-for="r in ratinguser">
-            <div v-if="r.rating == rating.id">
-              <div :rip="ratingip = r.ip"/>
-              <div :ur="userrating = r.score"/>
-            </div>
-          </div>
         <!-- end -->
         <div class="col-10 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
+          <div :key="r.id" v-for="r in ratinguser">
+            <div v-if="r.rating == rating.id">
+              <div v-if="giverating.ip == r.ip">
+                <div :ur="userrating = r.score"/>
+                <div :rip="ratingip = r.ip"/>
+              </div>
+            </div>
+          </div>
           <div :rid="giverating.rating = rating.id">
             <p class="display-5 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
