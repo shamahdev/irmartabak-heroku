@@ -19,12 +19,11 @@
             data-dismiss="modal"
             aria-label="Close"
           >
-            <span class="mdi mdi-close"></span>
+            <i class="fas fa-times"></i>
           </button>
         </div>
-        <div class="modal-body border-none">
-          <slot></slot>
-        </div>
+        <slot class="modal-body border-none">
+        </slot>
       </div>
     </div>
   </div>

@@ -29,6 +29,17 @@ __Running Server__
 
 ## Changelogs
 
+17/04/2020 by FrontEnd
+- Added Comment content from Google Review
+- Added News & Promo Page
+- Added Awards Page
+- Added About Developers Content
+- !! Images need to be compressed !!
+
+16/04/2020 by FrontEnd
+- Skeleton load now showing properly on Menu and Detail page
+- Navbar and Homeslider aren't rendered with LazyLoad method anymore
+
 15/04/2020 by FrontEnd
 - Added About Developer page
 - Added Back to Top Button

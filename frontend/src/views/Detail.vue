@@ -1,9 +1,44 @@
 <template>
   <div class="detail">
+
+  <section v-show="loading">
+      <div class="container-fluid row p-0 m-0 mb-5">
+        <div class="skeleton-thumbnail"/>
+      </div>
+      <!-- Skeleton Load -->
+      <div class="col-10 col-md-8 mx-auto my-auto p-0">
+        <p class="display-5 mt-5 mb-0 skeleton-txt">Martabak Super</p>
+        <div class="h2 my-3">
+          <p class="inline-block mr-3 skeleton-txt">Rp. 30000</p>
+        </div>
+        <div> 
+        <button
+          class="btn btn-skeleton btn-lg px-5 py-3"
+          data-toggle="modal"
+          data-target="#buymethod"
+        >
+          Pesan Sekarang
+        </button><!--
+        --><button
+          class="btn btn-skeleton btn-lg px-5 py-3"
+        >
+          Berikan Rating
+        </button>
+        </div>
+        <div class="my-5 px-0 py-4 px-md-4">
+          <label class="lead3 skeleton-txt">Rating</label>
+          <label class="lead3 skeleton-txt">Ukuran Tersedia</label
+          >
+          <p class="skeleton-txt">Small</p>
+          <label class="lead3 skeleton-txt">Deskripsi</label>
+        </div>
+      </div>
+      <!-- Skeleton End -->
+  </section>
+
     <vue-page-transition name="fade-in-up">
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
-        <div v-if="loading" class="skeleton-thumbnail"/>
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
       </div>
       <div class="container-fluid row p-0 m-0 my-5">
@@ -29,72 +64,43 @@
             <div class="h2 my-3">
               <p class="inline-block text-dark mr-3">{{ "Rp. " + martabak.price }}</p>
             </div>
-            <div class="btn-group"> 
+            <div> 
             <button
-              class="btn btn-primary btn-lg px-3 px-md-5 py-3"
+              class="btn btn-primary btn-lg px-5 py-3"
               data-toggle="modal"
               data-target="#buymethod"
             >
               Pesan Sekarang
-            </button>
-            <button
+            </button><!--
+            --><button
               v-if="already_rate !== null"
-              class="btn btn-dark btn-lg px-3 px-md-5 py-3"
+              class="btn btn-dark btn-lg px-5 py-3"
               data-toggle="modal"
               data-target="#startrating"
             >
               Berikan Rating
             </button>
             </div>
-            <!-- Skeleton Load -->
-            <div v-if="loading">
-              <p class="display-5 mt-5 mb-0 skeleton-txt">Martabak Super</p>
-              <div class="h2 my-3">
-                <p class="inline-block mr-3 skeleton-txt">Rp. 30000</p>
-              </div>
-              <div class="btn-group"> 
-              <button
-                class="btn btn-skeleton btn-lg px-3 px-md-5 py-3"
-                data-toggle="modal"
-                data-target="#buymethod"
-              >
-                Pesan Sekarang
-              </button>
-              <button
-                class="btn btn-skeleton btn-lg px-3 px-md-5 py-3"
-              >
-                Berikan Rating
-              </button>
-              </div>
-              <div class="my-5 px-0 py-4 px-md-4">
-                <label class="lead3 skeleton-txt">Rating</label>
-                <label class="lead3 skeleton-txt">Ukuran Tersedia</label
-                >
-                <p class="skeleton-txt">Small</p>
-                <label class="lead3 skeleton-txt">Deskripsi</label>
-              </div>
-            </div>
-            <!-- Skeleton End -->
             <modal id="startrating" title="Berikan Rating">
-              <div v-if="!already_rate" class="row m-0">
+              <div v-if="!already_rate" class="row p-2 m-0 mb-3">
                 <star-rating
                 @rating-selected="rate()"
                 v-model="giverating.score"
                 :increment="0.5"
-                :star-size="28"
+                :star-size="46"
                 text-class="custom-text"
               ></star-rating>
               </div>
               <!-- If already rate -->
-              <div v-if="already_rate" class="row m-0">
+              <div v-if="already_rate" class="row p-2 m-0">
                 <star-rating
                 :rating="userrating"
                 :read-only="true"
                 :increment="0.5"
-                :star-size="32"
+                :star-size="46"
                 ></star-rating>
               </div>
-                <div class="mt-2" v-if="already_rate">Kamu telah memberikan rating {{userrating + " untuk " + martabak.name }}</div> 
+                <div class="p-2 mt-2 mb-3" v-if="already_rate">Kamu telah memberikan rating {{userrating + " untuk " + martabak.name }}</div> 
             </modal>
             <!-- Modal2 -->
             <modal id="buymethod" title="Pilih Layanan Pemesanan">
@@ -180,11 +186,6 @@ export default {
       if(this.giverating.ip == this.ratingip){
         this.checked = true;
       }else{
-        this.$axios
-        .get('https://api.ipify.org/?format=json')
-        .then(response => {
-          this.giverating.ip = response.data["ip"]
-        });
         this.checked = false;
       }
       return this.checked
@@ -195,7 +196,7 @@ export default {
     this.$axios
       .get('https://api.ipify.org/?format=json')
       .then(response => {
-        this.giverating.ip = response.data["ip"]
+        this.giverating.ip = response.data["ip"];
       });
     this.$axios
     .get('/api/martabak/')
@@ -217,7 +218,7 @@ export default {
       console.log(error)
       this.errored = true
       })
-      .finally(() => 
+      .finally(() =>
       {
         if(this.giverating.ip == this.ratingip){
           this.checked = true;
@@ -240,8 +241,9 @@ export default {
   },
   watch:{
     $route (to, from){
-        this.getData()
+        this.getData();
+        this.ratingip = '';
     }
-} 
+}
 };
 </script>

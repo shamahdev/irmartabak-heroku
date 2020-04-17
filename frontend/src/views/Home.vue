@@ -5,20 +5,38 @@
       <!-- Layanan Pemesanan Modal -->
       <modal id="buymethod" title="Pilih Layanan Pemesanan">
         <div class="row m-0">
-          <div class="col-md-6 p-5 my-auto">
-            <a
-              href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
-            >
-              <img class="img-fluid" src="/static/img/gofood.png" alt="" />
-            </a>
-          </div>
-          <div class="col-md-6 p-5 my-auto">
-            <a
-              href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
-            >
-              <img class="img-fluid" src="/static/img/grabfood.png" alt="" />
-            </a>
-          </div>
+          <div class="col-12 mx-auto">
+             <p class="lead2 mb-4">
+                Pilih cabang yang paling dekat dengan lokasi kamu saat ini! <a class="text-warning" href="https://www.google.com/maps/search/Insinyur+Martabak">Tidak tau dimana? klik disini!</a>
+            </p>
+        </div>
+        <div class="col-12 mx-auto">
+          <p class="lead3">Kiaracondong</p>
+            <div> 
+              <a href="" class="btn btn-primary px-5 py-3" >GoFood</a><!--
+            --><a href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr" class="btn btn-dark px-5 py-3">GrabFood</a>
+           </div>
+        </div>
+        <div class="col-12 mx-auto">
+          <p class="lead3 mt-3">Cibaduyut</p>
+            <div> 
+              <a href="" class="btn btn-primary px-5 py-3" >GoFood</a><!--
+            --><a href="" class="btn btn-dark px-5 py-3">GrabFood</a>
+           </div>
+        </div>
+        <div class="col-12 mx-auto">
+          <p class="lead3 mt-3">Cijerah</p>
+            <div> 
+              <a href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f" class="btn btn-primary px-5 py-3" >GoFood</a><!--
+            --><a href="" class="btn btn-dark px-5 py-3">GrabFood</a>
+           </div>
+        </div>
+        <div class="col-12 mx-auto mb-4">
+          <p class="lead3 mt-3">Tubagus Ismail Raya (GrabFood Only)</p>
+            <div> 
+            <a href="https://food.grab.com/id/id/restaurant/%F0%9F%8C%A1%EF%B8%8F%F0%9F%9B%A1%EF%B8%8Finsinyur-martabak-tubagus-ismail-grabkitchen-delivery/6-CYVFLE3CJETYNE" class="btn btn-dark px-5 py-3">GrabFood</a>
+           </div>
+        </div>
         </div>
       </modal>
       <!-- End -->
@@ -32,7 +50,7 @@
         </div>
         <div class="col-md-8 p-0 my-auto aboutus">
           <h1 class="text-center display-4 my-5">Tentang Kami</h1>
-          <div class="shadow-sm jumbotron-fluid bg-primary px-5 pt-5 pb-0">
+          <div class="jumbotron-fluid bg-primary px-5 pt-5 pb-0">
             <h1 class="display-5 mb-3 mt-5">The Professional Martabak Maker</h1>
             <p class="lead2 mb-5">
               Insinyur martabak adalah sebuah brand martabak yang didirikan
@@ -40,7 +58,7 @@
               kitchen yang menyajikan berbagai varian martabak manis dan
               martabak telur.
             </p>
-            <div class="btn-group">
+            <div class="btn-group mx-auto mx-md-0">
               <button
                 data-toggle="modal"
                 data-target="#aboutmodal"
@@ -52,10 +70,10 @@
             <!-- Modal Tentang -->
             <modal id="aboutmodal" title="The Professional Martabak Maker">
               <div class="container-fluid row m-0 p-0">
-                <div class="col-sm-12 d-none d-md-block text-center col-md-4 py-2">
-                  <img class="img-fluid" src="/static/img/icon.png" alt="Insinyur Martabak Brand Icon" />
+                <div class="col-12 d-none d-md-block text-center py-2">
+                  <img class="img-fluid w-50" src="/static/img/icon.png" alt="Insinyur Martabak Brand Icon" />
                 </div>
-                <div class="col-sm-12 col-md-8 py-2 my-auto">
+                <div class="col-12 py-2 my-auto">
                   <p class="lead2 my-3">
                     Insinyur Martabak Berdiri sejak tahun 2017 hingga kini telah
                     melebarkan sayap hingga empat cabang yang tersebar di Kota
@@ -83,7 +101,7 @@
         <div class="text-center col-md-12 p-0">
           <h1 class="display-4 mt-5 pt-4">Tanggapan Pembeli</h1>
           <p class="mb-5 pb-4">
-            Mention kami dengan hashtag <b>#irmartabak_moment</b>
+            Mention kami di social media dengan hashtag <b>#irmartabak_moment</b>
           </p>
         </div>
       </div>
@@ -102,12 +120,42 @@
             :paginationEnabled="false"
             :loop="true"
           >
-            <slide v-bind:key="i" v-for="i in 6">
+            <slide>
               <comment
                 img="/static/img/stand.jpg"
-                avatar="/static/img/profile.jpg"
-                name="David Mamet"
-                comment="Wow, martabaknya enak buanget, de best pokonya! selalu jadi reccomend buat beli martabak apapun kesukaan kalian <3"
+                avatar="/static/img/sarie.png"
+                name="Sarie Maulida"
+                comment="Sepertinya juara di martabak manisnya,
+Toping nya banyak martabaknya tebal untuk martabak manis aq kasih nilai 9/10 manisnya g enek sih pas..
+Untuk martabak asinnya kebetulan beli yg special cuma 'B' aja sih g begitu wah aq kasih nilai 6/10"
+              />
+            </slide>
+            <slide>
+              <comment
+                img="/static/img/ekap.png"
+                avatar="/static/img/eka.png"
+                name="Lutfi Eka"
+                comment="Buat martabak manisnya jg lumayan mahal. yg ukuran kecil itu 17rb (untuk sndiri atau brdua) tp sebanding sm rasanya. enak dan bukan pake coklat yg murahan."
+              />
+            </slide>
+            <slide>
+              <comment
+                img="/static/img/indrip.jpg"
+                avatar="/static/img/indrie.png"
+                name="Yoriza Indrie"
+                comment="Pengalaman beli via grabfood, harga terjangkau, martabak asin lumayan enak dan martabak manis enak jg. Rasa relatif enak."
+              />
+            </slide>
+            <slide>
+              <comment
+                img="/static/img/magzp.jpg"
+                avatar="/static/img/magz.png"
+                name="Riefs Magz"
+                comment="Mantap harga gak terlalu mahal kaya martabak sebelah rasanya enak
+Top pokonya
+Pegawainya unik ada pake helm kaya pekerja proyek
+Pokonya yg belum nyoba coba deh 
+Rekomendasi banget."
               />
             </slide>
           </carousel>
@@ -126,14 +174,14 @@
       </div>
       <div class="row mt-5 p-0 m-0 mx-auto my-0 my-md-5 text-center">
         <div class="col text-center">
-        <div class="col-md-5 col-lg-3 d-inline-block pb-2 pb-md-0 px-5">
+        <div class="col-6 col-md-5 col-lg-3 d-inline-block pb-2 pb-md-0 px-0 px-md-4">
           <a
             href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
           >
             <img class="img-fluid" src="/static/img/gofood.png" alt="" />
           </a>
         </div>
-        <div class="col-md-5 col-lg-3 d-inline-block px-5">
+        <div class="col-6 col-md-5 col-lg-3 d-inline-block px-0 px-md-4">
           <a
             href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
           >
@@ -172,6 +220,7 @@
 </template>
 
 <script>
+import homeslider from "../components/homeslider.vue"
 export default {
   name: "Home",
   data() {
@@ -184,8 +233,8 @@ export default {
     };
   },
   components: {
+    homeslider,
     maplocation: () => import("../components/maplocation.vue"),
-    homeslider: () => import("../components/homeslider.vue"),
     menuslider: () => import("../components/menuslider.vue"),
     modal: () => import("../components/modal.vue"),
     comment: () => import("../components/comment.vue")

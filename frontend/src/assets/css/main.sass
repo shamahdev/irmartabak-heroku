@@ -235,13 +235,7 @@ input, textarea
   bottom: 0
   height: 70%
 .add-list
-  .mdi
-    font-size: 5rem
-  &:hover
-    cursor: pointer
-    .mdi
-      color: $primary
-      font-size: 6rem !important
+
 .card-img-overlay-fb,.card-img-overlay-ig,.card-img-overlay-twt,.card-img-overlay-yt,.card-img-overlay-add
   color: white
   position: absolute
@@ -249,24 +243,41 @@ input, textarea
   right: 0
   top: 0
   bottom: 0
-  .mdi
-    font-size: 5rem
+  div .svg-inline--fa
+      font-size: 3rem
   &:hover
-    cursor: pointer
-    .mdi
-      color: $secondary
+    div .svg-inline--fa
       font-size: 7rem
     p
-      color: $secondary
       font-size: 0rem
 .card-img-overlay-fb
-  background-color: fade-out(#22a6ff,0.2)
+  background-color: fade-out($fb,0.2)
+  box-shadow: inset 0 0 0 0px $fb
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $fb
 .card-img-overlay-ig
-  background-color: fade-out(#ff229c,0.2)
+  background-color: fade-out($ig,0.2)
+  box-shadow: inset 0 0 0 0px $ig
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $ig
 .card-img-overlay-twt
-  background-color: fade-out(#22e5ff,0.2)
+  background-color: fade-out($tw,0.2)
+  box-shadow: inset 0 0 0 0px $tw
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $tw
 .card-img-overlay-yt
-  background-color: fade-out(#ff2222,0.2)
+  background-color: fade-out($yt,0.2)
+  box-shadow: inset 0 0 0 0px $yt
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $yt
 .card-img-overlay-add
   color: $secondary
   background-color: fade-out($primary,0.2)
@@ -354,10 +365,6 @@ input, textarea
 .social-footer
   li
     padding: 4px 0rem
-  .mdi
-    &::before
-      font-size: 20px !important
-      margin-right: 4px
 .btn-skeleton, .skeleton-txt
   color: $fog
   color: #ffffff00

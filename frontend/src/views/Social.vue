@@ -11,12 +11,12 @@
           />
           <p class="display-4 mt-5">Tetap terhubung dengan kami!</p>
           <p class="mb-5 pb-4">
-            Dapatkan Berabagai informasi tentang kami dan keasikan lainnya dengan mengikuti akun sosial media kami
+            Dapatkan Berbagai informasi tentang kami dan keasikan lainnya dengan mengikuti akun sosial media kami
           </p>
         </div>
       </div>
       <div class="container-fluid row p-0 m-0 mx-auto">
-        <div class="col-sm-12 col-md-6 p-0">
+        <div class="col-md-6 col-xl-3 p-0">
           <!-- facebook -->
           <div class="card p-0 border-none">
             <a href="https://www.instagram.com/insinyur_martabak">
@@ -28,14 +28,14 @@
               <div class="card-img-overlay-fb row m-0 my-auto">
                 <div class="mx-auto my-auto text-center">
                   <i class="fab fa-facebook-f"></i>
-                  <p class="lead3 mb-0">Facebook</p>
-                  <p>Insinyur Martabak</p>
+                  <p class="display-4 mb-0 mt-3">Facebook</p>
+                  <p class="lead3">Insinyur Martabak</p>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 p-0">
+        <div class="col-md-6 col-xl-3 p-0">
           <!-- Instagram -->
           <div class="card p-0 border-none">
             <a href="https://www.instagram.com/insinyur_martabak">
@@ -47,14 +47,14 @@
               <div class="card-img-overlay-ig row m-0 my-auto">
                 <div class="mx-auto my-auto text-center">
                   <i class="fab fa-instagram"></i>
-                  <p class="lead3 mb-0">Instagram</p>
-                  <p>@insinyur_martabak</p>
+                  <p class="display-4 mb-0 mt-3">Instagram</p>
+                  <p class="lead3">@insinyur_martabak</p>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 p-0">
+        <div class="col-md-6 col-xl-3 p-0">
           <!-- Twitter -->
           <div class="card p-0 border-none">
             <a href="https://twitter.com/insinyur_mrtbk">
@@ -66,14 +66,14 @@
               <div class="card-img-overlay-twt row m-0 my-auto">
                 <div class="mx-auto my-auto text-center">
                   <i class="fab fa-twitter"></i>
-                  <p class="lead3 mb-0">Twitter</p>
-                  <p>@insinyur_mrtbk</p>
+                  <p class="display-4 mb-0 mt-3">Twitter</p>
+                  <p class="lead3">@insinyur_mrtbk</p>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 p-0">
+        <div class="col-md-6 col-xl-3 p-0">
           <!-- Youtube -->
           <div class="card p-0 border-none">
             <a href="https://www.youtube.com/channel/UCFLqxU4DwJLiv07RueTK0VA">
@@ -85,8 +85,8 @@
               <div class="card-img-overlay-yt row m-0 my-auto">
                 <div class="mx-auto my-auto text-center">
                   <i class="fab fa-youtube"></i>
-                  <p class="lead3 mb-0">Youtube</p>
-                  <p>Insinyur Martabak</p>
+                  <p class="display-4 mb-0 mt-3">Youtube</p>
+                  <p class="lead3">Insinyur Martabak</p>
                 </div>
               </div>
             </a>
@@ -96,3 +96,8 @@
     </section>
   </div>
 </template>
+<script>
+export default {
+  name: "Social",
+};
+</script>

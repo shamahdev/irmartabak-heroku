@@ -31,11 +31,11 @@
       <div class="col-md-4 m-auto p-4">
           <h4 class="lead3 mb-3">Hubungi Kami</h4>
           <ul class="p-0 social-footer" style="list-style: none;">
-            <li class="mdi mdi-email">ir.martabak@gmail.com</li>
+            <li><i class="fas fa-envelope mr-2"></i>ir.martabak@gmail.com</li>
             <li><i class="fab fa-whatsapp mr-2"></i>0895-0410-6666</li>
-            <li><i class="fab fa-instagram mr-2"></i>@insinyur_martabak</li>
+            <li><i class="fab fa-instagram mr-2"></i>insinyur_martabak</li>
             <li><i class="fab fa-facebook-f mr-2"></i>Insinyur Martabak</li>
-            <li><i class="fab fa-twitter mr-2"></i>@insinyur_mrtbk</li>
+            <li><i class="fab fa-twitter mr-2"></i>insinyur_mrtbk</li>
           </ul>
       </div>
     </div>

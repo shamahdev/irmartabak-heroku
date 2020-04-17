@@ -75,13 +75,20 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "dev" */ "../views/AboutDev.vue")
   },
-  // {
-  //   path: "/faq",
-  //   name: "Location",
-  //   meta: { hideDesktop: true },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/FAQ.vue")
-  // },
+  {
+    path: "/awards",
+    name: "Awards",
+    meta: { hideDesktop: true },
+    component: () =>
+      import(/* webpackChunkName: "awards" */ "../views/Awards.vue")
+  },
+  {
+    path: "/news",
+    name: "News",
+    meta: { hideDesktop: true },
+    component: () =>
+      import(/* webpackChunkName: "news" */ "../views/News.vue")
+  }
 ];
 
 const router = new VueRouter({

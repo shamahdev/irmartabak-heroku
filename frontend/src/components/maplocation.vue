@@ -34,7 +34,7 @@
                 <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Cibaduyut</p>
                 <p>Jl. Terusan Cibaduyut no 24</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
-                  Buka 14.00 - 23.00
+                  Buka 16.00 - 23.00
                 </p>
               </div>
               <div
@@ -49,7 +49,7 @@
                 <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Cijerah</p>
                 <p>Jl. Melong Asih no 45, Cijerah</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
-                  Buka 14.00 - 23.00
+                  Buka 16.00 - 23.00
                 </p>
               </div>
               <div

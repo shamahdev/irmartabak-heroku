@@ -15,10 +15,11 @@
   import 'bootstrap/dist/css/bootstrap.min.css';
   import 'aos/dist/aos.css';
   import './assets/css/main.min.css';
+  import navbar from "./components/navbar.vue"
 export default {
   name: "Home",
   components: {
-    navbar: () => import("./components/navbar.vue"),
+    navbar,
     sidebar: () => import("./components/sidebar.vue"),
     footerbar: () => import("./components/footerbar.vue"),
   }

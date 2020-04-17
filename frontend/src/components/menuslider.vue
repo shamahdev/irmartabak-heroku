@@ -50,7 +50,7 @@
               </div>
             </div>
           </slide>
-          <slide :key="martabak.id" v-for="martabak in martabakmenu" v-show="martabak.id != currentMartabak">
+          <slide :key="martabak" v-for="martabak in martabakmenu" v-if="martabak.id != currentMartabak">
             <div :key="rating.object_id" v-for="rating in ratingdata">
               <div v-if="rating.object_id == martabak.id">
                 <menucard

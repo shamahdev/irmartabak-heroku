@@ -8,31 +8,31 @@
     :navigationEnabled="false"
     :loop="true"
   >
-  <slide v-if="loading">
+  <slide v-show="loading">
       <div class="container-fluid row p-0 m-0">
-        <div class="col-md-6 p-4 p-md-2 p-lg-4 my-auto">
-          <div class="jumbotron-fluid bg-white m-3 m-lg-5 pr-0 pr-md-3 m-md-0 ml-2 ml-lg-5 pl-0 pl-md-5">
+        <div class="col-md-5 p-4 p-md-2 p-lg-3 my-auto">
+          <div class="jumbotron-fluid bg-white m-3 m-md-0 m-lg-5 pr-0 pr-md-5 pl-0 pl-md-5">
              <p class="skeleton-txt lead">Martabak Super</p>
             <h1 class="skeleton-txt display-3 mb-5 price">Rp. 30000</h1>
-            <div class="btn-group mt-3 mb-5 d-block d-md-inline-flex">
+            <div class="mt-3 mb-5">
               <button type="button" class="btn btn-skeleton btn-lg px-5 py-3" disabled>
                 Pesan Sekarang
-              </button>
-              <button type="button" class="btn btn-skeleton btn-lg px-5 py-3" disabled>
+              </button><!--
+              --><button type="button" class="btn btn-skeleton btn-lg px-5 py-3" disabled>
                 Detail
               </button>
             </div>
           </div>
         </div>
-        <div class="col-md-6 p-0 skeleton-img">
+        <div class="col-md-7 p-0 skeleton-img">
         </div>
       </div>
     </slide>
     <slide :key="martabak.id" v-for="martabak in martabakhome">
       <div class="container-fluid row p-0 m-0" :key="rating.object_id" v-for="rating in ratingdata">
-        <div class="col-md-6 p-4 p-md-2 p-lg-4 my-auto" v-if="rating.object_id == martabak.id">
+        <div class="col-md-5 p-4 p-md-2 p-lg-3 my-auto" v-if="rating.object_id == martabak.id">
           <div
-            class="jumbotron-fluid bg-white m-3 m-lg-5 pr-0 pr-md-3 m-md-0 ml-2 ml-lg-5 pl-0 pl-md-5"
+            class="container-fluid bg-white m-3 m-md-0 m-lg-5 pr-0 pr-md-5 pl-0 pl-md-5"
           >
             <p class="lead">{{martabak.name}}</p>
             <div>
@@ -44,21 +44,21 @@
               ></star-rating>
             </div>
             <h1 class="display-3 mb-5 price">{{ "Rp. " + martabak.price}}</h1>
-            <div class="btn-group mt-3 mb-5 d-block d-md-inline-flex">
+            <div class="mt-3 mb-5">
               <button
-                class=" btn btn-primary btn-lg px-5 py-3"
+                class="btn btn-primary btn-lg px-5 py-3"
                 data-toggle="modal"
                 :data-target="target"
               >
                 Pesan Sekarang
-              </button>
-              <router-link :to="'/menu/' + martabak.slug" tag="button" class="btn btn-dark btn-lg px-5 py-3">
+              </button><!--
+              --><router-link :to="'/menu/' + martabak.slug" tag="button" class="btn btn-dark btn-lg px-5 py-3">
                 Detail
               </router-link>
             </div>
           </div>
         </div>
-        <div class="col-md-6 p-0" v-if="rating.object_id == martabak.id">
+        <div class="col-md-7 p-0" v-if="rating.object_id == martabak.id">
           <img class="martabak2" :src="martabak.image" :alt="martabak.name" />
         </div>
       </div>

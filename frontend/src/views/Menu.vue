@@ -2,7 +2,7 @@
   <div class="Menu">
     <section id="menuus" class="py-3 py-md-5">
       <div class="row m-0 px-2 px-md-5 mx-2 mx-md-5">
-        <div class="col-md-4 p-0 float-left">
+        <div class="col p-0 mr-0 mr-md-3">
           <div class="form-group">
             <label class="lead3" for="search">Cari martabak</label>
             <input
@@ -15,8 +15,7 @@
             />
           </div>
         </div>
-        <div class="col-md-5 p-0"></div>
-        <div class="col-md-3 p-0">
+        <div class="col-md-4 p-0 ml-auto">
           <label class="lead3" for="orderby">Urutkan berdasarkan</label>
           <div class="row m-0 p-0">
             <div class="col-6 p-0">
@@ -36,7 +35,17 @@
         </div>
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
-        <div class="col-md-4 col-lg-3 p-0 my-2 my-md-4 " v-bind:key="martabak.id" v-for="martabak in search.slice(0,list)">
+        <!-- Skeleton Load -->
+          <div class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4" :key="i" v-for="i in 3" v-show="loading">
+              <div class="card card--menu card--disable mx-2">
+              <div class="image-card">
+              <img class="card-img-top img-fluid fit-cover"/>
+              </div>
+              <div class="card-img-overlay skeleton-card-overlay">
+              </div>
+            </div>
+          </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4" :key="martabak.id" v-for="martabak in search.slice(0,list)">
           <div :key="rating.id" v-for="rating in ratingdata">
             <div v-if="rating.object_id == martabak.id">
               <menucard
@@ -48,19 +57,8 @@
               />
             </div>
           </div>
-          <div v-if="loading">
-            <div :key="i" v-for="i in 5">
-              <div class="card card--menu card--disable mx-2">
-              <div class="image-card">
-              <img class="card-img-top img-fluid fit-cover"/>
-              </div>
-              <div class="card-img-overlay skeleton-card-overlay">
-              </div>
-            </div>
-            </div>
-          </div>
         </div>
-        <div class="add-list col-6 col-md-4 p-0 my-4 my-auto h-100" v-if="list < search.length">
+        <div class="add-list col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4 my-auto h-100" v-if="list < search.length">
           <div class="card p-0 py-3 border-none" @click="list += 3">
             <div class="mx-auto my-auto text-center">
               <i class="mdi mdi-plus-box-multiple" style="font-size: 5rem"></i>
