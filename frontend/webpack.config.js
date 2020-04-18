@@ -4,7 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const BundleTracker = require('webpack-bundle-tracker');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     mode: 'production',
@@ -37,7 +37,7 @@ module.exports = {
             threshold: 10240,
             minRatio: 0.8
           }),
-        new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ],
 
     module: {
