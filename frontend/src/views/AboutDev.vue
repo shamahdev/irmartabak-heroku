@@ -62,7 +62,7 @@
               <a class="btn btn-primary py-2 px-3" href="https://github.com/GaniyaMustafa/"><i class="fab fa-github fa-lg"></i></a>
               <a class="btn btn-primary py-2 px-3" href="mailto:ganiyamustaga32@gmail.com"><i class="fas fa-envelope fa-lg"></i></a>
             </div>
-            <p>Saya Ganiya Mustafa, lahir pada tanggal 10 mei 2003  Saya bersekolah di SMKN 1 Cimahi dengan mengambil jurusan Software Engineering. Saya seorang Back-End Engineering. maaf jika saya kurang sopan, dibawah saya ada penunjuk jalan yang hebat bisa disewa jika anda mau</p>
+            <p>Saya Ganiya Mustafa, lahir pada tanggal 10 mei 2003  Saya bersekolah di SMKN 1 Cimahi dengan mengambil jurusan Software Engineering. Saya seorang Back-End Programming.</p>
           </div>
         </div>
 
