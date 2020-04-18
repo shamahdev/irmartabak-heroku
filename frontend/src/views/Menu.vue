@@ -58,11 +58,11 @@
             </div>
           </div>
         </div>
-        <div class="add-list col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4 my-auto h-100" v-if="list < search.length">
-          <div class="card p-0 py-3 border-none" @click="list += 3">
+        <div class="add-list col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4 my-auto thumb" v-if="list < search.length">
+          <div class="h-100 card p-0 py-3 border-none" @click="list += 4">
             <div class="mx-auto my-auto text-center">
-              <i class="mdi mdi-plus-box-multiple" style="font-size: 5rem"></i>
-              <p class="lead3 mb-0 px-5">
+              <i class="fas fa-plus" style="font-size: 6rem"></i>
+              <p class="lead3 mb-0 px-5 mt-3">
                 Tekan untuk menampilkan lebih banyak menu
               </p>
             </div>
@@ -98,12 +98,12 @@ export default {
       orderasc: 'asc',
       ratingdata: [],
       martabakmenu: [],
-      list: 5,
+      list: 6,
     };
   },
   computed: {
     search(){
-      this.list = 5;
+      this.list = 6;
       if(this.orderasc == 'asc'){
         if(this.orderdata == 'name'){
           return this.martabakmenu.filter(m=>{
