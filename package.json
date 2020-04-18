@@ -20,6 +20,7 @@
     "hooper": "^0.3.4",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
     "vue-page-transition": "^0.2.2",

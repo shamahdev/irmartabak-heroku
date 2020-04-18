@@ -9,7 +9,7 @@ import { faArrowDown, faArrowUp, faArrowLeft, faArrowRight, faEnvelope, faTimes,
 
 import 'bootstrap/js/dist/collapse'
 import 'bootstrap/js/dist/modal'
-import AOS from "aos";
+import AOS from "aos/dist/aos.esm";
 
 AOS.init();
 library.add(faFacebookF, faInstagram, faYoutube, faTwitter, faWhatsapp, faLinkedin, faBehance, faGithub, faArrowDown, faArrowUp, faArrowRight, faArrowLeft, faEnvelope, faTimes, faBars);
