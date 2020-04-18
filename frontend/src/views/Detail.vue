@@ -6,31 +6,33 @@
         <div class="skeleton-thumbnail"/>
       </div>
       <!-- Skeleton Load -->
-      <div class="col-10 col-md-8 mx-auto my-auto p-0">
-        <p class="display-5 mt-5 mb-0 skeleton-txt">Martabak Super</p>
-        <div class="h2 my-3">
-          <p class="inline-block mr-3 skeleton-txt">Rp. 30000</p>
-        </div>
-        <div> 
-        <button
-          class="btn btn-skeleton btn-lg px-5 py-3"
-          data-toggle="modal"
-          data-target="#buymethod"
-        >
-          Pesan Sekarang
-        </button><!--
-        --><button
-          class="btn btn-skeleton btn-lg px-5 py-3"
-        >
-          Berikan Rating
-        </button>
-        </div>
-        <div class="my-5 px-0 py-4 px-md-4">
-          <label class="lead3 skeleton-txt">Rating</label>
-          <label class="lead3 skeleton-txt">Ukuran Tersedia</label
+      <div class="container-fluid row p-0 m-0 my-5">
+        <div class="col-10 col-md-8 mx-auto my-auto p-0">
+          <p class="display-5 mt-5 mb-0 skeleton-txt">Martabak Super</p>
+          <div class="h2 my-3">
+            <p class="inline-block mr-3 skeleton-txt">Rp. 30000</p>
+          </div>
+          <div> 
+          <button
+            class="btn btn-skeleton btn-lg px-5 py-3"
+            data-toggle="modal"
+            data-target="#buymethod"
           >
-          <p class="skeleton-txt">Small</p>
-          <label class="lead3 skeleton-txt">Deskripsi</label>
+            Pesan Sekarang
+          </button><!--
+          --><button
+            class="btn btn-skeleton btn-lg px-5 py-3"
+          >
+            Berikan Rating
+          </button>
+          </div>
+          <div class="my-5 px-0 py-4 px-md-4">
+            <label class="lead3 skeleton-txt">Rating</label>
+            <label class="lead3 skeleton-txt">Ukuran Tersedia</label
+            >
+            <p class="skeleton-txt">Small</p>
+            <label class="lead3 skeleton-txt">Deskripsi</label>
+          </div>
         </div>
       </div>
       <!-- Skeleton End -->
@@ -40,18 +42,20 @@
     <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
-      </div>
+   </div>
       <div class="container-fluid row p-0 m-0 my-5">
-        <!-- This is function | Not gonna be rendered-->
-        <div :key="rating.average" v-for="rating in ratingmartabak">
+        <div class="col-10 col-md-8 mx-auto my-auto p-0" :key="rating.average" v-for="rating in ratingmartabak">
+        <div v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
           <div :key="r.id" v-for="r in ratinguser">
             <div v-if="r.rating == rating.id">
-              <div :rip="ratingip = r.ip"/>
-              <div :ur="userrating = r.score"/>
+                <div :rip="ratingip = r.ip"/>
+                <div :ur="userrating = r.score"/>
+              <div v-if="giverating.ip == r.ip">
+                <div :ur="userrating = r.score"/>
+                <div :rip="ratingip = r.ip"/>
+              </div>
             </div>
           </div>
-        <!-- end -->
-        <div class="col-10 col-md-8 mx-auto my-auto p-0" v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
           <div :rid="giverating.rating = rating.id">
             <p class="display-5 mt-5 mb-0">{{ martabak.name }}</p>
             <star-rating
@@ -105,30 +109,40 @@
             <!-- Modal2 -->
             <modal id="buymethod" title="Pilih Layanan Pemesanan">
               <div class="row m-0">
-                <div class="col-md-6 p-5 my-auto">
-                  <a
-                    href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="/static/img/gofood.png"
-                      alt=""
-                    />
-                  </a>
-                </div>
-                <div class="col-md-6 p-5 my-auto">
-                  <a
-                    href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="/static/img/grabfood.png"
-                      alt=""
-                    />
-                  </a>
+                <div class="col-12 mx-auto">
+                  <p class="lead2 mb-4">
+                      Pilih cabang yang paling dekat dengan lokasi kamu saat ini! <a class="text-warning" href="https://www.google.com/maps/search/Insinyur+Martabak">Tidak tau dimana? klik disini!</a>
+                  </p>
+              </div>
+              <div class="col-12 mx-auto">
+                <p class="lead3">Kiaracondong</p>
+                  <div> 
+                    <a href="" class="btn btn-primary px-5 py-3" >GoFood</a><!--
+                  --><a href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr" class="btn btn-dark px-5 py-3">GrabFood</a>
                 </div>
               </div>
-            </modal>
+              <div class="col-12 mx-auto">
+                <p class="lead3 mt-3">Cibaduyut</p>
+                  <div> 
+                    <a href="" class="btn btn-primary px-5 py-3" >GoFood</a><!--
+                  --><a href="" class="btn btn-dark px-5 py-3">GrabFood</a>
+                </div>
+              </div>
+              <div class="col-12 mx-auto">
+                <p class="lead3 mt-3">Cijerah</p>
+                  <div> 
+                    <a href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f" class="btn btn-primary px-5 py-3" >GoFood</a><!--
+                  --><a href="" class="btn btn-dark px-5 py-3">GrabFood</a>
+                </div>
+              </div>
+              <div class="col-12 mx-auto mb-4">
+                <p class="lead3 mt-3">Tubagus Ismail Raya (GrabFood Only)</p>
+                  <div> 
+                  <a href="https://food.grab.com/id/id/restaurant/%F0%9F%8C%A1%EF%B8%8F%F0%9F%9B%A1%EF%B8%8Finsinyur-martabak-tubagus-ismail-grabkitchen-delivery/6-CYVFLE3CJETYNE" class="btn btn-dark px-5 py-3">GrabFood</a>
+                </div>
+              </div>
+              </div>
+          </modal>
           </div>
           <div class="my-5 px-0 py-4 px-md-4" v-if="rating.object_id == martabak.id">
             <label class="lead3">Nama</label>

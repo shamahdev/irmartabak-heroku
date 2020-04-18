@@ -3,7 +3,7 @@
     <div data-aos="zoom-in" class="card card--menu mx-2">
       <div class="image-card">
       <img
-        class="card-img-top img-fluid fit-cover"
+        class="thumb card-img-top img-fluid fit-cover"
         v-bind:src="img"
         :alt="slug"
       />

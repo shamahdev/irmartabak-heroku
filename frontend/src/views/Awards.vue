@@ -15,7 +15,7 @@
           </p>
         </div>
       </div>
-      <div data-aos="fade-up" class="container row p-0 m-0 mx-auto">
+      <div data-aos="fade-up" class="row p-0 m-0 mx-auto">
         <div class="col-6 col-md-3 col-lg-2 p-0 mx-auto text-center mb-5">
           <a href="https://www.grab.com/id/en/merchant-blog/grabfood-bandung-winners/"><img src="/static/img/awards.png" class="img-fluid" alt=""></a>
           <p class="lead mb-0 mt-3 text-muted">Performa Terbaik</p>

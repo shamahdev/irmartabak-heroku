@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar text-center p-0 bg-primary">
+  <div data-aos="fade-down" class="sidebar text-center p-0 bg-primary">
     <ul class="list-group">
       <a class="ig"
         href="https://www.instagram.com/insinyur_martabak"

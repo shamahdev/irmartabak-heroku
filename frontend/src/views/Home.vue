@@ -99,13 +99,13 @@
     <section id="comment">
       <div class="container-fluid row p-0 m-0 mx-auto">
         <div class="text-center col-md-12 p-0">
-          <h1 class="display-4 mt-5 pt-4">Tanggapan Pembeli</h1>
+          <h1 class="display-4 mt-5 pt-4">Tanggapan Pengunjung</h1>
           <p class="mb-5 pb-4">
-            Mention kami di social media dengan hashtag <b>#irmartabak_moment</b>
+            Ingin komentarnya di post juga? Mention kami di social media dengan hashtag <b>#irmartabak_moment</b>
           </p>
         </div>
       </div>
-      <div class="container-fluid row p-0 m-0 mx-auto">
+      <div data-aos="fade-up" class="container-fluid row p-0 m-0 mx-auto">
         <div class="col-md-12 col-sm-12 p-0 mx-auto">
           <carousel
             :autoplay="true"
@@ -125,9 +125,8 @@
                 img="/static/img/stand.jpg"
                 avatar="/static/img/sarie.png"
                 name="Sarie Maulida"
-                comment="Sepertinya juara di martabak manisnya,
-Toping nya banyak martabaknya tebal untuk martabak manis aq kasih nilai 9/10 manisnya g enek sih pas..
-Untuk martabak asinnya kebetulan beli yg special cuma 'B' aja sih g begitu wah aq kasih nilai 6/10"
+                :rating=4
+                comment="Sepertinya juara di martabak manisnya, Toping nya banyak martabaknya tebal untuk martabak manis aq kasih nilai 9/10 manisnya g enek sih pas.. Untuk martabak asinnya kebetulan beli yg special cuma 'B' aja sih g begitu wah aq kasih nilai 6/10"
               />
             </slide>
             <slide>
@@ -135,6 +134,7 @@ Untuk martabak asinnya kebetulan beli yg special cuma 'B' aja sih g begitu wah a
                 img="/static/img/ekap.png"
                 avatar="/static/img/eka.png"
                 name="Lutfi Eka"
+                :rating=4.5
                 comment="Buat martabak manisnya jg lumayan mahal. yg ukuran kecil itu 17rb (untuk sndiri atau brdua) tp sebanding sm rasanya. enak dan bukan pake coklat yg murahan."
               />
             </slide>
@@ -143,6 +143,7 @@ Untuk martabak asinnya kebetulan beli yg special cuma 'B' aja sih g begitu wah a
                 img="/static/img/indrip.jpg"
                 avatar="/static/img/indrie.png"
                 name="Yoriza Indrie"
+                :rating=5
                 comment="Pengalaman beli via grabfood, harga terjangkau, martabak asin lumayan enak dan martabak manis enak jg. Rasa relatif enak."
               />
             </slide>
@@ -151,11 +152,8 @@ Untuk martabak asinnya kebetulan beli yg special cuma 'B' aja sih g begitu wah a
                 img="/static/img/magzp.jpg"
                 avatar="/static/img/magz.png"
                 name="Riefs Magz"
-                comment="Mantap harga gak terlalu mahal kaya martabak sebelah rasanya enak
-Top pokonya
-Pegawainya unik ada pake helm kaya pekerja proyek
-Pokonya yg belum nyoba coba deh 
-Rekomendasi banget."
+                :rating=4
+                comment="Mantap harga gak terlalu mahal kaya martabak sebelah rasanya enak Top pokonya Pegawainya unik ada pake helm kaya pekerja proyek Pokonya yg belum nyoba coba deh Rekomendasi banget."
               />
             </slide>
           </carousel>
@@ -175,18 +173,10 @@ Rekomendasi banget."
       <div class="row mt-5 p-0 m-0 mx-auto my-0 my-md-5 text-center">
         <div class="col text-center">
         <div class="col-6 col-md-5 col-lg-3 d-inline-block pb-2 pb-md-0 px-0 px-md-4">
-          <a
-            href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
-          >
-            <img class="img-fluid" src="/static/img/gofood.png" alt="" />
-          </a>
+            <img class="img-fluid" src="/static/img/gofood.png" alt="Insinyur Martabak di GoFood">
         </div>
         <div class="col-6 col-md-5 col-lg-3 d-inline-block px-0 px-md-4">
-          <a
-            href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
-          >
-            <img class="img-fluid" src="/static/img/grabfood.png" alt="" />
-          </a>
+            <img class="img-fluid" src="/static/img/grabfood.png" alt="Insinyur Martabak di GrabFood">
         </div>
         </div>
       </div>

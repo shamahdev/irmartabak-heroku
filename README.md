@@ -29,12 +29,18 @@ __Running Server__
 
 ## Changelogs
 
+18/04/2020 by FrontEnd
+- Fixed Skeleton Loader layout on Detail Page
+- Static Images are now compressed (from 3.72 MB to 486 KB)
+- Fixed About Developer images
+- Fixed Comment slider's image not having same ratio
+- Added User's Rating to Comment slider
+
 17/04/2020 by FrontEnd
-- Added Comment content from Google Review
+- Added Comment content from Google Review (Static)
 - Added News & Promo Page
 - Added Awards Page
 - Added About Developers Content
-- !! Images need to be compressed !!
 
 16/04/2020 by FrontEnd
 - Skeleton load now showing properly on Menu and Detail page
