@@ -188,7 +188,25 @@ export default {
     menuslider: () => import("../components/menuslider.vue")
   },
   name: "Detail",
-  data: martabakState,
+  data() {
+    return{
+      giverating: {
+        "ip": "",
+        "score": null,
+        "user": null,
+        "rating": null
+      },
+      martabakdata: [],
+      ratingmartabak: [],
+      ratinguser: [],
+      ratingdata: [],
+      errored: false,
+      loading: true,
+      currentM: null,
+      ratingip: '',
+      checked: null
+    }
+  },
   created () {
     this.getData()
   },
