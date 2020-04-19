@@ -39,7 +39,7 @@
   </section>
 
     <vue-page-transition name="fade-in-up">
-    <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
+    <section v-if="!loading" id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
    </div>
@@ -165,7 +165,8 @@
 </template>
 
 <script>
-const martabakState = () =>({
+function martabakState(){
+  return{
   giverating: {
     "ip": "",
     "score": null,
@@ -181,8 +182,8 @@ const martabakState = () =>({
   currentM: null,
   ratingip: '',
   checked: null
-});
-
+  }
+};
 export default {
   components: {
     modal: () => import("../components/modal.vue"),
