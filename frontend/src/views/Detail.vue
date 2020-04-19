@@ -190,7 +190,7 @@ export default {
   name: "Detail",
   data: martabakState,
   created () {
-    this.getData()
+    this.getData();
   },
   computed: {
     already_rate(){
@@ -199,7 +199,7 @@ export default {
       }else{
         this.checked = false;
       }
-      return this.checked
+      return this.checked;
     },
   },
   methods: {
