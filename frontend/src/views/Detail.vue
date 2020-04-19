@@ -165,30 +165,30 @@
 </template>
 
 <script>
-const martabakState = () =>({
-  giverating: {
-    "ip": "",
-    "score": null,
-    "user": null,
-    "rating": null
-  },
-  martabakdata: [],
-  ratingmartabak: [],
-  ratinguser: [],
-  ratingdata: [],
-  errored: false,
-  loading: true,
-  currentM: null,
-  ratingip: '',
-  checked: null
-});
+// const martabakState = () =>({
+//   giverating: {
+//     "ip": "",
+//     "score": null,
+//     "user": null,
+//     "rating": null
+//   },
+//   martabakdata: [],
+//   ratingmartabak: [],
+//   ratinguser: [],
+//   ratingdata: [],
+//   errored: false,
+//   loading: true,
+//   currentM: null,
+//   ratingip: '',
+//   checked: null
+// });
 export default {
   components: {
     modal: () => import("../components/modal.vue"),
     menuslider: () => import("../components/menuslider.vue")
   },
   name: "Detail",
-  data() {
+  data(){
     return{
       giverating: {
         "ip": "",
@@ -205,7 +205,7 @@ export default {
       currentM: null,
       ratingip: '',
       checked: null
-    }
+      }
   },
   created () {
     this.getData()
@@ -221,6 +221,25 @@ export default {
     },
   },
   methods: {
+    resetData(){
+      return{
+      giverating: {
+        "ip": "",
+        "score": null,
+        "user": null,
+        "rating": null
+      },
+      martabakdata: [],
+      ratingmartabak: [],
+      ratinguser: [],
+      ratingdata: [],
+      errored: false,
+      loading: true,
+      currentM: null,
+      ratingip: '',
+      checked: null
+      }
+    },
     getData(){
     this.$axios
       .get('https://api.ipify.org/?format=json')
@@ -262,7 +281,7 @@ export default {
   },
   watch: {
     $route (to, from){
-      Object.assign(this.$data, martabakState());
+      Object.assign(this.$data, this.resetData());
       this.getData();
     }
 }
