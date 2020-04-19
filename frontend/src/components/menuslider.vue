@@ -5,7 +5,7 @@
         <h1 class="text-center display-4 my-5">Menu Paling Populer</h1>
       </div>
     </div>
-    <div class="container-fluid row p-0 m-0 mx-auto">
+    <div data-aos="fade-up" class="container-fluid row p-0 m-0 mx-auto">
       <div class="col-9 p-0 mx-auto mb-2 pb-5">
         <carousel
           class="mdi"
@@ -18,30 +18,12 @@
               [992, 3]
           ]"
           :navigationEnabled="true"
-          :navigationNextLabel="''"
-          :navigationPrevLabel="''"
+          :navigationNextLabel="'<i class=\'fas fa-arrow-right fa-lg\'></i>'"
+          :navigationPrevLabel="'<i class=\'fas fa-arrow-left fa-lg\'></i>'"
           :paginationEnabled="false"
           :loop="true"
         >
-          <slide v-if="loading">
-             <div class="card card--menu card--disable mx-2">
-              <div class="image-card">
-              <img class="card-img-top img-fluid fit-cover"/>
-              </div>
-              <div class="card-img-overlay skeleton-card-overlay">
-              </div>
-            </div>
-          </slide>
-          <slide v-if="loading">
-             <div class="card card--menu card--disable mx-2">
-              <div class="image-card">
-              <img class="card-img-top img-fluid fit-cover"/>
-              </div>
-              <div class="card-img-overlay skeleton-card-overlay">
-              </div>
-            </div>
-          </slide>
-          <slide v-if="loading">
+          <slide :key="x" v-for="x in 3" v-if="loading">
              <div class="card card--menu card--disable mx-2">
               <div class="image-card">
               <img class="card-img-top img-fluid fit-cover"/>
@@ -110,7 +92,7 @@ export default {
         console.log(error)
         this.errored = true
       })
-      .finally(() => this.loading = false)
+      setTimeout(() => this.loading = false, 500)
   },
   props: {
     currentMartabak: Number

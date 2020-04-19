@@ -1,6 +1,6 @@
 <template>
   <router-link :to="'/menu/' + slug" exact>
-    <div data-aos="zoom-in" class="card card--menu mx-2">
+    <div class="card card--menu mx-2">
       <div class="image-card">
       <img
         class="thumb card-img-top img-fluid fit-cover"
@@ -9,8 +9,8 @@
       />
       </div>
       <div class="card-img-overlay">
-        <p>{{ name }}</p>
-        <div class="my-2 text-dark">
+        <p class="mb-0">{{ name }}</p>
+        <div class="text-dark">
           <star-rating 
             :rating="rating" 
             :read-only="true"

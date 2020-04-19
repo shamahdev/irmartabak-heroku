@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
 
-  <section v-show="loading">
+  <section v-if="loading">
       <div class="container-fluid row p-0 m-0 mb-5">
         <div class="skeleton-thumbnail"/>
       </div>
@@ -39,17 +39,15 @@
   </section>
 
     <vue-page-transition name="fade-in-up">
-    <section id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
+    <section v-if="!loading" id="detailmartabak" :key="martabak.id" v-for="martabak in martabakdata">
       <div class="container-fluid row p-0 m-0 mb-5">
         <img class="thumbnail fit-cover" :src="martabak.image" :alt="martabak.name" />
    </div>
       <div class="container-fluid row p-0 m-0 my-5">
         <div class="col-10 col-md-8 mx-auto my-auto p-0" :key="rating.average" v-for="rating in ratingmartabak">
         <div v-if="rating.object_id == martabak.id" :cm="currentM = martabak.id" >
-          <div :key="r.id" v-for="r in ratinguser">
+          <div :key="r" v-for="r in ratinguser">
             <div v-if="r.rating == rating.id">
-                <div :rip="ratingip = r.ip"/>
-                <div :ur="userrating = r.score"/>
               <div v-if="giverating.ip == r.ip">
                 <div :ur="userrating = r.score"/>
                 <div :rip="ratingip = r.ip"/>
@@ -162,36 +160,35 @@
       </div>
     </section>
     </vue-page-transition>
-    <menuslider class="py-3 py-md-5" :currentMartabak="currentM" />
+    <menuslider class="py-3 py-md-5" :currentMartabak="currentM"/>
   </div>
 </template>
 
 <script>
-export default {
-  name: "Detail",
-  data() {
-    return {
-      giverating: {
-        "ip": "",
-        "score": null,
-        "user": null,
-        "rating": null
-      },
-      martabakdata: [],
-      ratingmartabak: [],
-      ratinguser: [],
-      errored: false,
-      loading: true,
-      currentM: null,
-      slug: this.$route.params.name,
-      ratingdata: [],
-      checked: null
-    };
+const martabakState = () =>({
+  giverating: {
+    "ip": "",
+    "score": null,
+    "user": null,
+    "rating": null
   },
+  martabakdata: [],
+  ratingmartabak: [],
+  ratinguser: [],
+  ratingdata: [],
+  errored: false,
+  loading: true,
+  currentM: null,
+  ratingip: '',
+  checked: null
+});
+export default {
   components: {
     modal: () => import("../components/modal.vue"),
     menuslider: () => import("../components/menuslider.vue")
   },
+  name: "Detail",
+  data: martabakState,
   created () {
     this.getData()
   },
@@ -215,14 +212,13 @@ export default {
     this.$axios
     .get('/api/martabak/')
     .then(response => {
-      this.martabakdata = response.data.filter(m => m.slug.includes(this.slug))
+      this.martabakdata = response.data.filter(m => m.slug.includes(this.$route.params.name))
     });
     this.$axios
       .get('/api/rating/')
       .then(response => {
         this.ratingmartabak = response.data
       });
-    this.slug = this.$route.params.name;
     this.$axios
       .get('/api/userrating/')
       .then(response => {
@@ -233,14 +229,7 @@ export default {
       this.errored = true
       })
       .finally(() =>
-      {
-        if(this.giverating.ip == this.ratingip){
-          this.checked = true;
-        }else{
-          this.checked = false;
-        }
-        this.loading = false
-      }
+        setTimeout(() => this.loading = false, 500)
       )
     },
     rate() {
@@ -253,10 +242,10 @@ export default {
     location.reload();
     }
   },
-  watch:{
+  watch: {
     $route (to, from){
-        this.getData();
-        this.ratingip = '';
+      Object.assign(this.$data, martabakState());
+      this.getData();
     }
 }
 };

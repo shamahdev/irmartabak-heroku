@@ -8,11 +8,12 @@
     :navigationEnabled="false"
     :loop="true"
   >
-  <slide v-show="loading">
+  <slide v-if="loading">
       <div class="container-fluid row p-0 m-0">
         <div class="col-md-5 p-4 p-md-2 p-lg-3 my-auto">
           <div class="jumbotron-fluid bg-white m-3 m-md-0 m-lg-5 pr-0 pr-md-5 pl-0 pl-md-5">
-             <p class="skeleton-txt lead">Martabak Super</p>
+             <p class="skeleton-txt lead mb-0
+             ">Martabak Super</p>
             <h1 class="skeleton-txt display-3 mb-5 price">Rp. 30000</h1>
             <div class="mt-3 mb-5">
               <button type="button" class="btn btn-skeleton btn-lg px-5 py-3" disabled>
@@ -34,7 +35,7 @@
           <div
             class="container-fluid bg-white m-3 m-md-0 m-lg-5 pr-0 pr-md-5 pl-0 pl-md-5"
           >
-            <p class="lead">{{martabak.name}}</p>
+            <p class="lead mb-0">{{martabak.name}}</p>
             <div>
               <star-rating
                 :rating="parseFloat(rating.average)"
@@ -92,7 +93,7 @@ export default {
         console.log(error)
         this.errored = true
       })
-      .finally(() => this.loading = false)
+      .finally(() => setTimeout(() => this.loading = false, 500))
   },
   props: {
     target: String

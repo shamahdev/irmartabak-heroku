@@ -19,16 +19,16 @@
           <label class="lead3" for="orderby">Urutkan berdasarkan</label>
           <div class="row m-0 p-0">
             <div class="col-6 p-0">
-              <select class="form-control form-control-lg" id="orderby" v-model="orderdata" >
+              <select class="form-control form-control-lg shadow-sm" @change="orderby()" id="orderby" v-model="orderdata" >
                 <option value="name">Nama</option>
                 <option value="price">Harga</option>
-                <option value="type">Tipe</option>
+                <option value="type">Rasa</option>
               </select>
             </div>
-            <div class="col-6 p-0">
-              <select class="form-control form-control-lg" id="orderby" v-model="orderasc">
-                <option value="asc">Dari Teratas</option>
-                <option value="desc">Dari Terbawah</option>
+            <div class="col-6 pr-0">
+              <select class="form-control form-control-lg shadow-sm" id="orderby" v-model="orderasc">
+                <option value="asc">{{ option_name[0] }}</option>
+                <option value="desc">{{ option_name[1] }}</option>
               </select>
             </div>
           </div>
@@ -36,7 +36,7 @@
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
         <!-- Skeleton Load -->
-          <div class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4" :key="i" v-for="i in 3" v-show="loading">
+          <div class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4" :key="i" v-for="i in 6" v-show="loading">
               <div class="card card--menu card--disable mx-2">
               <div class="image-card">
               <img class="card-img-top img-fluid fit-cover"/>
@@ -62,7 +62,7 @@
           <div class="h-100 card p-0 py-3 border-none" @click="list += 4">
             <div class="mx-auto my-auto text-center">
               <i class="fas fa-plus" style="font-size: 6rem"></i>
-              <p class="lead3 mb-0 px-5 mt-3">
+              <p class="lead mb-0 px-5 mt-3">
                 Tekan untuk menampilkan lebih banyak menu
               </p>
             </div>
@@ -96,14 +96,26 @@ export default {
       searchdata: '',
       orderdata: 'name',
       orderasc: 'asc',
+      option_name: ['A-Z','Z-A'],
       ratingdata: [],
       martabakmenu: [],
-      list: 6,
+      list: 7,
     };
+  },
+  methods: {
+    orderby(){
+      if(this.orderdata == 'name'){
+        this.option_name = ['A-Z, Z-A'];
+      }else if(this.orderdata == 'price'){
+        this.option_name=['Termurah','Termahal'];
+      }else if(this.orderdata == 'type'){
+        this.option_name = ['Asin', 'Manis'];
+      }
+    },
   },
   computed: {
     search(){
-      this.list = 6;
+      this.list = 7;
       if(this.orderasc == 'asc'){
         if(this.orderdata == 'name'){
           return this.martabakmenu.filter(m=>{
@@ -150,7 +162,7 @@ export default {
         console.log(error)
         this.errored = true
       })
-      .finally(() => this.loading = false)
+      setTimeout(() => this.loading = false, 500)
   },
   components: {
     menucard: () => import("../components/menucard.vue")

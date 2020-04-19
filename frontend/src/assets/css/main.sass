@@ -335,25 +335,15 @@ input, textarea
       color: white !important
       box-shadow: inset 0 0 0 50px $secondary
 .VueCarousel-navigation-button
-  transition: 0.2s ease
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.1) !important
-  padding: 18px !important
+  transition: 0.3s ease
+  box-shadow: inset 0 0 0 0px $primary
+  padding: 1.5rem !important
   color: white !important
   background-color: $secondary !important
   margin: 0
   &:hover
     color: $secondary !important
-    background-color: $primary !important
-.VueCarousel-navigation-next
-  &::before
-    @include accent-font
-    display: inline-block
-    content: '\0025BA'
-.VueCarousel-navigation-prev
-  &::before
-    @include accent-font
-    display: inline-block
-    content: '\0025C4'
+    box-shadow: inset 0 0 0 100px $primary
 .inner-shadow-lg
   box-shadow: 0 0rem 3rem rgba(0,0,0,.1) !important
 .footer-list
