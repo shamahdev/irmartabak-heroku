@@ -165,8 +165,7 @@
 </template>
 
 <script>
-function martabakState(){
-  return{
+const martabakState = () =>({
   giverating: {
     "ip": "",
     "score": null,
@@ -182,8 +181,7 @@ function martabakState(){
   currentM: null,
   ratingip: '',
   checked: null
-  }
-};
+});
 export default {
   components: {
     modal: () => import("../components/modal.vue"),
@@ -192,7 +190,7 @@ export default {
   name: "Detail",
   data: martabakState,
   created () {
-    this.getData();
+    this.getData()
   },
   computed: {
     already_rate(){
@@ -201,7 +199,7 @@ export default {
       }else{
         this.checked = false;
       }
-      return this.checked;
+      return this.checked
     },
   },
   methods: {

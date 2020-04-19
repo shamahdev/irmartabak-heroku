@@ -15,7 +15,6 @@ AOS.init({
 });
 library.add(faFacebookF, faInstagram, faYoutube, faTwitter, faWhatsapp, faLinkedin, faBehance, faGithub, faArrowDown, faArrowUp, faArrowRight, faArrowLeft, faEnvelope, faTimes, faBars, faPlus);
 dom.watch();
-Vue.config.performance = true;
 new Vue({
   router,
   render: h => h(App)
