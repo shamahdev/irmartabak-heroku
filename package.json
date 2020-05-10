@@ -18,7 +18,7 @@
     "core-js": "^3.6.4",
     "fs": "0.0.1-security",
     "hooper": "^0.3.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.11",
