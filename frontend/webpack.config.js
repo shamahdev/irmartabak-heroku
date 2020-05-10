@@ -1,23 +1,43 @@
 const path = require('path');
 const webpack = require('webpack');
-const BundleTracker = require('webpack-bundle-tracker');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const BundleTracker = require('webpack-bundle-tracker');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
+    optimization: {
+        minimizer: [
+          new UglifyJsPlugin({
+            cache: true,
+            parallel: true,
+          }),
+        ],
+    },
     context: __dirname,
     entry: {
             "app"  : "./src/Main.js",
-        },
+    },
     output: {
         path: path.resolve('./frontend/src/assets/bundles'),
         publicPath: '/static/bundles/',
         filename: '[name].js',
+        pathinfo: false,
     },
 
     plugins: [
         new BundleTracker({filename: './frontend/webpack-stats.json'}),
         new VueLoaderPlugin(),
+        new CompressionPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+            threshold: 10240,
+            minRatio: 0.8
+          }),
+        // new BundleAnalyzerPlugin()
     ],
 
     module: {
@@ -53,8 +73,5 @@ module.exports = {
                 ]
             },
         ],
-    },
-    resolve: {
-        alias: {vue: 'vue/dist/vue.js'}
     },
 };

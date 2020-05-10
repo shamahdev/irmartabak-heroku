@@ -5,9 +5,8 @@
 <link rel="shortcut icon" type="image/png" href="{% static '/img/icon.png' %}">
 <title> {% block title %}{% endblock %} </title>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static 'admin/css/base.css' %}{% endblock %}">
-{% block extrastyle %}
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<link rel="stylesheet" type="text/css" href="/static/css/main.min.css">
+{% block extrastyle %}    
 {% endblock %}
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
 {% block extrahead %}{% endblock %}
@@ -34,22 +33,22 @@
         </div>
         {% block usertools %}
         {% if has_permission %}
-        <div id="user-tools" class="text-dark">
+        <div id="user-tools" class="lead3" style="color: black">
             {% block welcome-msg %}
                 {% trans 'Welcome,' %}
                 <strong>{% firstof user.get_short_name user.get_username %}</strong>.
             {% endblock %}
             {% block userlinks %}
                 {% if site_url %}
-                    <a class="text-dark" href="{{ site_url }}">{% trans 'View site' %}</a> /
+                    <a style="color: black" href="{{ site_url }}">{% trans 'View site' %}</a> /
                 {% endif %}
                 {% if user.is_active and user.is_staff %}
-                        <a class="text-dark" href="/documentation">{% trans 'Documentation' %}</a> /
+                        <a style="color: black" href="/documentation">{% trans 'Documentation' %}</a> /
                 {% endif %}
                 {% if user.has_usable_password %}
-                <a class="text-dark" href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+                <a style="color: black" href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
                 {% endif %}
-                <a class="text-dark" href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+                <a style="color: black" href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
             {% endblock %}
         </div>
         {% endif %}
@@ -76,7 +75,7 @@
     <!-- Content -->
     <div id="content" class="{% block coltype %}colM{% endblock %}">
         {% block pretitle %}{% endblock %}
-        {% block content_title %}<div class="display-3" style="margin-bottom: 5%;">{% if title %}<h1>Insinyur Martabak Administration</h1>{% endif %}</div>{% endblock %}
+        {% block content_title %}<div class="display-4" style="margin-bottom: 2rem;">{% if title %}<h1 style="font-size: 2rem; font-weight: 900; color: #000;">Insinyur Martabak Administration</h1>{% endif %}</div>{% endblock %}
         {% block content %}
         {% block object-tools %}{% endblock %}
         {{ content }}

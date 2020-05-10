@@ -4,9 +4,9 @@
       <div class="container-fluid row p-0 m-0 mx-auto my-5">
         <div class="col-10 mx-auto my-auto p-0 text-center">
           <img
-            src="/static/img/logo.png"
+            src="/static/img/icon.png"
             class="img-fluid my-2"
-            width="200px"
+            width="140px"
             alt=""
           />
           <p class="display-4 my-5">Berikan kami kritik dan saran!</p>
@@ -53,7 +53,9 @@
               type="submit"
               value="Send"
               class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"
-            >Kirim Email</button>
+            >
+              Kirim Email
+            </button>
           </form>
         </div>
       </div>
@@ -62,28 +64,8 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
 // @ is an alias to /src
 export default {
-  name: "Contact",
-  methods: {
-    sendEmail: e => {
-      emailjs
-        .sendForm(
-          "gmail",
-          "template_GaUFC35R",
-          e.target,
-          "user_DhqUjJcMjEIxzBcZlAtt8"
-        )
-        .then(
-          result => {
-            console.log("SUCCESS!", result.status, result.text);
-          },
-          error => {
-            console.log("FAILED...", error);
-          }
-        );
-    }
-  }
+  name: "Contact"
 };
 </script>

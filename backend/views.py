@@ -24,11 +24,11 @@ def martabak(request, martabak_requested):
             'martabak' : martabak_requested,
         }
         availableMartabak = model_martabak.objects.get(slug = martabak_requested)
+        return render(request, "detail.html", context)
     except AttributeError:
         return render(request, 'detail.html', context)
     except ObjectDoesNotExist:
         return redirect("Menu")
-    return render(request, "detail.html", context)
     
 def error_404(request, exception):
     return render(request, '404.html')

@@ -3,16 +3,16 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import VueCarousel from "vue-carousel";
 import VuePageTransition from "vue-page-transition";
-import { VueStars } from "vue-stars";
-import StarRating from "vue-dynamic-star-rating";
+import StarRating from 'vue-star-rating'
 import VueAxios from '../components/plugins/axios';
 
 Vue.component("star-rating", StarRating);
-Vue.component("vue-stars", VueStars);
+
 Vue.use(VuePageTransition);
 Vue.use(VueCarousel);
 Vue.use(VueRouter);
 Vue.use(VueAxios);
+
 const routes = [
   {
     path: "/",
@@ -68,20 +68,27 @@ const routes = [
     meta: { hideDesktop: true },
     component: () => import(/* webpackChunkName: "error404" */ "../views/Error404.vue")
   },
-  // {
-  //   path: "/dev",
-  //   name: "Location",
-  //   meta: { hideDesktop: true },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/Dev.vue")
-  // },
-  // {
-  //   path: "/faq",
-  //   name: "Location",
-  //   meta: { hideDesktop: true },
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/FAQ.vue")
-  // },
+  {
+    path: "/dev",
+    name: "AboutDev",
+    meta: { hideDesktop: true },
+    component: () =>
+      import(/* webpackChunkName: "dev" */ "../views/AboutDev.vue")
+  },
+  {
+    path: "/awards",
+    name: "Awards",
+    meta: { hideDesktop: true },
+    component: () =>
+      import(/* webpackChunkName: "awards" */ "../views/Awards.vue")
+  },
+  {
+    path: "/news",
+    name: "News",
+    meta: { hideDesktop: true },
+    component: () =>
+      import(/* webpackChunkName: "news" */ "../views/News.vue")
+  }
 ];
 
 const router = new VueRouter({
