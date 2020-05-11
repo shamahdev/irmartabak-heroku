@@ -31,6 +31,7 @@ __Running Server__
 
 11/05/2020 by BackEnd
 - Improved URL Handling
+- Implemented comments from database
 
 10/05/2020 by BackEnd
 - Updating Python (This project now use Python 3.8)
