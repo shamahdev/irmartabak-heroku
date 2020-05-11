@@ -18,8 +18,8 @@ class MartabakAdmin(admin.ModelAdmin):
 @admin_thumbnails.thumbnail('image')
 class ArtikelAdmin(admin.ModelAdmin):
     artikel_thumbnail = AdminThumbnail(image_field='preview', template='thumbnail.html')
-    list_display = ('judul', 'tanggal', 'konten', 'image_thumbnail')
-    fields = ('judul', 'tanggal', 'konten', 'image', 'artikel_thumbnail')
+    list_display = ('judul', 'tanggal', 'konten', 'headline', 'image_thumbnail')
+    fields = ('judul', 'tanggal', 'konten', 'headline', 'link','image', 'artikel_thumbnail')
     readonly_fields = ('artikel_thumbnail',)
 
 @admin.register(komentar)

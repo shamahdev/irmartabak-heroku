@@ -32,6 +32,7 @@ __Running Server__
 11/05/2020 by BackEnd
 - Improved URL Handling
 - Implemented comments from database
+- Implemented news and promo from database
 
 10/05/2020 by BackEnd
 - Updating Python (This project now use Python 3.8)
@@ -41,10 +42,10 @@ __Running Server__
 - Added filter feature for Admin side list
 - Added Image preview in Comment's form
 - Added Image preview in Article's form
-- Automatically deletes old Comment Photo from filesystem when corresponding Martabak Record is updated with new file
-- Automatically deletes Comment Photo from filesystem when corresponding Martabak Record is deleted
-- Automatically deletes old Article Photo from filesystem when corresponding Martabak Record is updated with new file
-- Automatically deletes Article Photo from filesystem when corresponding Martabak Record is deleted
+- Automatically deletes old Comment Photo from filesystem when corresponding Comment Record is updated with new file
+- Automatically deletes Comment Photo from filesystem when corresponding Comment Record is deleted
+- Automatically deletes old Article Photo from filesystem when corresponding Article Record is updated with new file
+- Automatically deletes Article Photo from filesystem when corresponding Article Record is deleted
 
 09/05/2020 by BackEnd
 - Added Image preview in Martabak's form

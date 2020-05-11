@@ -157,4 +157,9 @@ WEBPACK_LOADER = {
     }
 }
 
+TINYMCE_DEFAULT_CONFIG = {
+   'paste_as_text': True,
+   'save_as_text': True,
+}
+
 django_heroku.settings(locals())

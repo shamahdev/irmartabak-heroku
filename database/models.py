@@ -74,6 +74,7 @@ class artikel(models.Model):
     )
     tanggal = models.DateField(auto_now=False, auto_now_add=False)
     link = models.CharField(max_length=200)
+    headline = models.BooleanField(default=True)
     slug = models.SlugField(blank=True, editable=False)
 
     def save(self, *args, **kwargs):
