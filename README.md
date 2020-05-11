@@ -29,6 +29,9 @@ __Running Server__
 
 ## Changelogs
 
+11/05/2020 by BackEnd
+- Improved URL Handling
+
 10/05/2020 by BackEnd
 - Updating Python (This project now use Python 3.8)
 - Added new Django package don't forget to run 'pip install -r requirements.txt'

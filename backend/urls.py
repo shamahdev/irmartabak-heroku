@@ -6,10 +6,11 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name="Home"),
-    path('menu/', views.menu, name="Menu"),
-    re_path(r'^(?P<page_requested>[\w-]+)/$', views.pages),
+    path('menu/', views.menu, name="Menu"),    
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
-    re_path(r'^menu/(?P<martabak_requested>[\w-]+)/$', views.martabak),
+    re_path(r'^(?P<page_requested>[\w-]+)/$', views.pages),
+    re_path(r'^(?P<page_requested>[\w-]+)/(?P<additional_page>[\w-]+)/$', views.pages),
+    re_path(r'^(?P<page_requested>[\w-]+)/(?P<additional_page>[\w-]+)/(?P<last_pattern>.*)/$', views.pages),
 ]
 handler404 = 'backend.views.error_404'
 handler500 = 'backend.views.error_500'
