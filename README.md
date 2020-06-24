@@ -2,8 +2,6 @@
 ![Icon](frontend/src/assets/img/icon.png)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/shaddamah/irmartabak-heroku)
-![Front-end team](https://img.shields.io/badge/frontend%20team-shaddamah-blue)
-![Back-end team](https://img.shields.io/badge/backend%20team-harizMunawar%20&%20GaniyaMustafa-red)
 ![GitHub followers](https://img.shields.io/github/followers/Shaddamah?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/Shaddamah/nyepak-bola?style=social)
 ![npm](https://img.shields.io/npm/v/vue-cli)
@@ -42,6 +40,10 @@ __3. Run Server__
 * [Webpack](https://webpack.js.org/)
 * [Django](https://www.djangoproject.com/)
 * [Heroku](https://www.heroku.com/)
+
+## Teams
+* **Front-end team**; [Shaddam Amru Hasibuan](https://github.com/Shaddamah)
+* **Back-end team**; [Hariz Sufyan Munawar](https://github.com/harizMunawar), [Ganiya Mustafa](https://github.com/GaniyaMustafa)
 
 ## Changelogs
 
