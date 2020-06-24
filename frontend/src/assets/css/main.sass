@@ -1,0 +1,387 @@
+@import 'variable'
+@import 'mobile'
+
+::-webkit-scrollbar
+  width: 8px
+::-webkit-scrollbar-track
+  background: $secondary
+::-webkit-scrollbar-thumb
+  background: $primary
+
+html
+  height: 100%
+html,body,p
+  @include secondary-font
+  scroll-behavior: smooth
+img
+  user-select: none
+#app 
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+#footer
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  justify-content: space-around
+
+#aboutus
+  height: 100% !important
+#favorite
+  overflow-x: hidden
+// #nprogress .bar 
+//   background: $primary
+//   height: 4px
+// #nprogress .spinner-icon 
+//   border-top-color: $primary
+//   border-left-color: $primary
+// #nprogress .peg
+//   box-shadow: 0 0 10px $primary, 0 0 5px $primary
+
+.btn:focus, .btn:active, .navbar-toggler:focus, .navbar-toggler:active
+  outline: none !important
+  box-shadow: none !important
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus 
+  outline: none !important
+  box-shadow: inset 0 -1px 0 $fog
+
+.fade-scale
+  transform: scale(0)
+  opacity: 0
+  transition: all .5s ease
+  &.show
+    opacity: 1
+    transform: scale(1)
+    transition: all .5s ease
+input, textarea
+  background-color: $fog !important
+.text-primary
+  color: $primary !important
+.bg-primary
+  background-color: $primary !important
+.bg-light
+  background-color: $fog !important
+.bg-white
+  background-color: white !important
+.btn
+  @include accent-font
+  text-transform: uppercase
+  border-radius: 0
+  border: 0 !important
+  font-size: 1rem
+.btn-primary
+  color: $secondary
+  border: none
+  transition: all .3s
+  position: relative
+  overflow: hidden
+  z-index: 1
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $primary
+    z-index: -2
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 0%
+    height: 100%
+    background-color: $secondary
+    transition: all .3s
+    z-index: -1
+  &:hover
+    color: #fff
+    &:before
+      width: 100% !important
+.btn-dark, .btn-secondary
+  border: none
+  transition: all .3s
+  position: relative
+  overflow: hidden
+  z-index: 1
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $secondary
+    z-index: -2
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 0%
+    height: 100%
+    background-color: $primary
+    transition: all .3s
+    z-index: -1
+  &:hover
+    color: $secondary
+    &:before
+      width: 100% !important
+      z-index: -1
+.navbar-brand
+  margin: 0 3%
+.nav-item
+  margin: 0.5rem 0rem
+  .nav-link
+      @include accent-font
+      font-size: 0.85rem
+      text-transform: uppercase
+      transition: 0.1s ease
+      padding: 0.5rem 1rem !important
+      margin: 0rem 0.8rem !important
+      border: none
+      transition: all .3s
+      position: relative
+      overflow: hidden
+      z-index: 1
+      &:hover
+        border-width: 3px
+        &:before
+          width: 100% !important
+          z-index: -1
+      &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 0%
+        height: 5%
+        background-color: $primary
+        transition: all .3s
+        z-index: -1
+.nav-link.router-link-active
+  color: $secondary !important
+  &:before
+    width: 100% !important
+.lead,.lead2
+  @include secondary-font
+.lead3
+  @include accent-font
+  font-size: 0.85rem
+  text-transform: uppercase
+.dropdown-menu
+  border-radius: 0
+  .dropdown-item
+    &:hover
+      background-color: $primary
+.navbar-toggler
+  border: none !important
+.card.card--menu
+  color: $secondary
+  &:hover
+    cursor: pointer
+.card
+  overflow: hidden
+  border: 0 !important
+  border-radius: 0
+  &:hover
+    .card-img-overlay
+      background-color: $primary
+      display: inline-block
+      top: 30%
+    .skeleton-card-overlay
+      background-color: $fog
+      top: 0%
+  *
+    transition: 0.3s ease
+    border-radius: 0px
+  .card-img-overlay
+    background-color: fade-out($primary,0.2)
+    display: inline-block
+    top: 50%
+  .skeleton-card-overlay
+    pointer-events: none
+    background-color: $fog
+    display: inline-block
+    top: 0%
+.card--disabled
+  pointer-events: none
+.container
+  max-width: 100%
+.modal-header, .modal-footer, .modal-content
+  border: 0 !important
+  border-radius: 0
+.card-img-overlay2
+  color: white
+  background-color: fade-out(black,0.1)
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  height: 70%
+.thumb
+  min-height: 100%
+  height: 450px
+  max-height: 450px
+.thumb2
+  min-height: 100%
+  height: 300px
+  max-height: 300px
+.thumb3
+  min-height: 100%
+  height: 180px
+  max-height: 180px
+.add-list
+  cursor: pointer
+    
+
+.card-img-overlay-fb,.card-img-overlay-ig,.card-img-overlay-twt,.card-img-overlay-yt,.card-img-overlay-add
+  color: white
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  div .svg-inline--fa
+      font-size: 3rem
+  &:hover
+    div .svg-inline--fa
+      font-size: 7rem
+    p
+      font-size: 0rem
+.card-img-overlay-fb
+  background-color: fade-out($fb,0.2)
+  box-shadow: inset 0 0 0 0px $fb
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $fb
+.card-img-overlay-ig
+  background-color: fade-out($ig,0.2)
+  box-shadow: inset 0 0 0 0px $ig
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $ig
+.card-img-overlay-twt
+  background-color: fade-out($tw,0.2)
+  box-shadow: inset 0 0 0 0px $tw
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $tw
+.card-img-overlay-yt
+  background-color: fade-out($yt,0.2)
+  box-shadow: inset 0 0 0 0px $yt
+  box-shadow: 0 !important
+  &:hover
+    cursor: pointer
+    box-shadow: inset 0 0 0 400px $yt
+.card-img-overlay-add
+  color: $secondary
+  background-color: fade-out($primary,0.2)
+.round
+  border-radius: 100%
+.border-none
+  border: 0
+.bg-dark, .bg-secondary
+  border: 0
+  background-color: $secondary !important
+.form-control
+  border: 0
+  font-size: 1rem
+//===== End of modification =====\\
+
+.not
+  background-color: white !important
+.inline-block
+  display: inline-block
+.map-point
+  .container
+    transition: 0.4s ease
+    padding: 1rem 1rem
+    margin: 2rem 0rem
+    box-shadow: inset 0 0 0 0px $primary
+    box-shadow: 0 !important
+    &:hover
+      cursor: pointer
+      box-shadow: inset 0 0 0 100px $primary
+    .float-right
+      transition: 0.3s ease
+      box-shadow: inset 0 0 0 0px $secondary
+  .active
+    cursor: auto
+    transition: 0.4s ease
+    padding: 3rem 1rem
+    background-color: $primary !important
+    &:hover
+      cursor: auto
+    .float-right
+      transition: 0.3s ease
+      color: white !important
+      box-shadow: inset 0 0 0 50px $secondary
+.VueCarousel-navigation-button
+  transition: 0.3s ease
+  box-shadow: inset 0 0 0 0px $primary
+  padding: 1.5rem !important
+  color: white !important
+  background-color: $secondary !important
+  margin: 0
+  &:hover
+    color: $secondary !important
+    box-shadow: inset 0 0 0 100px $primary
+.inner-shadow-lg
+  box-shadow: 0 0rem 3rem rgba(0,0,0,.1) !important
+.footer-list
+  list-style: none
+  li, a
+    text-decoration: none
+    color: white !important
+    transition: 0.1s ease
+    cursor: pointer
+    display: flex
+    border-width: 0px
+    border-style: none none solid none
+    border-color: $primary
+    padding: 10px 0rem
+    &:hover
+      border-width: 1px
+  .router-link-active
+    text-decoration: none
+    border-width: 0px !important
+    &:hover
+      border-width: 1px !important
+.social-footer
+  li
+    padding: 4px 0rem
+.btn-skeleton, .skeleton-txt
+  color: $fog
+  color: #ffffff00
+  pointer-events: none
+  background-color: $fog !important
+  user-select: none
+.skeleton-thumbnail
+    height: 50vh
+    width: 100%
+    background-color: $fog !important
+#toTop
+  position: fixed
+  bottom: 0
+  right: 5%
+  z-index: 365
+.blur
+  filter: blur(5px)
