@@ -41,7 +41,7 @@ __3. Run Server__
 * [Django](https://www.djangoproject.com/)
 * [Heroku](https://www.heroku.com/)
 
-## Teams
+## Our Team
 * **Front-end team**; [Shaddam Amru Hasibuan](https://github.com/Shaddamah)
 * **Back-end team**; [Hariz Sufyan Munawar](https://github.com/harizMunawar), [Ganiya Mustafa](https://github.com/GaniyaMustafa)
 
