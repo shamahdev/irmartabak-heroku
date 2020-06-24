@@ -4,7 +4,7 @@
 <div><!-- DIV needed for valid HTML -->
 <label class="lead3" for="searchbar"></label>
 <input class="lead" style="margin-top: 0.4%;" type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" id="searchbar" autofocus>
-<input class="btn btn-primary text-dark" type="submit" value="{% trans 'Search' %}">
+<input style="margin-top: 0.5%;margin-left: 0.3%;" class="btn btn-primary" type="submit" value="{% trans 'Search' %}">
 {% if show_result_count %}
     <span class="small quiet text-dark">{% blocktrans count counter=cl.result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktrans %} (<a href="?{% if cl.is_popup %}_popup=1{% endif %}">{% if cl.show_full_result_count %}{% blocktrans with full_result_count=cl.full_result_count %}{{ full_result_count }} total{% endblocktrans %}{% else %}{% trans "Show all" %}{% endif %}</a>)</span>
 {% endif %}

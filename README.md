@@ -29,6 +29,34 @@ __Running Server__
 
 ## Changelogs
 
+<<<<<<< HEAD
+=======
+11/05/2020 by BackEnd
+- Improved URL Handling
+- Implemented comments from database
+- Implemented news and promo from database
+
+10/05/2020 by BackEnd
+- Updating Python (This project now use Python 3.8)
+- Added new Django package don't forget to run 'pip install -r requirements.txt'
+- Improve Admin side list
+- Added search feature for Martabak in Admin side list
+- Added filter feature for Admin side list
+- Added Image preview in Comment's form
+- Added Image preview in Article's form
+- Automatically deletes old Comment Photo from filesystem when corresponding Comment Record is updated with new file
+- Automatically deletes Comment Photo from filesystem when corresponding Comment Record is deleted
+- Automatically deletes old Article Photo from filesystem when corresponding Article Record is updated with new file
+- Automatically deletes Article Photo from filesystem when corresponding Article Record is deleted
+
+09/05/2020 by BackEnd
+- Added Image preview in Martabak's form
+- Changed Martabak model
+- Created Comment model
+- Created Comment REST API
+- Refactored some code for better readability
+
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
 18/04/2020 by FrontEnd
 - Fixed Skeleton Loader layout on Detail Page
 - Static Images are now compressed (from 3.72 MB to 486 KB)

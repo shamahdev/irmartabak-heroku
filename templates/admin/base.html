@@ -5,8 +5,13 @@
 <link rel="shortcut icon" type="image/png" href="{% static '/img/icon.png' %}">
 <title> {% block title %}{% endblock %} </title>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static 'admin/css/base.css' %}{% endblock %}">
+<<<<<<< HEAD
 {% block extrastyle %}
     <link rel="stylesheet" type="text/css" href="/static/css/main.min.css">
+=======
+<link rel="stylesheet" type="text/css" href="/static/css/main.min.css">
+{% block extrastyle %}    
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
 {% endblock %}
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
 {% block extrahead %}{% endblock %}

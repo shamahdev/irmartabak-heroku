@@ -13,9 +13,15 @@
           :scrollPerPage="false"
           :perPage="1"
           :perPageCustom="[
+<<<<<<< HEAD
               [480, 1],
               [768, 2],
               [992, 3]
+=======
+            [480, 1],
+            [768, 2],
+            [992, 3]
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           ]"
           :navigationEnabled="true"
           :navigationNextLabel="'<i class=\'fas fa-arrow-right fa-lg\'></i>'"
@@ -24,19 +30,30 @@
           :loop="true"
         >
           <slide :key="x" v-for="x in 3" v-if="loading">
+<<<<<<< HEAD
              <div class="card card--menu card--disable mx-2">
+=======
+            <div class="card card--menu card--disable mx-2">
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
               <div class="image-card">
-              <img class="card-img-top img-fluid fit-cover"/>
+                <img class="card-img-top img-fluid fit-cover" />
               </div>
-              <div class="card-img-overlay skeleton-card-overlay">
-              </div>
+              <div class="card-img-overlay skeleton-card-overlay"></div>
             </div>
           </slide>
+<<<<<<< HEAD
           <slide :key="martabak" v-for="martabak in martabakmenu" v-if="martabak.id != currentMartabak">
+=======
+          <slide
+            :key="martabak"
+            v-for="martabak in martabakmenu"
+            v-if="martabak.id != currentMartabak"
+          >
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
             <div :key="rating.object_id" v-for="rating in ratingdata">
               <div v-if="rating.object_id == martabak.id">
                 <menucard
-                  :price="martabak.price"
+                  :lowest_price="martabak.lowest_price"
                   :name="martabak.name"
                   :rating="parseFloat(rating.average)"
                   :img="martabak.image"
@@ -51,6 +68,7 @@
     <div class="container-fluid row p-0 m-0 mx-auto mb-5">
       <div v-if="loading" class="col mx-auto p-0 text-center">
         <button type="button" class="mx-auto btn btn-skeleton btn-lg px-5 py-3">
+<<<<<<< HEAD
                 Menu Lainnya
               </button>
       </div>
@@ -58,6 +76,20 @@
         <router-link :to="'/menu'" tag="button" type="button" class="mx-auto btn btn-primary btn-lg px-5 py-3">
                 Menu Lainnya
               </router-link>
+=======
+          Menu Lainnya
+        </button>
+      </div>
+      <div v-if="!loading" class="col mx-auto p-0 text-center">
+        <router-link
+          :to="'/menu'"
+          tag="button"
+          type="button"
+          class="mx-auto btn btn-primary btn-lg px-5 py-3"
+        >
+          Menu Lainnya
+        </router-link>
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
       </div>
     </div>
   </section>
@@ -66,33 +98,46 @@
 <script>
 export default {
   name: "menuslider",
-  data (){
-    return{
+  data() {
+    return {
       martabakmenu: [],
       ratingdata: [],
       errored: false,
-      loading: true,
-    }
+      loading: true
+    };
   },
   components: {
     menucard: () => import("../components/menucard.vue")
   },
+<<<<<<< HEAD
    created () {
     this.$axios
     .get('/api/rating/')
     .then(response => {
       this.ratingdata = response.data
+=======
+  created() {
+    this.$axios.get("/api/rating/").then(response => {
+      this.ratingdata = response.data;
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
     });
     this.$axios
-      .get('/api/martabak/')
+      .get("/api/martabak/")
       .then(response => {
-        this.martabakmenu = response.data  
+        this.martabakmenu = response.data;
       })
       .catch(error => {
+<<<<<<< HEAD
         console.log(error)
         this.errored = true
       })
       setTimeout(() => this.loading = false, 500)
+=======
+        console.log(error);
+        this.errored = true;
+      });
+    setTimeout(() => (this.loading = false), 500);
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
   },
   props: {
     currentMartabak: Number

@@ -6,6 +6,7 @@
       <modal id="buymethod" title="Pilih Layanan Pemesanan">
         <div class="row m-0">
           <div class="col-12 mx-auto">
+<<<<<<< HEAD
              <p class="lead2 mb-4">
                 Pilih cabang yang paling dekat dengan lokasi kamu saat ini! <a class="text-warning" href="https://www.google.com/maps/search/Insinyur+Martabak">Tidak tau dimana? klik disini!</a>
             </p>
@@ -37,6 +38,56 @@
             <a href="https://food.grab.com/id/id/restaurant/%F0%9F%8C%A1%EF%B8%8F%F0%9F%9B%A1%EF%B8%8Finsinyur-martabak-tubagus-ismail-grabkitchen-delivery/6-CYVFLE3CJETYNE" class="btn btn-dark px-5 py-3">GrabFood</a>
            </div>
         </div>
+=======
+            <p class="lead2 mb-4">
+              Pilih cabang yang paling dekat dengan lokasi kamu saat ini!
+              <a
+                class="text-warning"
+                href="https://www.google.com/maps/search/Insinyur+Martabak"
+                >Tidak tau dimana? klik disini!</a
+              >
+            </p>
+          </div>
+          <div class="col-12 mx-auto">
+            <p class="lead3">Kiaracondong</p>
+            <div>
+              <a href="" class="btn btn-primary px-5 py-3">GoFood</a>
+              <a
+                href="https://food.grab.com/id/id/restaurant/insinyur-martabak-ir-martabak-babakan-sari-delivery/IDGFSTI000013nr"
+                class="btn btn-dark px-5 py-3"
+                >GrabFood</a
+              >
+            </div>
+          </div>
+          <div class="col-12 mx-auto">
+            <p class="lead3 mt-3">Cibaduyut</p>
+            <div>
+              <a href="" class="btn btn-primary px-5 py-3">GoFood</a>
+              <a href="" class="btn btn-dark px-5 py-3">GrabFood</a>
+            </div>
+          </div>
+          <div class="col-12 mx-auto">
+            <p class="lead3 mt-3">Cijerah</p>
+            <div>
+              <a
+                href="https://gofood.co.id/bahasa/bandung/restaurant/insinyur-martabak-ir-martabak-cijerah-01b2ca13-eecb-4c5a-8835-207ba3e8e59f"
+                class="btn btn-primary px-5 py-3"
+                >GoFood</a
+              >
+              <a href="" class="btn btn-dark px-5 py-3">GrabFood</a>
+            </div>
+          </div>
+          <div class="col-12 mx-auto mb-4">
+            <p class="lead3 mt-3">Tubagus Ismail Raya (GrabFood Only)</p>
+            <div>
+              <a
+                href="https://food.grab.com/id/id/restaurant/%F0%9F%8C%A1%EF%B8%8F%F0%9F%9B%A1%EF%B8%8Finsinyur-martabak-tubagus-ismail-grabkitchen-delivery/6-CYVFLE3CJETYNE"
+                class="btn btn-dark px-5 py-3"
+                >GrabFood</a
+              >
+            </div>
+          </div>
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
         </div>
       </modal>
       <!-- End -->
@@ -53,10 +104,16 @@
           <div class="jumbotron-fluid bg-primary px-5 pt-5 pb-0">
             <h1 class="display-5 mb-3 mt-5">The Professional Martabak Maker</h1>
             <p class="lead2 mb-5">
+<<<<<<< HEAD
               Insinyur martabak adalah sebuah brand martabak yang didirikan
               oleh para ahli dalam bidangnya. Dengan konsep proyek open
               kitchen yang menyajikan berbagai varian martabak manis dan
               martabak telur.
+=======
+              Insinyur martabak adalah sebuah brand martabak yang didirikan oleh
+              para ahli dalam bidangnya. Dengan konsep proyek open kitchen yang
+              menyajikan berbagai varian martabak manis dan martabak telur.
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
             </p>
             <div class="btn-group mx-auto mx-md-0">
               <button
@@ -71,20 +128,30 @@
             <modal id="aboutmodal" title="The Professional Martabak Maker">
               <div class="container-fluid row m-0 p-0">
                 <div class="col-12 d-none d-md-block text-center py-2">
+<<<<<<< HEAD
                   <img class="img-fluid w-50" src="/static/img/icon.png" alt="Insinyur Martabak Brand Icon" />
+=======
+                  <img
+                    class="img-fluid w-50"
+                    src="/static/img/icon.png"
+                    alt="Insinyur Martabak Brand Icon"
+                  />
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
                 </div>
                 <div class="col-12 py-2 my-auto">
                   <p class="lead2 my-3">
                     Insinyur Martabak Berdiri sejak tahun 2017 hingga kini telah
                     melebarkan sayap hingga empat cabang yang tersebar di Kota
-                    Bandung. Insinyur Martabak menyediakan menu yang lengkap mulai
-                    dari martabak klasik hingga martabak dengan inovasi yang modern
-                    dan kekinian.</p>
+                    Bandung. Insinyur Martabak menyediakan menu yang lengkap
+                    mulai dari martabak klasik hingga martabak dengan inovasi
+                    yang modern dan kekinian.
+                  </p>
                   <p class="lead2 my-3">
-                    Dengan konsep yang unik dan rasa produk yang
-                    spesial serta selalu terjaga kualitasnya, Insinyur Martabak
-                    selalu digemari oleh para pecinta martabak yang pastinya telah
-                    mendapat tempat spesial di hati para pelanggannya.</p>
+                    Dengan konsep yang unik dan rasa produk yang spesial serta
+                    selalu terjaga kualitasnya, Insinyur Martabak selalu
+                    digemari oleh para pecinta martabak yang pastinya telah
+                    mendapat tempat spesial di hati para pelanggannya.
+                  </p>
                   <p class="lead3 mt-3">INSINYUR MARTABAK 2017-2020</p>
                 </div>
               </div>
@@ -101,7 +168,12 @@
         <div class="text-center col-md-12 p-0">
           <h1 class="display-4 mt-5 pt-4">Tanggapan Pengunjung</h1>
           <p class="mb-5 pb-4">
+<<<<<<< HEAD
             Ingin komentarnya di post juga? Mention kami di social media dengan hashtag <b>#irmartabak_moment</b>
+=======
+            Ingin komentarnya di post juga? Mention kami di social media dengan
+            hashtag <b>#irmartabak_moment</b>
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           </p>
         </div>
       </div>
@@ -113,27 +185,59 @@
           <h1 class="display-4 mt-0 mt-md-3">
             Tersedia Juga di
           </h1>
-          <p class="mb-0 mb-md-3">Dapatkan banyak promo diskon dengan menggunakan layanan dibawah ini!</p>
-
+          <p class="mb-0 mb-md-3">
+            Dapatkan banyak promo diskon dengan menggunakan layanan dibawah ini!
+          </p>
         </div>
       </div>
       <div class="row mt-5 p-0 m-0 mx-auto my-0 my-md-5 text-center">
         <div class="col text-center">
+<<<<<<< HEAD
         <div class="col-6 col-md-5 col-lg-3 d-inline-block pb-2 pb-md-0 px-0 px-md-4">
             <img class="img-fluid" src="/static/img/gofood.png" alt="Insinyur Martabak di GoFood">
         </div>
         <div class="col-6 col-md-5 col-lg-3 d-inline-block px-0 px-md-4">
             <img class="img-fluid" src="/static/img/grabfood.png" alt="Insinyur Martabak di GrabFood">
         </div>
+=======
+          <div
+            class="col-6 col-md-5 col-lg-3 d-inline-block pb-2 pb-md-0 px-0 px-md-4"
+          >
+            <img
+              class="img-fluid"
+              src="/static/img/gofood.png"
+              alt="Insinyur Martabak di GoFood"
+            />
+          </div>
+          <div class="col-6 col-md-5 col-lg-3 d-inline-block px-0 px-md-4">
+            <img
+              class="img-fluid"
+              src="/static/img/grabfood.png"
+              alt="Insinyur Martabak di GrabFood"
+            />
+          </div>
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
         </div>
       </div>
     </section>
     <section id="quotes" class="px-5 px-md-0 pt-2">
       <div class="container-fluid row p-0 m-0">
         <div class="maskot col-md-6 px-5 order-12 order-md-1">
+<<<<<<< HEAD
           <img src="/static/img/maskot.png" class="img-fluid w-100 px-1 px-md-3 mx-auto" srcset="" />
         </div>
         <div class="quote col-md-6 p-0 my-auto mx-auto pr-0 pr-md-4 py-5 h-100 order-1 order-md-12">
+=======
+          <img
+            src="/static/img/maskot.png"
+            class="img-fluid w-100 px-1 px-md-3 mx-auto"
+            srcset=""
+          />
+        </div>
+        <div
+          class="quote col-md-6 p-0 my-auto mx-auto pr-0 pr-md-4 py-5 h-100 order-1 order-md-12"
+        >
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           <h1 class="display-5 my-2">
             "Bahagiamu kamu yang ciptakan, dan kami hadir untuk menyempurnakan!"
           </h1>
@@ -174,7 +278,11 @@ export default {
     menuslider: () => import("../components/menuslider.vue"),
     modal: () => import("../components/modal.vue"),
     comment: () => import("../components/comment.vue"),
+<<<<<<< HEAD
     commentslider: () => import("../components/commentslider.vue"),
+=======
+    commentslider: () => import("../components/commentslider.vue")
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
   }
 };
 </script>

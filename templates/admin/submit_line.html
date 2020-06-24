@@ -1,7 +1,7 @@
 {% load i18n admin_urls %}
 <div class="submit-row">
 {% block submit-row %}
-{% if show_save %}<input class="btn btn-dark" type="submit" value="{% trans 'Save' %}" class="default" name="_save">{% endif %}
+{% if show_save %}<input class="btn btn-primary" type="submit" value="{% trans 'Save' %}" class="default" name="_save">{% endif %}
 {% if show_delete_link and original %}
     {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
     <p class="deletelink-box"><a class="btn btn-danger text-white" href="{% add_preserved_filters delete_url %}" class="deletelink">{% trans "Delete" %}</a></p>

@@ -1,4 +1,4 @@
-import dj_database_url # add this to the top of your file
+import dj_database_url
 import os
 import django_heroku
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'webpack_loader',
     'tinymce',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -154,6 +155,11 @@ WEBPACK_LOADER = {
         'BUNDLE_DIR_NAME': '/bundles/',
         'STATS_FILE': os.path.join(FRONTEND_DIR, 'webpack-stats.json'),
     }
+}
+
+TINYMCE_DEFAULT_CONFIG = {
+   'paste_as_text': True,
+   'save_as_text': True,
 }
 
 django_heroku.settings(locals())

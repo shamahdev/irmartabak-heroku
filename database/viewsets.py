@@ -1,7 +1,7 @@
 from rest_framework import viewsets, permissions
-from .models import martabak, artikel
+from .models import martabak, artikel, komentar
 from star_ratings.models import Rating, UserRating
-from .serializer import MartabakSerializer, RatingSerializer, UserRatingSerializer, ArtikelSerializer
+from .serializer import MartabakSerializer, RatingSerializer, UserRatingSerializer, ArtikelSerializer, KomentarSerializer
 
 class martabakbestsellerViewSet(viewsets.ModelViewSet):
     queryset = martabak.objects.all().filter(best_seller="True")
@@ -16,6 +16,11 @@ class martabakViewSet(viewsets.ModelViewSet):
 class artikelViewSet(viewsets.ModelViewSet):
     queryset = artikel.objects.all()
     serializer_class = ArtikelSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+class komentarViewSet(viewsets.ModelViewSet):
+    queryset = komentar.objects.all()
+    serializer_class = KomentarSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 class RatingViewSet(viewsets.ModelViewSet):
