@@ -1,5 +1,5 @@
 # Insinyur Martabak's Website
-![Icon](frontend/src/assets/img/icon.png)
+![Icon](frontend/src/assets/img/logo.png)
 
 
 ![GitHub contributors](https://img.shields.io/github/contributors/shaddamah/irmartabak-heroku)
