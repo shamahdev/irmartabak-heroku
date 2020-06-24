@@ -11,7 +11,12 @@
           />
           <p class="display-4 mt-5">Tetap terhubung dengan kami!</p>
           <p class="mb-5 pb-4">
+<<<<<<< HEAD
             Dapatkan Berbagai informasi tentang kami dan keasikan lainnya dengan mengikuti akun sosial media kami
+=======
+            Dapatkan Berbagai informasi tentang kami dan keasikan lainnya dengan
+            mengikuti akun sosial media kami
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           </p>
         </div>
       </div>

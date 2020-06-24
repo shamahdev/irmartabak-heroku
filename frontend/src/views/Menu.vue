@@ -19,14 +19,31 @@
           <label class="lead3" for="orderby">Urutkan berdasarkan</label>
           <div class="row m-0 p-0">
             <div class="col-6 p-0">
+<<<<<<< HEAD
               <select class="form-control form-control-lg shadow-sm" @change="orderby()" id="orderby" v-model="orderdata" >
+=======
+              <select
+                class="form-control form-control-lg shadow-sm"
+                @change="orderby()"
+                id="orderby"
+                v-model="orderdata"
+              >
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
                 <option value="name">Nama</option>
                 <option value="price">Harga</option>
                 <option value="type">Rasa</option>
               </select>
             </div>
             <div class="col-6 pr-0">
+<<<<<<< HEAD
               <select class="form-control form-control-lg shadow-sm" id="orderby" v-model="orderasc">
+=======
+              <select
+                class="form-control form-control-lg shadow-sm"
+                id="orderby"
+                v-model="orderasc"
+              >
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
                 <option value="asc">{{ option_name[0] }}</option>
                 <option value="desc">{{ option_name[1] }}</option>
               </select>
@@ -36,6 +53,7 @@
       </div>
       <div class="row m-0 px-2 px-md-5 mx-0 mx-md-5 mb-5">
         <!-- Skeleton Load -->
+<<<<<<< HEAD
           <div class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4" :key="i" v-for="i in 6" v-show="loading">
               <div class="card card--menu card--disable mx-2">
               <div class="image-card">
@@ -46,10 +64,30 @@
             </div>
           </div>
         <div class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4" :key="martabak.id" v-for="martabak in search.slice(0,list)">
+=======
+        <div
+          class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4"
+          :key="i"
+          v-for="i in 6"
+          v-show="loading"
+        >
+          <div class="card card--menu card--disable mx-2">
+            <div class="image-card">
+              <img class="card-img-top img-fluid fit-cover" />
+            </div>
+            <div class="card-img-overlay skeleton-card-overlay"></div>
+          </div>
+        </div>
+        <div
+          class="col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4"
+          :key="martabak.id"
+          v-for="martabak in search.slice(0, list)"
+        >
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           <div :key="rating.id" v-for="rating in ratingdata">
             <div v-if="rating.object_id == martabak.id">
               <menucard
-                :price="martabak.price"
+                :lowest_price="martabak.lowest_price"
                 :name="martabak.name"
                 :rating="parseFloat(rating.average)"
                 :img="martabak.image"
@@ -58,7 +96,14 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         <div class="add-list col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4 my-auto thumb" v-if="list < search.length">
+=======
+        <div
+          class="add-list col-md-6 col-lg-4 col-xl-3 p-0 my-2 my-md-4 my-auto thumb"
+          v-if="list < search.length"
+        >
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           <div class="h-100 card p-0 py-3 border-none" @click="list += 4">
             <div class="mx-auto my-auto text-center">
               <i class="fas fa-plus" style="font-size: 6rem"></i>
@@ -93,6 +138,7 @@ export default {
   data() {
     return {
       loading: true,
+<<<<<<< HEAD
       searchdata: '',
       orderdata: 'name',
       orderasc: 'asc',
@@ -129,40 +175,118 @@ export default {
           return this.martabakmenu.filter(m=>{
             return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
           } ).sort((a, b) => (a.variant > b.variant) - (a.variant < b.variant))
+=======
+      searchdata: "",
+      orderdata: "name",
+      orderasc: "asc",
+      option_name: ["A-Z", "Z-A"],
+      ratingdata: [],
+      martabakmenu: [],
+      list: 7
+    };
+  },
+  methods: {
+    orderby() {
+      if (this.orderdata == "name") {
+        this.option_name = ["A-Z, Z-A"];
+      } else if (this.orderdata == "price") {
+        this.option_name = ["Termurah", "Termahal"];
+      } else if (this.orderdata == "type") {
+        this.option_name = ["Asin", "Manis"];
+      }
+    }
+  },
+  computed: {
+    search() {
+      this.list = 7;
+      if (this.orderasc == "asc") {
+        if (this.orderdata == "name") {
+          return this.martabakmenu
+            .filter(m => {
+              return m.name
+                .toLowerCase()
+                .includes(this.searchdata.toLowerCase());
+            })
+            .sort((a, b) => (a.name > b.name) - (a.name < b.name));
+        } else if (this.orderdata == "price") {
+          return this.martabakmenu
+            .filter(m => {
+              return m.name
+                .toLowerCase()
+                .includes(this.searchdata.toLowerCase());
+            })
+            .sort((a, b) => a.lowest_price - b.lowest_price);
+        } else if (this.orderdata == "type") {
+          return this.martabakmenu
+            .filter(m => {
+              return m.name
+                .toLowerCase()
+                .includes(this.searchdata.toLowerCase());
+            })
+            .sort((a, b) => (a.variant > b.variant) - (a.variant < b.variant));
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
         }
-      }else{
-        if(this.orderdata == 'name'){
-          return this.martabakmenu.filter(m=>{
-            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
-          } ).sort((a, b) => (a.name > b.name) - (a.name < b.name)).reverse()
-        }else if(this.orderdata == 'price'){
-          return this.martabakmenu.filter(m=>{
-            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
-          } ).sort((a, b) => (a.price - b.price)).reverse()
-        }else if(this.orderdata == 'type'){
-          return this.martabakmenu.filter(m=>{
-            return m.name.toLowerCase().includes(this.searchdata.toLowerCase())
-          } ).sort((a, b) => (a.variant > b.variant) - (a.variant < b.variant)).reverse()
+      } else {
+        if (this.orderdata == "name") {
+          return this.martabakmenu
+            .filter(m => {
+              return m.name
+                .toLowerCase()
+                .includes(this.searchdata.toLowerCase());
+            })
+            .sort((a, b) => (a.name > b.name) - (a.name < b.name))
+            .reverse();
+        } else if (this.orderdata == "price") {
+          return this.martabakmenu
+            .filter(m => {
+              return m.name
+                .toLowerCase()
+                .includes(this.searchdata.toLowerCase());
+            })
+            .sort((a, b) => a.lowest_price - b.lowest_price)
+            .reverse();
+        } else if (this.orderdata == "type") {
+          return this.martabakmenu
+            .filter(m => {
+              return m.name
+                .toLowerCase()
+                .includes(this.searchdata.toLowerCase());
+            })
+            .sort((a, b) => (a.variant > b.variant) - (a.variant < b.variant))
+            .reverse();
         }
       }
-    },
+    }
   },
+<<<<<<< HEAD
    created () {
     this.$axios
     .get('/api/rating/')
     .then(response => {
       this.ratingdata = response.data
+=======
+  created() {
+    this.$axios.get("/api/rating/").then(response => {
+      this.ratingdata = response.data;
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
     });
     this.$axios
-      .get('/api/martabak/')
+      .get("/api/martabak/")
       .then(response => {
-        this.martabakmenu = response.data
+        this.martabakmenu = response.data;
       })
       .catch(error => {
+<<<<<<< HEAD
         console.log(error)
         this.errored = true
       })
       setTimeout(() => this.loading = false, 500)
+=======
+        console.log(error);
+        this.errored = true;
+      });
+    setTimeout(() => (this.loading = false), 500);
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
   },
   components: {
     menucard: () => import("../components/menucard.vue")

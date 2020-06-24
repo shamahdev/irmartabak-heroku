@@ -27,6 +27,10 @@
 </template>
 <script>
 export default {
+<<<<<<< HEAD
   name: "Awards",
+=======
+  name: "Awards"
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
 };
 </script>

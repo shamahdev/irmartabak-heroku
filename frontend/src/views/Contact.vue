@@ -53,7 +53,9 @@
               type="submit"
               value="Send"
               class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"
-            >Kirim Email</button>
+            >
+              Kirim Email
+            </button>
           </form>
         </div>
       </div>
@@ -64,6 +66,10 @@
 <script>
 // @ is an alias to /src
 export default {
+<<<<<<< HEAD
   name: "Contact",
+=======
+  name: "Contact"
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
 };
 </script>

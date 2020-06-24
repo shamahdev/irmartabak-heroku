@@ -11,7 +11,12 @@
           />
           <p class="lead m-0 mt-5">ERROR 404 NOT FOUND</p>
           <p class="display-4 mb-5">Maaf Halaman ini tidak tersedia!</p>
-          <router-link exact to="/" class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5">Kembali ke Home</router-link>
+          <router-link
+            exact
+            to="/"
+            class="btn btn-primary btn-lg px-5 py-3 mt-3 mb-5"
+            >Kembali ke Home</router-link
+          >
         </div>
       </div>
     </section>

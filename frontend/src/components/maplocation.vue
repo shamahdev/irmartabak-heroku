@@ -4,7 +4,12 @@
       <div class="container-fluid row p-0 m-0">
         <div class="col-md-6 col-sm-12 p-0 my-auto">
           <h1 class="text-center display-4 mb-3">
+<<<<<<< HEAD
             Temukan Kami di</h1>
+=======
+            Temukan Kami di
+          </h1>
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
           <div class="col-lg-11 col-md-12 col-sm-12 float-right p-0">
             <div class="map-point px-3 px-md-0">
               <div
@@ -16,7 +21,9 @@
                 "
                 v-bind:class="{ active: map_active[0] }"
               >
-                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Kiaracondong</p>
+                <p class="lead3 mb-2">
+                  <i class="mdi mdi-map-marker"></i> Kiaracondong
+                </p>
                 <p>Jl. Babakan Sari no 115 Kiaracondong, Bandung</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 14.00 - 23.00
@@ -31,7 +38,9 @@
                 "
                 v-bind:class="{ active: map_active[1] }"
               >
-                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Cibaduyut</p>
+                <p class="lead3 mb-2">
+                  <i class="mdi mdi-map-marker"></i> Cibaduyut
+                </p>
                 <p>Jl. Terusan Cibaduyut no 24</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 16.00 - 23.00
@@ -46,7 +55,9 @@
                 "
                 v-bind:class="{ active: map_active[2] }"
               >
-                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Cijerah</p>
+                <p class="lead3 mb-2">
+                  <i class="mdi mdi-map-marker"></i> Cijerah
+                </p>
                 <p>Jl. Melong Asih no 45, Cijerah</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 16.00 - 23.00
@@ -61,7 +72,10 @@
                 "
                 v-bind:class="{ active: map_active[3] }"
               >
-                <p class="lead3 mb-2"><i class="mdi mdi-map-marker"></i> Grab Kitchen (GrabFood only)</p>
+                <p class="lead3 mb-2">
+                  <i class="mdi mdi-map-marker"></i> Grab Kitchen (GrabFood
+                  only)
+                </p>
                 <p>Grab Kitchen, Jl. Tubagus Ismail Raya no 24</p>
                 <p class="lead3 float-right bg-white px-3 py-2">
                   Buka 14.00 - 23.00

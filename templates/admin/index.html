@@ -17,12 +17,12 @@
         <div class="app-{{ app.app_label }} module ">
         <table>
         <caption style="caption-side: top;" class="bg-primary">
-            <a class="text-dark lead3" href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
+            <a style="color: black;" class="lead3" href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
         </caption>
         {% for model in app.models %}
             <tr class="model-{{ model.object_name|lower }}">
             {% if model.admin_url %}
-                <th scope="row"><a class="text-dark" href="{{ model.admin_url }}">{{ model.name }}</a></th>
+                <th scope="row"><a style="color: black;" href="{{ model.admin_url }}">{{ model.name }}</a></th>
             {% else %}
                 <th scope="row">{{ model.name }}</th>
             {% endif %}

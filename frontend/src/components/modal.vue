@@ -22,8 +22,12 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
+<<<<<<< HEAD
         <slot class="modal-body border-none">
         </slot>
+=======
+        <slot class="modal-body border-none"> </slot>
+>>>>>>> e348fbfdc7302b54eff23e38d8ff2c66761c95cd
       </div>
     </div>
   </div>
