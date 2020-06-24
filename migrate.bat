@@ -1,1 +1,0 @@
-..\envMartabak\Scripts\activate & python manage.py migrate
