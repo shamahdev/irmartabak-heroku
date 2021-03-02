@@ -131,17 +131,6 @@
             </p>
           </div>
         </div>
-
-        <div class="row col-md-11 col-lg-9 my-3 mx-auto">
-          <div class="col-md-5 p-5 order-1 order-md-12 d-inline-flex">
-            <div class="bg-primary pr-4"></div>
-            <img
-              data-aos="fade-right"
-              src="/static/img/bos.jpeg"
-              class="img-fluid w-100"
-            />
-          </div>
-        </div>
       </div>
     </section>
   </div>
