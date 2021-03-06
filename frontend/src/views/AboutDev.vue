@@ -131,39 +131,6 @@
             </p>
           </div>
         </div>
-
-        <div class="row col-md-11 col-lg-9 my-3 mx-auto">
-          <div class="col-md-5 p-5 order-1 order-md-12 d-inline-flex">
-            <div class="bg-primary pr-4"></div>
-            <img
-              data-aos="fade-right"
-              src="/static/img/bos.jpeg"
-              class="img-fluid w-100"
-            />
-          </div>
-          <div class="col-md-7 p-0 px-5 px-md-0 my-auto order-12 order-md-1">
-            <p class="display-4 mb-0">Mala Anisa Ulfasari</p>
-            <p class="lead m-0 mb-3">Web Tester</p>
-            <div class="d-inline-flex mb-5">
-              <a
-                class="btn btn-primary py-2 px-3"
-                href="http://instagram.com/malaanisa018/"
-                ><i class="fab fa-instagram fa-lg"></i
-              ></a>
-              <a
-                class="btn btn-primary py-2 px-3"
-                href="https://www.facebook.com/profile.php?id=100049251677098"
-                ><i class="fab fa-facebook-f fa-lg"></i
-              ></a>
-            </div>
-            <p>
-              Nama saya Mala Anisa UlfaSari, disini saya sebagai Web Tester.
-              Meskipun web itu sulit tapi saya senang mengerjakannya. dengan
-              informasi yang detail dan lengkap, kami bisa mengerjakan web
-              tersebut dengan mudah
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   </div>
