@@ -16,7 +16,7 @@ django-star-ratings==0.9.1
 django-templated-mail==1.1.1
 django-tinymce==2.8.0
 django-webpack-loader==0.7.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 djoser==2.0.3
 filelock==3.0.12
