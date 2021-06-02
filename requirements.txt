@@ -39,6 +39,6 @@ swapper==1.1.2.post1
 traceback2==1.4.0
 twine==1.7.4
 unittest2==1.1.0
-urllib3==1.25.8
+urllib3==1.26.5
 virtualenv==20.0.10
 whitenoise==5.0.1
