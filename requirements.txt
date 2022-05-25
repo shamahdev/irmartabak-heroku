@@ -29,7 +29,7 @@ mysqlclient==1.4.6
 Pillow==7.0.0
 pkginfo==1.5.0.1
 psycopg2==2.8.5
-PyJWT==1.7.1
+PyJWT==2.4.0
 pytz==2019.2
 requests==2.23.0
 requests-toolbelt==0.9.1
